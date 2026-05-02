@@ -1,16 +1,22 @@
 /**
  * Script de prueba end-to-end.
- * Ejecutar con: npx tsx scripts/test-api.ts
+ * Ejecutar con: npm run test:api
  *
  * 1. Trae 10 propiedades de EasyBroker staging
  * 2. Obtiene detalle de cada una
  * 3. Pasa cada una por el scorer
  * 4. Imprime tabla de resultados y resumen agregado
+ * 5. Guarda resultado completo en data/scoring-results.json
  */
 
 import "dotenv/config";
+import { writeFile, mkdir } from "node:fs/promises";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { listProperties, getProperty } from "../lib/easybroker";
 import { scoreProperty, type ScoringResult } from "../lib/scorer";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 async function main() {
   console.log("═══════════════════════════════════════════════════════════");
@@ -19,7 +25,7 @@ async function main() {
 
   // 1. Listar propiedades
   console.log("→ Obteniendo 10 propiedades de staging...\n");
-  const { pagination, content: properties } = await listProperties({ limit: 3 });
+  const { pagination, content: properties } = await listProperties({ limit: 10 });
   console.log(`  Total en staging: ${pagination.total} propiedades`);
   console.log(`  Obtenidas: ${properties.length}\n`);
 
@@ -81,8 +87,10 @@ async function main() {
     "location_clarity",
   ] as const;
 
+  const avgByDimension: Record<string, number> = {};
   for (const dim of dimensionKeys) {
     const avg = Math.round(results.reduce((s, r) => s + r.dimensions[dim].score, 0) / results.length);
+    avgByDimension[dim] = avg;
     console.log(`    ${padRight(dim, 24)} ${avg}/100`);
   }
 
@@ -92,12 +100,52 @@ async function main() {
   for (const flag of allFlags) {
     flagCounts.set(flag, (flagCounts.get(flag) ?? 0) + 1);
   }
+  const topFlags: Array<{ flag: string; count: number }> = [];
   if (flagCounts.size === 0) {
     console.log("    (ninguna)");
   } else {
     for (const [flag, count] of Array.from(flagCounts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 5)) {
       console.log(`    ${count}x — ${flag}`);
+      topFlags.push({ flag, count });
     }
+  }
+
+  // 5. Guardar resultados en disco
+  const output = {
+    generatedAt: new Date().toISOString(),
+    source: "easybroker_api_staging",
+    totalInPincali: pagination.total,
+    sampled: results.length,
+    results: results.map((r, i) => ({
+      publicId: r.publicId,
+      title: properties[i].title,
+      propertyType: properties[i].property_type,
+      location: properties[i].location,
+      operations: properties[i].operations,
+      titleImageThumb: properties[i].title_image_thumb,
+      totalScore: r.totalScore,
+      passes: r.passes,
+      dimensions: r.dimensions,
+      policyAlignment: r.policyAlignment,
+      flagsForModerationTeam: r.flagsForModerationTeam,
+    })),
+    aggregates: {
+      passRate: Math.round((passing / results.length) * 100) / 100,
+      avgScore: avgTotal,
+      avgByDimension,
+      topFlags,
+    },
+  };
+
+  try {
+    const dataDir = resolve(__dirname, "..", "data");
+    await mkdir(dataDir, { recursive: true });
+    const outPath = resolve(dataDir, "scoring-results.json");
+    await writeFile(outPath, JSON.stringify(output, null, 2), "utf-8");
+    console.log(`\n✓ Resultados guardados en data/scoring-results.json`);
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error(`\n✗ No se pudo guardar en disco: ${msg}`);
   }
 
   console.log("\n═══════════════════════════════════════════════════════════");
