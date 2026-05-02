@@ -4,6 +4,12 @@ export interface ScoringDimension {
   weight: number;
 }
 
+export interface Policy {
+  id: string;
+  description: string;
+  autoValidatable: boolean;
+}
+
 export interface Config {
   brand: {
     name: string;
@@ -25,12 +31,23 @@ export interface Config {
     githubUrl: string;
     parentLabUrl: string;
   };
-  sheets: {
-    syntheticListingsSheetId: string;
+  dataSources: {
+    primary: "easybroker_api" | "sheets";
+    easybroker: {
+      baseUrl: string;
+      environment: "staging" | "production";
+      rateLimitPerSecond: number;
+    };
+    sheets: {
+      syntheticListingsSheetId: string;
+    };
   };
   scoring: {
     passingThreshold: number;
     dimensions: ScoringDimension[];
+  };
+  policies: {
+    official: Policy[];
   };
 }
 
@@ -55,8 +72,16 @@ export const config: Config = {
     githubUrl: "https://github.com/francoherrerasa-creator/listing-quality-sync",
     parentLabUrl: "https://github.com/francoherrerasa-creator/franco-herrera-growth-lab",
   },
-  sheets: {
-    syntheticListingsSheetId: "13numKGQmet5NsSe3qYFUqLm-tjWCOLWfTHUHuOxQV7U",
+  dataSources: {
+    primary: "easybroker_api",
+    easybroker: {
+      baseUrl: process.env.EASYBROKER_BASE_URL || "https://api.stagingeb.com",
+      environment: "staging",
+      rateLimitPerSecond: 20,
+    },
+    sheets: {
+      syntheticListingsSheetId: "13numKGQmet5NsSe3qYFUqLm-tjWCOLWfTHUHuOxQV7U",
+    },
   },
   scoring: {
     passingThreshold: 70,
@@ -66,6 +91,45 @@ export const config: Config = {
       { id: "data_completeness", label: "Completitud de datos", weight: 20 },
       { id: "photos_signal", label: "Señal de calidad de fotos", weight: 20 },
       { id: "location_clarity", label: "Claridad de ubicación", weight: 15 },
+    ],
+  },
+  policies: {
+    official: [
+      {
+        id: "no_duplicates",
+        description: "No se permiten anuncios duplicados, aunque tengan diferentes ubicaciones o variantes",
+        autoValidatable: true,
+      },
+      {
+        id: "available_properties",
+        description: "Los inmuebles deben estar disponibles (no vendidos/rentados)",
+        autoValidatable: true,
+      },
+      {
+        id: "no_fraudulent",
+        description: "No se permiten anuncios fraudulentos, engañosos o tipo anzuelo",
+        autoValidatable: false,
+      },
+      {
+        id: "images_promote_property",
+        description: "Las imágenes deben promover el inmueble real",
+        autoValidatable: true,
+      },
+      {
+        id: "real_price_location",
+        description: "El precio y la ubicación deben ser reales y verificables",
+        autoValidatable: true,
+      },
+      {
+        id: "matching_characteristics",
+        description: "Las características descritas deben coincidir con el inmueble real",
+        autoValidatable: true,
+      },
+      {
+        id: "bank_auctions_classified",
+        description: "Los remates bancarios deben clasificarse como tal",
+        autoValidatable: false,
+      },
     ],
   },
 };
