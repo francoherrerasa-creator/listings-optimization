@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Listing Quality Sync
 
-## Getting Started
+**Franco Herrera Growth Lab** — Growth systems built with AI
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## El problema
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+EasyBroker monetiza por tiers según cantidad de anuncios publicados ($490–$1,990+ MXN/mes). Pincali, su marketplace con 443K propiedades, no monetiza directo — su función es generar leads que justifiquen upgrades de tier. Pero el funnel free-to-paid está roto: si el inventario en Pincali tiene baja calidad (descripciones vacías, fotos pixeladas, precios absurdos), las búsquedas no convierten a leads, los asesores no ven valor, y no hay upgrade. La calidad del inventario es la palanca oculta del ARPU.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## La hipótesis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Un sistema de scoring con IA que evalúe cada listing antes de publicarlo en Pincali puede filtrar el inventario de baja calidad, mejorar la tasa de conversión búsqueda→lead, y crear un feedback loop donde los asesores mejoran sus listings para obtener más visibilidad — detonando upgrades de tier orgánicamente.
 
-## Learn More
+## Cómo funciona
 
-To learn more about Next.js, take a look at the following resources:
+1. **Google Sheet** con datos de listings (sintéticos en demo, API real en producción)
+2. **Scorer IA** (Anthropic Claude vía n8n) evalúa cada listing en 5 dimensiones de calidad
+3. **Dashboard dual** — vista pública (solo listings score >70) + vista interna (métricas de Growth)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend:** Next.js 14+ · TypeScript · Tailwind CSS
+- **Datos:** Google Sheets API
+- **IA:** Anthropic Claude API (vía n8n)
+- **Deploy:** Vercel
 
-## Deploy on Vercel
+## Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [x] Estructura base + config portable
+- [ ] Google Sheet con 50 listings sintéticos
+- [ ] Scoring con n8n + Anthropic
+- [ ] Dashboard público (vista Pincali)
+- [ ] Dashboard interno (vista Growth)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+> 🔄 **Migración a cuenta corporativa: <1 hora** · [ver MIGRATION.md](docs/MIGRATION.md)
+
+---
+
+Construido por [Francisco Franco Herrera Sánchez](https://www.linkedin.com/in/franco-herrera/) · [Franco Herrera Growth Lab](https://github.com/francoherrerasa-creator/franco-herrera-growth-lab)
