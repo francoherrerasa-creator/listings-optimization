@@ -27,31 +27,39 @@ export default async function RedFlagsPage() {
   const { results } = data;
 
   // Detect violations
+  // One violation per flag (primary category only, no double-counting)
   const violations: Violation[] = [];
   const brandListings: Record<string, Set<string>> = {};
 
   for (const r of results) {
     for (const flag of r.flagsForModerationTeam) {
+      // Determine primary type (first match wins)
+      let type: string | null = null;
+      let action = "";
       if (contactKeywords.test(flag)) {
+        type = "Información de contacto";
+        action = "Remover datos de contacto de la descripción";
+      } else if (brandKeywords.test(flag)) {
+        type = "Nombre comercial";
+        action = "Eliminar nombre de agencia/inmobiliaria del copy";
+      } else if (ctaKeywords.test(flag)) {
+        type = "CTA comercial directo";
+        action = "Remover llamados a acción directos de la descripción";
+      }
+
+      if (type) {
         violations.push({
           publicId: r.publicId,
           title: r.title,
           titleImageThumb: r.titleImageThumb,
-          type: "Información de contacto",
+          type,
           evidence: flag,
-          action: "Remover datos de contacto de la descripción",
+          action,
         });
       }
+
+      // Track brand patterns regardless
       if (brandKeywords.test(flag)) {
-        violations.push({
-          publicId: r.publicId,
-          title: r.title,
-          titleImageThumb: r.titleImageThumb,
-          type: "Nombre comercial",
-          evidence: flag,
-          action: "Eliminar nombre de agencia/inmobiliaria del copy",
-        });
-        // Track brand patterns
         const match = flag.match(/['']([^'']+)['']/);
         if (match) {
           const name = match[1];
@@ -59,27 +67,11 @@ export default async function RedFlagsPage() {
           brandListings[name].add(r.publicId);
         }
       }
-      if (ctaKeywords.test(flag)) {
-        violations.push({
-          publicId: r.publicId,
-          title: r.title,
-          titleImageThumb: r.titleImageThumb,
-          type: "CTA comercial directo",
-          evidence: flag,
-          action: "Remover llamados a acción directos de la descripción",
-        });
-      }
     }
   }
 
-  // Deduplicate violations per listing+type
-  const seen = new Set<string>();
-  const uniqueViolations = violations.filter((v) => {
-    const key = `${v.publicId}:${v.type}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+  // violations is already 1 per flag (no duplicates needed)
+  const uniqueViolations = violations;
 
   const affectedListings = new Set(uniqueViolations.map((v) => v.publicId)).size;
 
@@ -147,7 +139,7 @@ export default async function RedFlagsPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
-                  <p className="text-sm text-gray-800">{uniqueViolations.length} violaciones concentradas en {affectedListings} listings.</p>
+                  <p className="text-sm text-gray-800">{uniqueViolations.length} flags de violación concentrados en {affectedListings} listings.</p>
                 </div>
               </div>
             </div>

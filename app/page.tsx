@@ -1,25 +1,27 @@
 import { config } from "@/lib/config";
 import { loadScoringResults } from "@/lib/loadResults";
+import { loadHealthData } from "@/lib/loadHealth";
 import Link from "next/link";
+import HomeContent from "./components/HomeContent";
 
 const features = [
   {
     title: "API EasyBroker",
     subtitle: "Datos Reales",
     description:
-      "Conexión directa al inventario. 1,437 propiedades reales del entorno staging. La transición a producción es cambiar una API key.",
+      "Conexion directa al inventario. 1,437 propiedades reales del entorno staging. La transicion a produccion es cambiar una API key.",
   },
   {
-    title: "Evaluación Automática",
+    title: "Evaluacion Automatica",
     subtitle: "Safety Compliance",
     description:
-      "Seguimos las 7 políticas oficiales de publicación de EasyBroker. Cada listing evaluado en 5 dimensiones: descripción, precio, datos faltantes, fotos y ubicación.",
+      "Seguimos las 7 politicas oficiales de publicacion de EasyBroker. Cada listing evaluado en 5 dimensiones: descripcion, precio, datos faltantes, fotos y ubicacion.",
   },
   {
     title: "Next Steps",
     subtitle: "Acciones Claras",
     description:
-      "Canales de acción derivados de los datos: cada flag detectado se convierte en un ticket accionable para el equipo.",
+      "Canales de accion derivados de los datos: cada flag detectado se convierte en un ticket accionable para el equipo.",
   },
 ];
 
@@ -33,8 +35,9 @@ const stack = [
 
 export default async function Home() {
   const data = await loadScoringResults();
-  const { results } = data;
+  const health = await loadHealthData();
 
+  const { aggregate, projections } = health;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -87,53 +90,40 @@ export default async function Home() {
           </p>
         </div>
 
-        {/* Funnel */}
-        <div className="mt-8 max-w-5xl mx-auto w-full">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide text-center mb-4">
-            PIPELINE DEL LISTING · ERROR MÁS COMÚN: DESCRIPCIÓN INCOMPLETA
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 items-stretch">
-            {/* Stage 1 */}
-            <div className="border-b-4 border-gray-300 rounded-lg p-4 text-center border border-gray-100">
-              <p className="text-2xl font-bold text-gray-700">{results.length}</p>
-              <p className="text-xs font-medium text-gray-700 mt-1">Listings revisados</p>
-              <p className="text-[11px] text-gray-500 mt-0.5">muestra auditada · {results.reduce((s, r) => s + r.flagsForModerationTeam.length, 0)} flags encontradas</p>
-            </div>
-            {/* Stage 2 */}
-            <div className="border-b-4 border-red-400 rounded-lg p-4 text-center border border-gray-100 relative">
-              <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">CUELLO DE BOTELLA</span>
-              <p className="text-2xl font-bold text-red-600">19</p>
-              <p className="text-xs font-medium text-gray-700 mt-1">Descripción incompleta</p>
-              <p className="text-[11px] text-gray-500 mt-0.5">flags · 10 de 10 listings afectados</p>
-            </div>
-            {/* Stage 3 */}
-            <div className="border-b-4 border-green-300 rounded-lg p-4 text-center border border-gray-100">
-              <p className="text-2xl font-bold text-green-700">9</p>
-              <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Growth</p>
-              <p className="text-[11px] text-gray-500 mt-0.5">+9 listings a activar con automatización</p>
-            </div>
-            {/* Stage 4 */}
-            <div className="border-b-4 border-green-500 rounded-lg p-4 text-center border border-gray-100">
-              <p className="text-2xl font-bold text-green-700">10</p>
-              <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Mona</p>
-              <p className="text-[11px] text-gray-500 mt-0.5">10 listings a activar vía WhatsApp</p>
-            </div>
-            {/* Stage 5 */}
-            <div className="border-b-4 border-green-700 rounded-lg p-4 text-center border border-gray-100">
-              <div className="flex items-center justify-center gap-2">
-                <p className="text-2xl font-bold text-green-800">{results.length - 4}</p>
-                <span className="px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">4 con Red Flags</span>
-              </div>
-              <p className="text-xs font-medium text-gray-700 mt-1">Pincali Ready</p>
-              <p className="text-[11px] text-gray-500 mt-0.5">después de optimizaciones</p>
-            </div>
-          </div>
-          <p className="text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto mt-6 text-center">
-            De los 10 listings analizados, 0 cumplen el mínimo de calidad hoy. El equipo de Growth puede recuperar 9 al mínimo esperado. Mona, vía WhatsApp, cierra el 100%. Red Flags con acción inmediata.
-          </p>
-        </div>
+        {/* Dynamic section: toggle + chart + paragraph */}
+        <HomeContent
+          currentHealth={aggregate.averageHealth}
+          totalListings={aggregate.totalListings}
+          listingsAbove80Today={aggregate.listingsByHealthBucket.excellent}
+          optimistic={{
+            postAutomation: {
+              avgHealth: projections.postAutomation.optimistic.avgHealth,
+              pincaliReady: projections.postAutomation.optimistic.pincaliReady,
+            },
+            postBotMona: {
+              avgHealth: projections.postAutomationAndBotMona.optimistic.avgHealth,
+              pincaliReady: projections.postAutomationAndBotMona.optimistic.pincaliReady,
+            },
+            postRedFlags: {
+              pincaliReady: projections.postRedFlagsResolved.optimistic.pincaliReady,
+            },
+          }}
+          conservative={{
+            postAutomation: {
+              avgHealth: projections.postAutomation.conservative.avgHealth,
+              pincaliReady: projections.postAutomation.conservative.pincaliReady,
+            },
+            postBotMona: {
+              avgHealth: projections.postAutomationAndBotMona.conservative.avgHealth,
+              pincaliReady: projections.postAutomationAndBotMona.conservative.pincaliReady,
+            },
+            postRedFlags: {
+              pincaliReady: projections.postRedFlagsResolved.conservative.pincaliReady,
+            },
+          }}
+        />
 
-        {/* Buttons - 6 in 3x2 grid, columns color-matched */}
+        {/* Buttons - 6 in 3x2 grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 max-w-4xl mx-auto w-full">
           <Link href="/donde-estamos" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">1) MEDIMOS</Link>
           <Link href="/plan-de-accion" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>2) ACCIONAMOS</Link>
@@ -144,14 +134,14 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Cómo funciona */}
+      {/* Como funciona */}
       <section className="px-6 py-16">
         <div className="max-w-5xl mx-auto">
           <h2
             className="text-2xl font-bold mb-10 text-center"
             style={{ color: config.brand.primaryColor }}
           >
-            Cómo funciona
+            Como funciona
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature) => (
@@ -224,4 +214,3 @@ export default async function Home() {
     </div>
   );
 }
-
