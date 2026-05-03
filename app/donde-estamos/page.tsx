@@ -73,7 +73,7 @@ export default async function GrowthPage() {
             <span className="text-gray-300">·</span>
             <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
+            <Link href="/propiedades" className="hover:text-gray-900 transition-colors">Propiedades</Link>
             <span className="text-gray-300">·</span>
             <Link href="/red-flags" className="hover:text-gray-900 transition-colors">Red Flags</Link>
             <span className="text-gray-300">·</span>
@@ -92,7 +92,7 @@ export default async function GrowthPage() {
           {/* Executive Summary */}
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6">
             <p className="text-base text-gray-700 leading-relaxed">
-              Analizamos 10 listings de los 1,437 publicados. Ninguno pasa control de calidad. Promedio actual: Calidad 54% con 40 flags totales, 4 flags por listing. La descripción es el cuello de botella claro: afecta a los 10 listings auditados con 19 flags.
+              Analizamos 10 propiedades de las 1,437 publicadas. Ninguna pasa control de calidad. Promedio actual: Calidad 54% con 40 flags totales, 4 flags por propiedad. La descripción es el cuello de botella claro: afecta a las 10 propiedades auditadas con 19 flags.
             </p>
           </div>
 
@@ -119,12 +119,12 @@ export default async function GrowthPage() {
               <AggregateCard
                 label="Flags"
                 value={String(totalFlags)}
-                detail={`promedio: ${(totalFlags / results.length).toFixed(1)}/listing`}
+                detail={`promedio: ${(totalFlags / results.length).toFixed(1)}/propiedad`}
               />
               <AggregateCard
                 label="Top Issue"
                 value={dimensionLabels[worstDim[0]] ?? worstDim[0]}
-                detail={`${worstDimAffected} listings afectados`}
+                detail={`${worstDimAffected} propiedades afectadas`}
               />
               <AggregateCard
                 label="Estatus Operativo"
@@ -143,7 +143,7 @@ export default async function GrowthPage() {
             {/* Column headers */}
             <div className="flex items-center gap-4 mb-2">
               <div className="w-32 shrink-0" />
-              <span className="w-8 text-center text-[10px] text-gray-400 uppercase shrink-0">listings</span>
+              <span className="w-8 text-center text-[10px] text-gray-400 uppercase shrink-0">prop.</span>
               <div className="flex-1" />
               <div className="w-10 shrink-0" />
             </div>
@@ -183,7 +183,7 @@ export default async function GrowthPage() {
                   <tr className="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wide">
                     <th className="px-4 py-3 font-medium">Dimensión</th>
                     <th className="px-4 py-3 font-medium text-center">Flags</th>
-                    <th className="px-4 py-3 font-medium text-center">Listings afectados</th>
+                    <th className="px-4 py-3 font-medium text-center">Propiedades afectadas</th>
                     <th className="px-4 py-3 font-medium text-center">Score</th>
                   </tr>
                 </thead>
@@ -214,36 +214,36 @@ export default async function GrowthPage() {
             </div>
           </section>
 
-          {/* Section 4: Funnel de Optimización */}
+          {/* Funnel de Optimización */}
           <section>
             <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">
-              Funnel de optimización
+              Funnel de Optimización
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              <FunnelCard
-                value="10"
-                label="Listings revisados"
-                detail="muestra auditada, 40 flags encontradas"
-                borderColor="border-b-gray-400"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
+              <div className="border-b-4 border-gray-300 rounded-lg p-4 text-center border border-gray-100">
+                <p className="text-2xl font-bold text-gray-700">10</p>
+                <p className="text-xs font-medium text-gray-700 mt-1">Propiedades revisadas</p>
+                <p className="text-[11px] text-gray-500 mt-0.5">muestra auditada</p>
+                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-medium bg-gray-100 text-gray-600 rounded-full">40 flags encontradas</span>
+              </div>
               <div className="border-b-4 border-red-400 rounded-lg p-4 text-center border border-gray-100">
                 <p className="text-2xl font-bold text-red-600">19</p>
                 <p className="text-xs font-medium text-gray-700 mt-1">Descripción incompleta</p>
-                <p className="text-[11px] text-gray-500 mt-0.5">flags · 10 de 10 listings afectados</p>
+                <p className="text-[11px] text-gray-500 mt-0.5">10 de 10 propiedades afectadas</p>
                 <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">CUELLO DE BOTELLA</span>
               </div>
-              <FunnelCard
-                value="9"
-                label="Optimizables por Automatización"
-                detail="9 listings a activar"
-                borderColor="border-b-green-300"
-              />
-              <FunnelCard
-                value="10"
-                label="Optimizables por Mona AI"
-                detail="10 listings a activar vía WhatsApp"
-                borderColor="border-b-green-500"
-              />
+              <div className="border-b-4 border-green-300 rounded-lg p-4 text-center border border-gray-100">
+                <p className="text-2xl font-bold text-green-700">9</p>
+                <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Automatización</p>
+                <p className="text-[11px] text-gray-500 mt-0.5">9 propiedades a activar</p>
+                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-medium bg-green-100 text-green-700 rounded-full">vía API</span>
+              </div>
+              <div className="border-b-4 border-green-500 rounded-lg p-4 text-center border border-gray-100">
+                <p className="text-2xl font-bold text-green-700">10</p>
+                <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Mona AI</p>
+                <p className="text-[11px] text-gray-500 mt-0.5">10 propiedades a activar</p>
+                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-medium bg-green-100 text-green-700 rounded-full">vía WhatsApp</span>
+              </div>
               <div className="border-b-4 border-green-700 rounded-lg p-4 text-center border border-gray-100">
                 <p className="text-2xl font-bold text-green-800">{results.length - 4}</p>
                 <p className="text-xs font-medium text-gray-700 mt-1">Pincali Ready</p>

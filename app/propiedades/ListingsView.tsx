@@ -116,7 +116,7 @@ export function ListingsView({ results }: { results: ScoringResultEntry[] }) {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wide">
-                <th className="px-4 py-3 font-medium">Listing</th>
+                <th className="px-4 py-3 font-medium">Propiedad</th>
                 <SortHeader label="Tipo" sortId="type" />
                 <SortHeader label="Ubicación" sortId="location" />
                 <SortHeader label="Score" sortId="score" />
@@ -132,7 +132,7 @@ export function ListingsView({ results }: { results: ScoringResultEntry[] }) {
               {displayed.length === 0 ? (
                 <tr>
                   <td colSpan={10} className="px-4 py-8 text-center text-gray-400">
-                    Sin listings para este filtro
+                    Sin propiedades para este filtro
                   </td>
                 </tr>
               ) : (

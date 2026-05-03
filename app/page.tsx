@@ -15,7 +15,7 @@ const features = [
     title: "Evaluacion Automatica",
     subtitle: "Safety Compliance",
     description:
-      "Seguimos las 7 politicas oficiales de publicacion de EasyBroker. Cada listing evaluado en 5 dimensiones: descripcion, precio, datos faltantes, fotos y ubicacion.",
+      "Seguimos las 7 politicas oficiales de publicacion de EasyBroker. Cada propiedad evaluada en 5 dimensiones: descripcion, precio, datos faltantes, fotos y ubicacion.",
   },
   {
     title: "Next Steps",
@@ -95,7 +95,7 @@ export default async function Home() {
             }}
           >
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: config.brand.secondaryColor }} />
-            Live demo · {aggregate.totalListings} listings reales analizados
+            Live demo · {aggregate.totalListings} propiedades reales analizadas
           </div>
 
           <h1
@@ -108,7 +108,7 @@ export default async function Home() {
             className="text-xl md:text-2xl font-medium tracking-tight"
             style={{ color: config.brand.secondaryColor }}
           >
-            Listings Optimization
+            Property Optimization
           </p>
         </div>
 
@@ -117,10 +117,7 @@ export default async function Home() {
           <h2 className="text-xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>
             Pipeline de Calidad
           </h2>
-          <p className="text-xs text-gray-400 mb-1">Distribución de listings por nivel</p>
-          <p className="text-sm text-gray-500 mb-6">
-            Cómo el inventario avanza desde publicado hasta listo para generar revenue.
-          </p>
+          <p className="text-xs text-gray-400 mb-6">Distribución de propiedades por nivel</p>
 
           <div className="space-y-3">
             {MATURITY_LEVELS.map((ml) => {
@@ -156,7 +153,7 @@ export default async function Home() {
         {/* Declarative paragraph */}
         <div className="mt-8 max-w-3xl mx-auto w-full">
           <p className="text-sm text-gray-600 leading-relaxed text-center">
-            El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva el inventario de Calidad 54% a 93% promedio. 10 de 10 listings quedan Pincali Ready tras resolver Red Flags.
+            El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva las propiedades de Calidad 54% a 93% promedio. 10 de 10 propiedades quedan Pincali Ready tras resolver Red Flags.
           </p>
         </div>
 
@@ -166,7 +163,7 @@ export default async function Home() {
           <Link href="/plan-de-accion" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>2) ACCIONAMOS</Link>
           <Link href="/road-to-excellence" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">3) ENTREGAMOS</Link>
           <Link href="/red-flags" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">RED FLAGS</Link>
-          <Link href="/listings" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>LISTINGS</Link>
+          <Link href="/propiedades" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>PROPIEDADES</Link>
           <Link href="/pincali" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">PINCALI READY</Link>
         </div>
       </section>

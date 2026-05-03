@@ -113,7 +113,7 @@ export default async function RedFlagsPage() {
             <span className="text-gray-300">·</span>
             <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
+            <Link href="/propiedades" className="hover:text-gray-900 transition-colors">Propiedades</Link>
             <span className="text-gray-300">·</span>
             <Link href="/pincali" className="hover:text-gray-900 transition-colors">Pincali</Link>
           </div>
@@ -131,7 +131,7 @@ export default async function RedFlagsPage() {
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
-                  <p className="text-sm text-gray-800">{Math.round((affectedListings / results.length) * 100)}% del inventario tiene violaciones.</p>
+                  <p className="text-sm text-gray-800">{Math.round((affectedListings / results.length) * 100)}% de las propiedades tiene violaciones.</p>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
@@ -139,7 +139,7 @@ export default async function RedFlagsPage() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
-                  <p className="text-sm text-gray-800">{uniqueViolations.length} flags de violación concentrados en {affectedListings} listings.</p>
+                  <p className="text-sm text-gray-800">{uniqueViolations.length} flags de violación concentrados en {affectedListings} propiedades.</p>
                 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@ export default async function RedFlagsPage() {
           {/* Violations Table */}
           <section className="mb-10">
             <h3 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.secondaryColor }}>
-              Listings que violan políticas
+              Propiedades que violan políticas
             </h3>
             <ViolationsTable listings={listingGroups} />
           </section>
@@ -164,7 +164,7 @@ export default async function RedFlagsPage() {
                   <thead>
                     <tr className="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wide">
                       <th className="px-4 py-3 font-medium">Nombre comercial</th>
-                      <th className="px-4 py-3 font-medium text-center">Listings</th>
+                      <th className="px-4 py-3 font-medium text-center">Propiedades</th>
                       <th className="px-4 py-3 font-medium text-center">Violaciones</th>
                       <th className="px-4 py-3 font-medium">Acción</th>
                     </tr>
@@ -175,7 +175,7 @@ export default async function RedFlagsPage() {
                         <td className="px-4 py-3 font-medium text-gray-900">{brand.name}</td>
                         <td className="px-4 py-3 text-center text-gray-600">{brand.listings.length}</td>
                         <td className="px-4 py-3 text-center font-medium text-red-600">{brand.totalViolations}</td>
-                        <td className="px-4 py-3 text-xs text-gray-600">Contactar asesor, remover marca de todos los listings</td>
+                        <td className="px-4 py-3 text-xs text-gray-600">Contactar asesor, remover marca de todas las propiedades</td>
                       </tr>
                     ))}
                   </tbody>
@@ -184,7 +184,7 @@ export default async function RedFlagsPage() {
             ) : (
               <div className="border border-gray-100 rounded-lg p-5 text-center">
                 <p className="text-sm text-gray-500">
-                  Ningún asesor recurrente detectado en muestra de {results.length}. Recomendamos correr análisis sobre el inventario completo (1,437 listings) para identificar patrones sistémicos.
+                  Ningún asesor recurrente detectado en muestra de {results.length}. Recomendamos correr análisis sobre las 1,437 propiedades para identificar patrones sistémicos.
                 </p>
               </div>
             )}
@@ -199,7 +199,7 @@ export default async function RedFlagsPage() {
               <p className="text-4xl font-bold text-red-500">~{estimatedLeadsLost}</p>
               <p className="text-sm text-gray-600 mt-1">leads/mes potencialmente perdidos</p>
               <p className="text-xs text-gray-400 mt-3 max-w-md mx-auto">
-                Asumiendo que cada listing recibe 5 contactos/mes y que el 30% se desvía por datos de contacto en descripción. Modelo conservador, ajustar con data real de Pincali.
+                Asumiendo que cada propiedad recibe 5 contactos/mes y que el 30% se desvía por datos de contacto en descripción. Modelo conservador, ajustar con data real de Pincali.
               </p>
             </div>
           </section>

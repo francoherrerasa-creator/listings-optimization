@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Listings Optimization - Franco Herrera Growth Lab",
+  title: "Property Optimization - Franco Herrera Growth Lab",
   description: "Optimiza la calidad y conversión del inventario inmobiliario",
 };
 

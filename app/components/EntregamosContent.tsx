@@ -22,9 +22,9 @@ interface EntregamosContentProps {
 export default function EntregamosContent(props: EntregamosContentProps) {
   const s = props.conservative;
 
-  const subtitle = `De Calidad ${props.currentHealth}% a ${s.postBotMonaHealth}%`;
+  const subtitle = `One team: de 0 a 10 Pincali Ready`;
 
-  const executiveSummary = `El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva el inventario de Calidad ${props.currentHealth}% a ${s.postBotMonaHealth}% promedio. Automatización resuelve 14 de 15 campos medibles sin tocar al asesor. Mona AI cierra el último: pedir fotos premium vía WhatsApp. Pincali Ready depende de resolver Red Flags: 5 violaciones de política en 4 listings requieren acción inmediata.`;
+  const executiveSummary = `El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva las propiedades de Calidad ${props.currentHealth}% a ${s.postBotMonaHealth}% promedio. Automatización resuelve 14 de 15 campos medibles sin tocar al asesor. Mona AI cierra el último: pedir fotos premium vía WhatsApp. Pincali Ready depende de resolver Red Flags: 5 violaciones de política en 4 propiedades requieren acción inmediata.`;
 
   return (
     <div>

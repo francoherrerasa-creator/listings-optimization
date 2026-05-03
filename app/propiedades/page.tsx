@@ -21,7 +21,7 @@ export default async function ListingsPage() {
             </Link>
             <span className="text-gray-300">·</span>
             <span className="text-sm text-gray-500">
-              Listings · {config.project.name}
+              Propiedades · {config.project.name}
             </span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
@@ -44,7 +44,7 @@ export default async function ListingsPage() {
             className="text-2xl font-bold mb-6"
             style={{ color: config.brand.primaryColor }}
           >
-            LISTINGS
+            PROPIEDADES
           </h1>
 
           <ListingsView results={data.results} />

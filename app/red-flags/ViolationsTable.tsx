@@ -50,7 +50,7 @@ export function ViolationsTable({ listings }: { listings: ListingGroup[] }) {
   });
 
   const filters: Array<{ key: ViolationFilter; label: string }> = [
-    { key: "all", label: "Todos los listings" },
+    { key: "all", label: "Todas las propiedades" },
     { key: "Información de contacto", label: "Información de contacto" },
     { key: "Nombre comercial", label: "Nombre comercial" },
     { key: "CTA comercial directo", label: "CTA comercial" },
@@ -87,7 +87,7 @@ export function ViolationsTable({ listings }: { listings: ListingGroup[] }) {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wide">
-                <SortHeader label="Listing" id="id" />
+                <SortHeader label="Propiedad" id="id" />
                 <SortHeader label="Violaciones" id="count" />
                 <SortHeader label="Acción sugerida" id="action" />
               </tr>

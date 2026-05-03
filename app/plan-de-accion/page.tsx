@@ -22,7 +22,7 @@ export default async function NextStepsPage() {
             <span className="text-gray-300">·</span>
             <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
+            <Link href="/propiedades" className="hover:text-gray-900 transition-colors">Propiedades</Link>
             <span className="text-gray-300">·</span>
             <Link href="/pincali" className="hover:text-gray-900 transition-colors">Pincali</Link>
             <span className="text-gray-300">·</span>
@@ -38,7 +38,7 @@ export default async function NextStepsPage() {
 
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
             <p className="text-base text-gray-700 leading-relaxed">
-              El diagnóstico revela 5 frentes simultáneos que requieren acciones concretas. Growth resuelve 40 flags de calidad con Automatización y Mona AI. Sales, Customer Success y Trust & Safety atacan los hallazgos operativos: listings sin asesor, inventario inactivo y violaciones de política. Producto cierra los gaps de visibilidad en la API.
+              El diagnóstico revela 5 frentes simultáneos que requieren acciones concretas. Growth resuelve 40 flags de calidad con Automatización y Mona AI. Sales, Customer Success y Trust & Safety atacan los hallazgos operativos: propiedades sin asesor, propiedades inactivas y violaciones de política. Producto cierra los gaps de visibilidad en la API.
             </p>
           </div>
 
@@ -46,17 +46,17 @@ export default async function NextStepsPage() {
           <section className="mb-10">
             <h3 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.secondaryColor }}>Dónde estamos</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {/* Card 1: Listings sin asesor */}
+              {/* Card 1: Propiedades sin asesor */}
               <div className="border border-red-200 bg-red-50 rounded-lg p-5">
-                <h4 className="text-xs font-semibold text-gray-700 mb-2">Listings sin asesor asignado</h4>
+                <h4 className="text-xs font-semibold text-gray-700 mb-2">Propiedades sin asesor asignado</h4>
                 <p className="text-2xl font-bold text-red-600">5 de 10 (50%)</p>
                 <p className="text-xs text-gray-500 mt-1">agent: null. Riesgo operativo: lead llega y no hay quién atienda</p>
               </div>
               {/* Card 2: Sin actualizar */}
               <div className="border border-yellow-200 bg-yellow-50 rounded-lg p-5">
-                <h4 className="text-xs font-semibold text-gray-700 mb-2">Inventario sin actualizar</h4>
+                <h4 className="text-xs font-semibold text-gray-700 mb-2">Propiedades sin actualizar</h4>
                 <p className="text-2xl font-bold text-yellow-700">{">"}90 días: 10</p>
-                <p className="text-xs text-gray-500 mt-1">Todos los listings sin actualización desde agosto 2024</p>
+                <p className="text-xs text-gray-500 mt-1">Todas las propiedades sin actualización desde agosto 2024</p>
               </div>
               {/* Card 3: Por operación */}
               <div className="border border-gray-200 rounded-lg p-5">
@@ -64,11 +64,12 @@ export default async function NextStepsPage() {
                 <p className="text-2xl font-bold text-gray-700">Venta: 10 (100%)</p>
                 <p className="text-xs text-gray-500 mt-1">Distribución por tipo de operación</p>
               </div>
-              {/* Card 4: Pipeline de Calidad */}
-              <div className="border border-green-200 bg-green-50 rounded-lg p-5">
-                <h4 className="text-xs font-semibold text-gray-700 mb-2">Pipeline de Calidad</h4>
-                <p className="text-sm font-medium text-gray-700">Básico: 5 · Completo: 5 · Optimizado: 0 · Premium: 0</p>
-                <p className="text-xs text-gray-500 mt-1">Meta: todos en Optimizado o superior</p>
+              {/* Card 4: Riesgo de Churn */}
+              <div className="border border-red-200 bg-red-50 rounded-lg p-5">
+                <h4 className="text-xs font-semibold text-gray-700 mb-2">Riesgo de Churn del Asesor</h4>
+                <p className="text-2xl font-bold text-red-600">10 de 10</p>
+                <p className="text-xs text-gray-500 mt-1">propiedades con señales de riesgo</p>
+                <p className="text-[10px] text-gray-400 mt-1">inactivas, asesor con 1 sola publicación, perfil incompleto</p>
               </div>
               {/* Card 5: API GAP */}
               <div className="border border-gray-200 bg-gray-50 rounded-lg p-5 relative">
@@ -112,13 +113,13 @@ export default async function NextStepsPage() {
                     </tr>
                     <tr className="bg-yellow-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-yellow-700">Sales</td>
-                      <td className="px-4 py-3 text-gray-700">Asignar asesor responsable a listings sin agente</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">5 listings</td>
+                      <td className="px-4 py-3 text-gray-700">Asignar asesor responsable a propiedades sin agente</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">5 propiedades</td>
                     </tr>
                     <tr className="bg-cyan-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-cyan-700">Customer Success</td>
-                      <td className="px-4 py-3 text-gray-700">Reactivar asesores con inventario sin actualizar {">"}90 días</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">10 listings</td>
+                      <td className="px-4 py-3 text-gray-700">Reactivar asesores con propiedades sin actualizar {">"}90 días</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">10 propiedades</td>
                     </tr>
                     <tr className="bg-red-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-red-600">Trust & Safety</td>

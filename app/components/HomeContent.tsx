@@ -39,8 +39,8 @@ export default function HomeContent(props: HomeContentProps) {
 
   const paragraph =
     scenario === "conservative"
-      ? `De los ${props.totalListings} listings analizados, ${props.listingsAbove80Today} cumplen el estándar de calidad hoy (Calidad >=80%). Asumiendo 90% de éxito en automatización y 50% de respuesta del asesor a Mona AI, llevamos el inventario a Calidad ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`
-      : `De los ${props.totalListings} listings analizados, ${props.listingsAbove80Today} cumplen el estándar de calidad hoy (Calidad >=80%). En escenario optimista (100% éxito automatización + 80% respuesta a Mona AI), llevamos el inventario a Calidad ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`;
+      ? `De las ${props.totalListings} propiedades analizadas, ${props.listingsAbove80Today} cumplen el estándar de calidad hoy (Calidad >=80%). Asumiendo 90% de éxito en automatización y 50% de respuesta del asesor a Mona AI, llevamos las propiedades a Calidad ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`
+      : `De las ${props.totalListings} propiedades analizadas, ${props.listingsAbove80Today} cumplen el estándar de calidad hoy (Calidad >=80%). En escenario optimista (100% éxito automatización + 80% respuesta a Mona AI), llevamos las propiedades a Calidad ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`;
 
   return (
     <div className="mt-8 max-w-5xl mx-auto w-full">

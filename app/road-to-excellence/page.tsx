@@ -20,7 +20,7 @@ export default async function RoadToExcellencePage() {
             <span className="text-gray-300">·</span>
             <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Medimos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
+            <Link href="/propiedades" className="hover:text-gray-900 transition-colors">Propiedades</Link>
             <span className="text-gray-300">·</span>
             <Link href="/pincali" className="hover:text-gray-900 transition-colors">Pincali</Link>
             <span className="text-gray-300">·</span>
@@ -32,21 +32,21 @@ export default async function RoadToExcellencePage() {
       <main className="flex-1 px-6 py-10">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>ENTREGAMOS</h1>
-          <p className="text-sm text-gray-500 mb-8">Resultado del sistema multi-equipo: 0 a 10 Pincali Ready</p>
+          <p className="text-sm text-gray-500 mb-8">One team: de 0 a 10 Pincali Ready</p>
 
           {/* Executive Summary */}
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
             <p className="text-base text-gray-700 leading-relaxed">
-              Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Mona AI. Sales asigna asesor a los 5 listings huérfanos. Customer Success reactiva los 10 listings inactivos. Trust & Safety resuelve las 5 violaciones de política. Producto expone los KPIs faltantes en API. Resultado: de 0 listings Pincali Ready hoy, llegamos a 10 cuando los 5 frentes ejecutan en paralelo.
+              Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Mona AI. Sales asigna asesor a las 5 propiedades huérfanas. Customer Success reactiva las 10 propiedades inactivas. Trust & Safety resuelve las 5 violaciones de política. Resultado: de 0 propiedades Pincali Ready hoy, llegamos a 10 cuando los frentes ejecutan en paralelo.
             </p>
           </div>
 
           {/* Team Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             {/* Growth */}
             <div className="border border-green-200 bg-green-50 rounded-lg p-5">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: GROWTH</p>
-              <h3 className="text-lg font-semibold text-gray-900 mt-1">Calidad del Listing</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1">Calidad de la Propiedad</h3>
               <div className="mt-3 space-y-2 text-xs text-gray-600">
                 <p>Automatización · 90% éxito · resuelve 31 flags</p>
                 <p>Mona AI · 50% respuesta · resuelve 9 flags</p>
@@ -57,15 +57,15 @@ export default async function RoadToExcellencePage() {
             <div className="border border-yellow-200 bg-yellow-50 rounded-lg p-5">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: SALES</p>
               <h3 className="text-lg font-semibold text-gray-900 mt-1">Asignación de Asesor</h3>
-              <p className="text-xs text-gray-600 mt-3">Identificar y asignar asesor responsable a los 5 listings sin agente</p>
-              <p className="text-sm font-medium text-yellow-700 mt-3">5 a 0 listings sin asesor</p>
+              <p className="text-xs text-gray-600 mt-3">Identificar y asignar asesor responsable a las 5 propiedades sin agente</p>
+              <p className="text-sm font-medium text-yellow-700 mt-3">5 → 0 propiedades sin asesor</p>
             </div>
             {/* Customer Success */}
             <div className="border border-cyan-200 bg-cyan-50 rounded-lg p-5">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: CUSTOMER SUCCESS</p>
-              <h3 className="text-lg font-semibold text-gray-900 mt-1">Reactivación de Inventario</h3>
-              <p className="text-xs text-gray-600 mt-3">Contactar a los asesores con listings sin actualizar {">"}90 días</p>
-              <p className="text-sm font-medium text-cyan-700 mt-3">10 a 0 listings inactivos</p>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1">Reactivación de Propiedades</h3>
+              <p className="text-xs text-gray-600 mt-3">Contactar a los asesores con propiedades sin actualizar {">"}90 días</p>
+              <p className="text-sm font-medium text-cyan-700 mt-3">10 → 0 propiedades inactivas</p>
             </div>
             {/* Trust & Safety */}
             <div className="border border-red-200 bg-red-50 rounded-lg p-5">
@@ -74,18 +74,11 @@ export default async function RoadToExcellencePage() {
               <p className="text-xs text-gray-600 mt-3">Limpieza editorial de descripciones con datos de contacto, nombres comerciales, CTAs directos</p>
               <p className="text-sm font-medium text-red-600 mt-3">5 a 0 violaciones de política</p>
             </div>
-            {/* Producto */}
-            <div className="border border-purple-200 bg-purple-50 rounded-lg p-5">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: PRODUCTO</p>
-              <h3 className="text-lg font-semibold text-gray-900 mt-1">Exposición de KPIs en API</h3>
-              <p className="text-xs text-gray-600 mt-3">Exponer plan del asesor (Free/Basic/Pro) y tipo de asesor (Inmobiliaria/Independiente) en API pública</p>
-              <p className="text-sm font-medium text-purple-700 mt-3">Habilita 2 KPIs estratégicos</p>
-            </div>
-            {/* Marketing */}
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-5">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide">MARKETING</p>
-              <h3 className="text-sm font-medium text-gray-500 mt-1">Sin acciones derivadas del diagnóstico actual</h3>
-            </div>
+          </div>
+          {/* Marketing */}
+          <div className="border border-gray-200 bg-gray-50 rounded-lg p-5 mb-8">
+            <p className="text-[10px] text-gray-400 uppercase tracking-wide">MARKETING</p>
+            <h3 className="text-sm font-medium text-gray-500 mt-1">Sin acciones derivadas del diagnóstico actual</h3>
           </div>
 
           {/* Separator */}
@@ -110,7 +103,7 @@ export default async function RoadToExcellencePage() {
               <li>Fraude potencial (precios anzuelo, remates clasificados)</li>
             </ul>
             <p className="text-sm font-medium text-red-700 mb-4">
-              {aggregate.listingsWithRedFlags} de {aggregate.totalListings} listings con violaciones · {aggregate.totalRedFlags} flags detectados
+              {aggregate.listingsWithRedFlags} de {aggregate.totalListings} propiedades con violaciones · {aggregate.totalRedFlags} flags detectados
             </p>
             <Link
               href="/red-flags"

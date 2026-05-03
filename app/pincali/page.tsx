@@ -21,7 +21,7 @@ export default async function PincaliPage() {
             </Link>
             <span className="text-gray-300">·</span>
             <span className="text-sm text-gray-500">
-              Pincali · Inventario filtrado
+              Pincali · Propiedades filtradas
             </span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
@@ -31,7 +31,7 @@ export default async function PincaliPage() {
             <span className="text-gray-300">·</span>
             <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
+            <Link href="/propiedades" className="hover:text-gray-900 transition-colors">Propiedades</Link>
             <span className="text-gray-300">·</span>
             <Link href="/red-flags" className="hover:text-gray-900 transition-colors">Red Flags</Link>
           </div>
@@ -152,12 +152,12 @@ function EmptyState({
         ⊘
       </div>
       <h2 className="text-2xl font-bold text-gray-900 mb-3">
-        0 listings cumplen el mínimo esperado de calidad
+        0 propiedades cumplen el mínimo esperado de calidad
       </h2>
       <p className="text-gray-500 max-w-lg leading-relaxed mb-8">
         De {totalAnalyzed.toLocaleString()} propiedades analizadas, ninguna
         alcanza el criterio mínimo (score ≥ {threshold}). Esta vista demuestra
-        el filtro automático que se aplicaría en producción: solo listings de
+        el filtro automático que se aplicaría en producción: solo propiedades de
         alta calidad llegan al buscador.
       </p>
       <Link
