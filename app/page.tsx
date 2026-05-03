@@ -6,22 +6,22 @@ import Link from "next/link";
 
 const features = [
   {
-    title: "API EasyBroker",
+    title: "🔌 API EasyBroker",
     subtitle: "Datos Reales",
     description:
-      "Conexion directa al inventario. 1,437 propiedades reales del entorno staging. La transicion a produccion es cambiar una API key.",
+      "Conexión directa al inventario. 1,437 propiedades reales del entorno staging. La transición a producción es cambiar una API key.",
   },
   {
-    title: "Evaluacion Automatica",
+    title: "🛡️ Evaluación Automática",
     subtitle: "Safety Compliance",
     description:
-      "Seguimos las 7 politicas oficiales de publicacion de EasyBroker. Cada propiedad evaluada en 5 dimensiones: descripcion, precio, datos faltantes, fotos y ubicacion.",
+      "Seguimos las 7 políticas oficiales de publicación de EasyBroker. Cada propiedad evaluada en 5 dimensiones: descripción, precio, datos faltantes, fotos y ubicación.",
   },
   {
-    title: "Next Steps",
+    title: "🎯 Next Steps",
     subtitle: "Acciones Claras",
     description:
-      "Canales de accion derivados de los datos: cada flag detectado se convierte en un ticket accionable para el equipo.",
+      "Canales de acción derivados de los datos: cada flag detectado se convierte en un ticket accionable para el equipo.",
   },
 ];
 
@@ -168,14 +168,14 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Como funciona */}
-      <section className="px-6 py-16">
+      {/* Cómo funciona */}
+      <section className="px-6 py-8">
         <div className="max-w-5xl mx-auto">
           <h2
             className="text-2xl font-bold mb-10 text-center"
             style={{ color: config.brand.primaryColor }}
           >
-            Como funciona
+            Cómo funciona
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature) => (

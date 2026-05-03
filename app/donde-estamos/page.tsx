@@ -136,7 +136,7 @@ export default async function GrowthPage() {
 
           {/* Section 2: Calidad por Dimensión */}
           <section>
-            <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">
+            <h2 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.primaryColor }}>
               Calidad por dimensión
             </h2>
 
@@ -174,7 +174,7 @@ export default async function GrowthPage() {
 
           {/* Section 3: Flags by Dimension */}
           <section>
-            <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">
+            <h2 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.primaryColor }}>
               Flags por dimensión
             </h2>
             <div className="border border-gray-100 rounded-lg overflow-hidden">
@@ -216,7 +216,7 @@ export default async function GrowthPage() {
 
           {/* Funnel de Optimización */}
           <section>
-            <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">
+            <h2 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.primaryColor }}>
               Funnel de Optimización
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">

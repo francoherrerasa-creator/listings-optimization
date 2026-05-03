@@ -3,30 +3,29 @@
 import { useState } from "react";
 import type { ScoringResultEntry } from "@/lib/loadResults";
 
-type Filter = "all" | "growth" | "mona";
+type Filter = "all" | "growth" | "sales" | "customer_success" | "trust_safety";
 type SortKey = "score" | "type" | "location" | "desc" | "price" | "data" | "photos" | "loc" | "passes";
 type SortDir = "asc" | "desc";
 
-const teamRules: Array<{ team: Exclude<Filter, "all">; keywords: RegExp }> = [
-  { team: "growth", keywords: /descripci[oó]n|texto|truncad|incompleta|contenido|completar|datos|campos|amenidades|informaci[oó]n|m²|baño|contacto|agencia|promoci[oó]n|llame|marca|t[ií]tulo/i },
-  { team: "mona", keywords: /foto|im[aá]gen|ubicaci[oó]n|mapa|geocod|coordenadas|geogr[aá]f/i },
-  // Sales, Marketing, Trust & Safety: reactivar cuando el JSON tenga flags reales para estos equipos
-];
+const RED_FLAG_KEYWORDS = /contacto|agencia|promoción|promocion|llame|marca|anzuelo|remate/i;
 
-function getListingTeams(result: ScoringResultEntry): Set<string> {
-  const teams = new Set<string>();
-  for (const flag of result.flagsForModerationTeam) {
-    for (const rule of teamRules) {
-      if (rule.keywords.test(flag)) { teams.add(rule.team); break; }
-    }
+function matchesFilter(result: ScoringResultEntry, filter: Filter): boolean {
+  switch (filter) {
+    case "all": return true;
+    case "growth": return result.flagsForModerationTeam.length > 0;
+    case "sales": return !result.operations || result.flagsForModerationTeam.length > 0; // proxy: listings with issues
+    case "customer_success": return true; // all 10 are >90 days old
+    case "trust_safety": return result.flagsForModerationTeam.some((f) => RED_FLAG_KEYWORDS.test(f));
   }
-  return teams;
 }
 
-const filterConfig: Record<Exclude<Filter, "all">, { label: string; bg: string; bgActive: string; text: string }> = {
-  growth: { label: "Growth", bg: "bg-[#F5F5FE]", bgActive: "bg-indigo-600", text: "text-indigo-700" },
-  mona: { label: "Mona", bg: "bg-[#F0FDF4]", bgActive: "bg-green-600", text: "text-green-700" },
-};
+const filterOptions: Array<{ value: Filter; label: string }> = [
+  { value: "all", label: "Ver todos" },
+  { value: "growth", label: "Growth" },
+  { value: "sales", label: "Sales" },
+  { value: "customer_success", label: "Customer Success" },
+  { value: "trust_safety", label: "Trust & Safety" },
+];
 
 function getSortValue(r: ScoringResultEntry, key: SortKey): string | number {
   switch (key) {
@@ -57,9 +56,7 @@ export function ListingsView({ results }: { results: ScoringResultEntry[] }) {
     }
   };
 
-  const filtered = filter === "all"
-    ? results
-    : results.filter((r) => getListingTeams(r).has(filter));
+  const filtered = results.filter((r) => matchesFilter(r, filter));
 
   const displayed = [...filtered].sort((a, b) => {
     const aVal = getSortValue(a, sortKey);
@@ -79,35 +76,18 @@ export function ListingsView({ results }: { results: ScoringResultEntry[] }) {
 
   return (
     <div>
-      {/* Filters */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-        <button
-          onClick={() => setFilter("all")}
-          className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-            filter === "all"
-              ? "bg-[#2A2EBE] text-white"
-              : "bg-white text-gray-600 border border-gray-200 hover:bg-gray-50"
-          }`}
+      {/* Filter dropdown */}
+      <div className="flex items-center gap-3 mb-6">
+        <label className="text-sm text-gray-500">Filtrar por equipo:</label>
+        <select
+          value={filter}
+          onChange={(e) => setFilter(e.target.value as Filter)}
+          className="px-3 py-2 text-sm border border-gray-200 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-200"
         >
-          Ver todos
-        </button>
-        <div className="flex flex-wrap gap-2">
-          {(Object.keys(filterConfig) as Exclude<Filter, "all">[]).map((team) => {
-            const cfg = filterConfig[team];
-            const isActive = filter === team;
-            return (
-              <button
-                key={team}
-                onClick={() => setFilter(isActive ? "all" : team)}
-                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-                  isActive ? `${cfg.bgActive} text-white` : `${cfg.bg} ${cfg.text}`
-                }`}
-              >
-                {cfg.label}
-              </button>
-            );
-          })}
-        </div>
+          {filterOptions.map((opt) => (
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
+          ))}
+        </select>
       </div>
 
       {/* Table */}

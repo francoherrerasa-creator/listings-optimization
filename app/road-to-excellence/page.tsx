@@ -41,7 +41,8 @@ export default async function RoadToExcellencePage() {
             </p>
           </div>
 
-          {/* Team Cards */}
+          {/* Ownership */}
+          <h2 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.primaryColor }}>Ownership</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             {/* Growth */}
             <div className="border border-green-200 bg-green-50 rounded-lg p-5">
@@ -89,7 +90,7 @@ export default async function RoadToExcellencePage() {
           </div>
 
           <section className="mb-10">
-            <h2 className="text-lg font-bold mb-1" style={{ color: config.brand.primaryColor }}>Impacto en Revenue</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-wide mb-1" style={{ color: config.brand.primaryColor }}>Impacto en Revenue</h2>
             <p className="text-sm text-gray-500 mb-4">Cómo la calidad de la propiedad se convierte en MRR para EasyBroker</p>
             <p className="text-xs text-gray-400 mb-6">
               Pricing oficial: Emprendedor $490/mes (10 anuncios), Independiente $990/mes (25 anuncios), Agencia $1,490/mes (50 anuncios). Free no publica en Pincali. Proyecciones basadas en plan Independiente como ancla (Most popular).
