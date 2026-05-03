@@ -52,7 +52,7 @@ export default async function RoadToExcellencePage() {
                 <p>Automatización · 90% éxito · resuelve 31 flags</p>
                 <p>Mona AI · 50% respuesta · resuelve 9 flags</p>
               </div>
-              <p className="text-sm font-medium text-green-700 mt-3">Calidad: 54% → 93%</p>
+              <p className="text-sm font-medium mt-3" style={{ color: config.brand.primaryColor }}>Calidad: 54% → 93%</p>
             </div>
             {/* Sales */}
             <div className="border border-yellow-200 bg-yellow-50 rounded-lg p-5">
@@ -64,8 +64,8 @@ export default async function RoadToExcellencePage() {
                   <p className="text-sm font-medium text-yellow-700 mt-1">5 → 0 propiedades sin asesor</p>
                 </div>
                 <div>
-                  <p>▸ Intervención humana cuando Mona AI no obtiene respuesta del asesor</p>
-                  <p className="text-sm font-medium text-yellow-700 mt-1">Calidad: 93% → 100%</p>
+                  <p>▸ Intervención humana cuando el equipo de Growth no obtiene respuesta del asesor</p>
+                  <p className="text-sm font-medium mt-1" style={{ color: config.brand.primaryColor }}>Calidad: 93% → 100%</p>
                 </div>
               </div>
             </div>
@@ -75,7 +75,6 @@ export default async function RoadToExcellencePage() {
               <h3 className="text-lg font-semibold text-gray-900 mt-1">Reactivación de Propiedades</h3>
               <p className="text-xs text-gray-600 mt-3">Contactar a los asesores con propiedades sin actualizar {">"}90 días</p>
               <p className="text-sm font-medium text-cyan-700 mt-3">10 → 0 propiedades inactivas</p>
-              <p className="text-xs text-gray-400 italic mt-2">Habilita: respuesta del asesor cuando Mona AI contacta</p>
             </div>
             {/* Trust & Safety */}
             <div className="border border-red-200 bg-red-50 rounded-lg p-5">
