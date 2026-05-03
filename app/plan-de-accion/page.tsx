@@ -46,24 +46,24 @@ export default async function NextStepsPage() {
           <section className="mb-10">
             <h3 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.secondaryColor }}>Dónde estamos</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {/* Card 1: Propiedades sin asesor */}
-              <div className="border border-red-200 bg-red-50 rounded-lg p-5">
-                <h4 className="text-xs font-semibold text-gray-700 mb-2">Propiedades sin asesor asignado</h4>
-                <p className="text-2xl font-bold text-red-600">5 de 10 (50%)</p>
-                <p className="text-xs text-gray-500 mt-1">agent: null. Riesgo operativo: lead llega y no hay quién atienda</p>
-              </div>
-              {/* Card 2: Sin actualizar */}
-              <div className="border border-yellow-200 bg-yellow-50 rounded-lg p-5">
-                <h4 className="text-xs font-semibold text-gray-700 mb-2">Propiedades sin actualizar</h4>
-                <p className="text-2xl font-bold text-yellow-700">{">"}90 días: 10</p>
-                <p className="text-xs text-gray-500 mt-1">Todas las propiedades sin actualización desde agosto 2024</p>
-              </div>
-              {/* Card 3: Pincali Ready */}
+              {/* Card 1: Pincali Ready */}
               <div className="border border-red-200 bg-red-50 rounded-lg p-5">
                 <h4 className="text-xs font-semibold text-gray-700 mb-2">Pincali Ready</h4>
                 <p className="text-2xl font-bold text-red-600">0</p>
                 <p className="text-xs text-gray-600 mt-1">Pincali Ready hoy</p>
                 <p className="text-[10px] text-gray-400 mt-1">40 flags en 10 publicaciones bloquean activación</p>
+              </div>
+              {/* Card 2: Propiedades sin asesor */}
+              <div className="border border-red-200 bg-red-50 rounded-lg p-5">
+                <h4 className="text-xs font-semibold text-gray-700 mb-2">Propiedades sin asesor asignado</h4>
+                <p className="text-2xl font-bold text-red-600">5 de 10 (50%)</p>
+                <p className="text-xs text-gray-500 mt-1">agent: null. Riesgo operativo: lead llega y no hay quién atienda</p>
+              </div>
+              {/* Card 3: Sin actualizar */}
+              <div className="border border-yellow-200 bg-yellow-50 rounded-lg p-5">
+                <h4 className="text-xs font-semibold text-gray-700 mb-2">Propiedades sin actualizar</h4>
+                <p className="text-2xl font-bold text-yellow-700">{">"}90 días: 10</p>
+                <p className="text-xs text-gray-500 mt-1">Todas las propiedades sin actualización desde agosto 2024</p>
               </div>
               {/* Card 4: Riesgo de Churn */}
               <div className="border border-red-200 bg-red-50 rounded-lg p-5">

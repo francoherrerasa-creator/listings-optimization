@@ -81,6 +81,68 @@ export default async function RoadToExcellencePage() {
             <h3 className="text-sm font-medium text-gray-500 mt-1">Sin acciones derivadas del diagnóstico actual</h3>
           </div>
 
+          {/* Impacto en Revenue */}
+          <div className="flex items-center gap-4 my-8">
+            <div className="flex-1 h-px bg-gray-200" />
+            <span className="text-xs text-gray-400">Impacto en Revenue</span>
+            <div className="flex-1 h-px bg-gray-200" />
+          </div>
+
+          <section className="mb-10">
+            <h2 className="text-lg font-bold mb-1" style={{ color: config.brand.primaryColor }}>Impacto en Revenue</h2>
+            <p className="text-sm text-gray-500 mb-4">Cómo la calidad de la propiedad se convierte en MRR para EasyBroker</p>
+            <p className="text-xs text-gray-400 mb-6">
+              Pricing oficial: Emprendedor $490/mes (10 anuncios), Independiente $990/mes (25 anuncios), Agencia $1,490/mes (50 anuncios). Free no publica en Pincali. Proyecciones basadas en plan Independiente como ancla (Most popular).
+            </p>
+
+            {/* Flywheel */}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
+              <div className="rounded-lg p-3 text-center bg-red-50 border border-red-100">
+                <p className="text-lg font-bold text-red-600">1</p>
+                <p className="text-[10px] text-gray-600">Calidad sube</p>
+              </div>
+              <div className="rounded-lg p-3 text-center bg-orange-50 border border-orange-100">
+                <p className="text-lg font-bold text-orange-600">2</p>
+                <p className="text-[10px] text-gray-600">Más leads desde Pincali</p>
+              </div>
+              <div className="rounded-lg p-3 text-center bg-yellow-50 border border-yellow-100">
+                <p className="text-lg font-bold text-yellow-700">3</p>
+                <p className="text-[10px] text-gray-600">Asesor cierra ventas</p>
+              </div>
+              <div className="rounded-lg p-3 text-center bg-green-50 border border-green-100">
+                <p className="text-lg font-bold text-green-600">4</p>
+                <p className="text-[10px] text-gray-600">Llega al límite del plan</p>
+              </div>
+              <div className="rounded-lg p-3 text-center bg-emerald-50 border border-emerald-200">
+                <p className="text-lg font-bold text-emerald-700">5</p>
+                <p className="text-[10px] text-gray-600">Upgrade = MRR</p>
+              </div>
+            </div>
+            <p className="text-[11px] text-gray-400 mb-8 text-center">Free Plan no aparece en Pincali: cero leads del marketplace, nunca upgradea. Este sistema desbloquea ese ciclo.</p>
+
+            {/* 3 projection cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="border border-gray-200 rounded-lg p-5 text-center">
+                <p className="text-2xl font-bold text-gray-700">$4,950 MXN/mes</p>
+                <p className="text-xs font-medium text-gray-600 mt-1">MRR estimado actual (sample)</p>
+                <p className="text-[10px] text-gray-400 mt-2">5 asesores x $990 plan Independiente</p>
+              </div>
+              <div className="border border-yellow-200 bg-yellow-50/30 rounded-lg p-5 text-center">
+                <p className="text-2xl font-bold text-yellow-700">+$1,000 MXN/mes</p>
+                <p className="text-xs font-medium text-gray-600 mt-1">MRR adicional con 30% upgrade rate</p>
+                <p className="text-[10px] text-gray-400 mt-2">1 Emprendedor a Independiente (+$500) + 1 Independiente a Agencia (+$500)</p>
+              </div>
+              <div className="border border-green-200 bg-green-50/30 rounded-lg p-5 text-center">
+                <p className="text-2xl font-bold text-green-700">+$1.3M MXN/año</p>
+                <p className="text-xs font-medium text-gray-600 mt-1">MRR adicional proyectado en producción</p>
+                <p className="text-[10px] text-gray-400 mt-2">~720 asesores x 30% upgrade x $500 promedio = $108,000 MXN/mes</p>
+              </div>
+            </div>
+            <p className="text-[10px] text-gray-400 mt-4 text-center">
+              Hipótesis defendible: 30% upgrade rate es benchmark estándar SaaS B2B. Validación requiere acceso a cohort interno de EasyBroker. Pricing oficial verificado en easybroker.com/mx/planes.
+            </p>
+          </section>
+
           {/* Separator */}
           <div className="flex items-center gap-4 my-8">
             <div className="flex-1 h-px bg-gray-200" />

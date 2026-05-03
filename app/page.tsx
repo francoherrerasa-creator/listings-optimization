@@ -117,7 +117,7 @@ export default async function Home() {
           <h2 className="text-xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>
             Pipeline de Calidad
           </h2>
-          <p className="text-xs text-gray-400 mb-6">Distribución de propiedades por nivel</p>
+          <p className="text-lg text-gray-500 mb-6">Distribución de propiedades por nivel</p>
 
           <div className="space-y-3">
             {MATURITY_LEVELS.map((ml) => {
@@ -152,13 +152,13 @@ export default async function Home() {
 
         {/* Declarative paragraph */}
         <div className="mt-8 max-w-3xl mx-auto w-full">
-          <p className="text-sm text-gray-600 leading-relaxed text-center">
+          <p className="text-base text-gray-600 leading-relaxed text-center">
             El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva las propiedades de Calidad 54% a 93% promedio. 10 de 10 propiedades quedan Pincali Ready tras resolver Red Flags.
           </p>
         </div>
 
         {/* Buttons - 6 in 3x2 grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 max-w-4xl mx-auto w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8 max-w-3xl mx-auto w-full">
           <Link href="/donde-estamos" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">1) MEDIMOS</Link>
           <Link href="/plan-de-accion" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>2) ACCIONAMOS</Link>
           <Link href="/road-to-excellence" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">3) ENTREGAMOS</Link>
