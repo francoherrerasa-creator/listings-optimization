@@ -140,35 +140,31 @@ export default async function RoadToExcellencePage() {
               </div>
             </div>
 
-            {/* Bloque B: Revenue Recuperado */}
+            {/* Bloque B: Revenue Recuperado (API GAP) */}
             <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-3 mt-8">Revenue recuperado · prevención de churn</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="border border-red-200 bg-red-50/30 rounded-lg p-5 text-center">
-                <p className="text-2xl font-bold text-red-600">$4,950 MXN/mes</p>
-                <p className="text-xs font-medium text-gray-600 mt-1">Revenue en riesgo (sample)</p>
-                <p className="text-[10px] text-gray-400 mt-2">5 asesores con publicaciones inactivas {">"}90 días</p>
+              <div className="border border-gray-200 bg-gray-50 rounded-lg p-5 text-center">
+                <span className="inline-block px-2 py-0.5 text-[10px] font-bold bg-gray-200 text-gray-600 rounded mb-2">API GAP</span>
+                <p className="text-xs font-medium text-gray-700 mt-1">Revenue en riesgo (sample)</p>
+                <p className="text-[11px] text-gray-500 mt-1">Requiere acceso al plan actual de cada asesor en EasyBroker</p>
+                <p className="text-[10px] text-gray-400 mt-2">5 asesores con publicaciones inactivas {">"}90 días son candidatos a churn</p>
               </div>
-              <div className="border border-yellow-200 bg-yellow-50/30 rounded-lg p-5 text-center">
-                <p className="text-2xl font-bold text-yellow-700">+$2,475 MXN/mes</p>
-                <p className="text-xs font-medium text-gray-600 mt-1">Revenue recuperado con reactivación</p>
-                <p className="text-[10px] text-gray-400 mt-2">50% win-back rate · benchmark industria SaaS B2B</p>
+              <div className="border border-gray-200 bg-gray-50 rounded-lg p-5 text-center">
+                <span className="inline-block px-2 py-0.5 text-[10px] font-bold bg-gray-200 text-gray-600 rounded mb-2">API GAP</span>
+                <p className="text-xs font-medium text-gray-700 mt-1">Revenue recuperado con reactivación</p>
+                <p className="text-[11px] text-gray-500 mt-1">Requiere historial de win-back interno</p>
+                <p className="text-[10px] text-gray-400 mt-2">Benchmark industria SaaS B2B: 50% win-back rate</p>
               </div>
-              <div className="border border-green-200 bg-green-50/30 rounded-lg p-5 text-center">
-                <p className="text-2xl font-bold text-green-700">+$2.1M MXN/año</p>
-                <p className="text-xs font-medium text-gray-600 mt-1">Revenue protegido proyectado en producción</p>
-                <p className="text-[10px] text-gray-400 mt-2">~360 asesores en riesgo x 50% win-back x $990 plan Independiente</p>
+              <div className="border border-gray-200 bg-gray-50 rounded-lg p-5 text-center">
+                <span className="inline-block px-2 py-0.5 text-[10px] font-bold bg-gray-200 text-gray-600 rounded mb-2">API GAP</span>
+                <p className="text-xs font-medium text-gray-700 mt-1">Revenue protegido (escala 1,437)</p>
+                <p className="text-[11px] text-gray-500 mt-1">Proyección requiere data interna del cohort completo</p>
+                <p className="text-[10px] text-gray-400 mt-2">Con acceso a producción se calcula impacto real</p>
               </div>
             </div>
 
-            {/* Total combinado */}
-            <div className="mt-8 text-center">
-              <p className="text-lg font-bold" style={{ color: config.brand.primaryColor }}>
-                Total impacto en MRR (escala 1,437): +$3.4M MXN/año entre revenue nuevo y recuperado
-              </p>
-            </div>
-
-            <p className="text-[10px] text-gray-400 mt-4 text-center">
-              Hipótesis defendible: 30% upgrade rate y 50% win-back son benchmarks SaaS B2B. Validación requiere acceso a cohort interno de EasyBroker. Pricing oficial verificado en easybroker.com/mx/planes.
+            <p className="text-[10px] text-gray-400 mt-6 text-center">
+              Revenue Nuevo defendible con pricing oficial (verificado en easybroker.com/mx/planes). Revenue Recuperado requiere acceso a datos internos: plan del asesor, historial transaccional, y cohorts de win-back. Estos cálculos se construyen en día 1 con acceso al producto.
             </p>
           </section>
 
