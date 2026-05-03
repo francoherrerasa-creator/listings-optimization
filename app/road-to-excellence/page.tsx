@@ -91,6 +91,49 @@ export default async function RoadToExcellencePage() {
             <h3 className="text-sm font-medium text-gray-500 mt-1">Sin acciones derivadas del diagnóstico actual</h3>
           </div>
 
+          {/* Resultado Final */}
+          <h2 className="text-sm font-semibold uppercase tracking-wide mb-1 mt-10" style={{ color: config.brand.primaryColor }}>Resultado Final</h2>
+          <p className="text-xs text-gray-500 mb-4">Foto del inventario después de la ejecución multi-equipo</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+            {/* Pincali Ready */}
+            <div className="border border-green-200 bg-green-50 rounded-lg p-5">
+              <p className="text-2xl font-bold text-green-700">10 ✓</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Pincali Ready activadas</p>
+              <p className="text-[11px] text-gray-500 mt-1">100% del inventario auditado listo para marketplace</p>
+            </div>
+            {/* Sin asesor */}
+            <div className="border border-green-200 bg-green-50 rounded-lg p-5">
+              <p className="text-2xl font-bold text-green-700">0 ✓</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Propiedades sin asesor</p>
+              <p className="text-[11px] text-gray-500 mt-1">Sales asignó asesor a las 5 propiedades huérfanas</p>
+            </div>
+            {/* Inactivas */}
+            <div className="border border-green-200 bg-green-50 rounded-lg p-5">
+              <p className="text-2xl font-bold text-green-700">0 ✓</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Propiedades inactivas</p>
+              <p className="text-[11px] text-gray-500 mt-1">Customer Success reactivó las 10 propiedades {">"}90 días</p>
+            </div>
+            {/* Churn */}
+            <div className="border border-green-200 bg-green-50 rounded-lg p-5">
+              <p className="text-2xl font-bold text-green-700">0 de 10 ✓</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Riesgo de Churn del Asesor</p>
+              <p className="text-[11px] text-gray-500 mt-1">Inventario activo, asesores conectados</p>
+            </div>
+            {/* API GAP 1 */}
+            <div className="border border-gray-200 bg-gray-50 rounded-lg p-5">
+              <span className="inline-block px-2 py-0.5 text-[10px] font-bold bg-gray-200 text-gray-600 rounded mb-2">API GAP</span>
+              <p className="text-xs font-medium text-gray-700 mt-1">Por tipo de plan</p>
+              <p className="text-[11px] text-gray-500 mt-1">Pendiente: requiere acceso a datos internos de Producto</p>
+            </div>
+            {/* API GAP 2 */}
+            <div className="border border-gray-200 bg-gray-50 rounded-lg p-5">
+              <span className="inline-block px-2 py-0.5 text-[10px] font-bold bg-gray-200 text-gray-600 rounded mb-2">API GAP</span>
+              <p className="text-xs font-medium text-gray-700 mt-1">Por tipo de asesor</p>
+              <p className="text-[11px] text-gray-500 mt-1">Pendiente: requiere acceso a datos internos de Producto</p>
+            </div>
+          </div>
+          <p className="text-xs text-gray-400 mb-8">* Las 2 métricas marcadas como API GAP no se resuelven con el sistema actual. Requieren exposición de datos en API pública por parte del equipo de Producto.</p>
+
           {/* Impacto en Revenue */}
           <div className="flex items-center gap-4 my-8">
             <div className="flex-1 h-px bg-gray-200" />
