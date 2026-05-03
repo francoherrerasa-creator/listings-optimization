@@ -120,7 +120,8 @@ export default async function RoadToExcellencePage() {
             </div>
             <p className="text-[11px] text-gray-400 mb-8 text-center">Free Plan no aparece en Pincali: cero leads del marketplace, nunca upgradea. Este sistema desbloquea ese ciclo.</p>
 
-            {/* 3 projection cards */}
+            {/* Bloque A: Revenue Nuevo */}
+            <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-3">Revenue nuevo · upgrade del plan</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="border border-gray-200 rounded-lg p-5 text-center">
                 <p className="text-2xl font-bold text-gray-700">$4,950 MXN/mes</p>
@@ -138,46 +139,42 @@ export default async function RoadToExcellencePage() {
                 <p className="text-[10px] text-gray-400 mt-2">~720 asesores x 30% upgrade x $500 promedio = $108,000 MXN/mes</p>
               </div>
             </div>
+
+            {/* Bloque B: Revenue Recuperado */}
+            <p className="text-[10px] text-gray-400 uppercase tracking-wide mb-3 mt-8">Revenue recuperado · prevención de churn</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="border border-red-200 bg-red-50/30 rounded-lg p-5 text-center">
+                <p className="text-2xl font-bold text-red-600">$4,950 MXN/mes</p>
+                <p className="text-xs font-medium text-gray-600 mt-1">Revenue en riesgo (sample)</p>
+                <p className="text-[10px] text-gray-400 mt-2">5 asesores con publicaciones inactivas {">"}90 días</p>
+              </div>
+              <div className="border border-yellow-200 bg-yellow-50/30 rounded-lg p-5 text-center">
+                <p className="text-2xl font-bold text-yellow-700">+$2,475 MXN/mes</p>
+                <p className="text-xs font-medium text-gray-600 mt-1">Revenue recuperado con reactivación</p>
+                <p className="text-[10px] text-gray-400 mt-2">50% win-back rate · benchmark industria SaaS B2B</p>
+              </div>
+              <div className="border border-green-200 bg-green-50/30 rounded-lg p-5 text-center">
+                <p className="text-2xl font-bold text-green-700">+$2.1M MXN/año</p>
+                <p className="text-xs font-medium text-gray-600 mt-1">Revenue protegido proyectado en producción</p>
+                <p className="text-[10px] text-gray-400 mt-2">~360 asesores en riesgo x 50% win-back x $990 plan Independiente</p>
+              </div>
+            </div>
+
+            {/* Total combinado */}
+            <div className="mt-8 text-center">
+              <p className="text-lg font-bold" style={{ color: config.brand.primaryColor }}>
+                Total impacto en MRR (escala 1,437): +$3.4M MXN/año entre revenue nuevo y recuperado
+              </p>
+            </div>
+
             <p className="text-[10px] text-gray-400 mt-4 text-center">
-              Hipótesis defendible: 30% upgrade rate es benchmark estándar SaaS B2B. Validación requiere acceso a cohort interno de EasyBroker. Pricing oficial verificado en easybroker.com/mx/planes.
+              Hipótesis defendible: 30% upgrade rate y 50% win-back son benchmarks SaaS B2B. Validación requiere acceso a cohort interno de EasyBroker. Pricing oficial verificado en easybroker.com/mx/planes.
             </p>
           </section>
 
-          {/* Separator */}
-          <div className="flex items-center gap-4 my-8">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400">Acción Inmediata</span>
-            <div className="flex-1 h-px bg-gray-200" />
-          </div>
-
-          {/* Red Flags */}
-          <div className="border border-red-200 bg-red-50 rounded-lg p-6">
-            <div className="mb-3">
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER</p>
-              <h3 className="text-lg font-semibold text-gray-900">Red Flags</h3>
-              <p className="text-xs text-red-600 mt-1">Growth, limpieza editorial automática</p>
-            </div>
-            <p className="text-sm text-gray-600 mb-3">Acción: Limpieza editorial automática de descripciones</p>
-            <ul className="text-xs text-gray-600 space-y-1 mb-4 list-disc list-inside">
-              <li>Datos de contacto en descripción (teléfonos, emails, URLs)</li>
-              <li>Nombres comerciales/inmobiliarias promocionados en copy</li>
-              <li>Llamados a acción comerciales directos</li>
-              <li>Fraude potencial (precios anzuelo, remates clasificados)</li>
-            </ul>
-            <p className="text-sm font-medium text-red-700 mb-4">
-              {aggregate.listingsWithRedFlags} de {aggregate.totalListings} propiedades con violaciones · {aggregate.totalRedFlags} flags detectados
-            </p>
-            <Link
-              href="/red-flags"
-              className="inline-block px-4 py-2 text-xs font-medium rounded-lg border border-red-200 text-red-700 hover:bg-red-100 transition-colors"
-            >
-              Ver Red Flags →
-            </Link>
-          </div>
-
           {/* Final phrase */}
           <p className="text-3xl font-bold text-center mt-12" style={{ color: config.brand.primaryColor }}>
-            Ready to go.
+            Growth
           </p>
 
           {/* Back button */}
