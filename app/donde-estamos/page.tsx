@@ -226,13 +226,12 @@ export default async function GrowthPage() {
                 detail="muestra auditada, 40 flags encontradas"
                 borderColor="border-b-gray-400"
               />
-              <FunnelCard
-                value="19"
-                label="Descripción incompleta"
-                detail="flags, 10 de 10 listings afectados"
-                borderColor="border-b-red-500"
-                badge="CUELLO DE BOTELLA"
-              />
+              <div className="border-b-4 border-red-400 rounded-lg p-4 text-center border border-gray-100">
+                <p className="text-2xl font-bold text-red-600">19</p>
+                <p className="text-xs font-medium text-gray-700 mt-1">Descripción incompleta</p>
+                <p className="text-[11px] text-gray-500 mt-0.5">flags · 10 de 10 listings afectados</p>
+                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">CUELLO DE BOTELLA</span>
+              </div>
               <FunnelCard
                 value="9"
                 label="Optimizables por Automatización"
@@ -245,13 +244,12 @@ export default async function GrowthPage() {
                 detail="10 listings a activar vía WhatsApp"
                 borderColor="border-b-green-500"
               />
-              <FunnelCard
-                value="6"
-                label="Pincali Ready"
-                detail="después de optimizaciones"
-                borderColor="border-b-green-700"
-                badge="4 con Red Flags"
-              />
+              <div className="border-b-4 border-green-700 rounded-lg p-4 text-center border border-gray-100">
+                <p className="text-2xl font-bold text-green-800">{results.length - 4}</p>
+                <p className="text-xs font-medium text-gray-700 mt-1">Pincali Ready</p>
+                <p className="text-[11px] text-gray-500 mt-0.5">después de optimizaciones</p>
+                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">4 con Red Flags</span>
+              </div>
             </div>
           </section>
 

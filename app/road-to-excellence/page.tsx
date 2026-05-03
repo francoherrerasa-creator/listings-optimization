@@ -1,11 +1,10 @@
 import { config } from "@/lib/config";
 import { loadHealthData } from "@/lib/loadHealth";
 import Link from "next/link";
-import EntregamosContent from "../components/EntregamosContent";
 
 export default async function RoadToExcellencePage() {
   const health = await loadHealthData();
-  const { aggregate, projections } = health;
+  const { aggregate } = health;
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -33,39 +32,59 @@ export default async function RoadToExcellencePage() {
       <main className="flex-1 px-6 py-10">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>ENTREGAMOS</h1>
+          <p className="text-sm text-gray-500 mb-8">Resultado del sistema multi-equipo: 0 a 10 Pincali Ready</p>
 
-          <EntregamosContent
-            currentHealth={aggregate.averageHealth}
-            totalListings={aggregate.totalListings}
-            optimistic={{
-              postAutomationHealth: projections.postAutomation.optimistic.avgHealth,
-              postBotMonaHealth: projections.postAutomationAndBotMona.optimistic.avgHealth,
-              automationRate: projections.postAutomationAndBotMona.optimistic.automationRate ?? 1,
-              botMonaThreshold: projections.postAutomationAndBotMona.optimistic.botMonaThreshold ?? 0.8,
-              pincaliReady: projections.postRedFlagsResolved.optimistic.pincaliReady,
-            }}
-            conservative={{
-              postAutomationHealth: projections.postAutomation.conservative.avgHealth,
-              postBotMonaHealth: projections.postAutomationAndBotMona.conservative.avgHealth,
-              automationRate: projections.postAutomationAndBotMona.conservative.automationRate ?? 0.9,
-              botMonaThreshold: projections.postAutomationAndBotMona.conservative.botMonaThreshold ?? 0.5,
-              pincaliReady: projections.postRedFlagsResolved.conservative.pincaliReady,
-            }}
-          />
+          {/* Executive Summary */}
+          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
+            <p className="text-base text-gray-700 leading-relaxed">
+              Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Mona AI. Sales asigna asesor a los 5 listings huérfanos. Customer Success reactiva los 10 listings inactivos. Trust & Safety resuelve las 5 violaciones de política. Producto expone los KPIs faltantes en API. Resultado: de 0 listings Pincali Ready hoy, llegamos a 10 cuando los 5 frentes ejecutan en paralelo.
+            </p>
+          </div>
 
-          {/* Lateral cards */}
-          <div className="grid grid-cols-3 gap-3 mt-6">
-            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
-              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Sales</h4>
-              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">Sin acciones</span>
+          {/* Team Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {/* Growth */}
+            <div className="border border-green-200 bg-green-50 rounded-lg p-5">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: GROWTH</p>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1">Calidad del Listing</h3>
+              <div className="mt-3 space-y-2 text-xs text-gray-600">
+                <p>Automatización · 90% éxito · resuelve 31 flags</p>
+                <p>Mona AI · 50% respuesta · resuelve 9 flags</p>
+              </div>
+              <p className="text-sm font-medium text-green-700 mt-3">Calidad: 54% a 93%</p>
             </div>
-            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
-              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Marketing</h4>
-              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">Sin acciones</span>
+            {/* Sales */}
+            <div className="border border-yellow-200 bg-yellow-50 rounded-lg p-5">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: SALES</p>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1">Asignación de Asesor</h3>
+              <p className="text-xs text-gray-600 mt-3">Identificar y asignar asesor responsable a los 5 listings sin agente</p>
+              <p className="text-sm font-medium text-yellow-700 mt-3">5 a 0 listings sin asesor</p>
             </div>
-            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
-              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Trust & Safety</h4>
-              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">Sin acciones</span>
+            {/* Customer Success */}
+            <div className="border border-cyan-200 bg-cyan-50 rounded-lg p-5">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: CUSTOMER SUCCESS</p>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1">Reactivación de Inventario</h3>
+              <p className="text-xs text-gray-600 mt-3">Contactar a los asesores con listings sin actualizar {">"}90 días</p>
+              <p className="text-sm font-medium text-cyan-700 mt-3">10 a 0 listings inactivos</p>
+            </div>
+            {/* Trust & Safety */}
+            <div className="border border-red-200 bg-red-50 rounded-lg p-5">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: TRUST & SAFETY</p>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1">Resolución de Violaciones</h3>
+              <p className="text-xs text-gray-600 mt-3">Limpieza editorial de descripciones con datos de contacto, nombres comerciales, CTAs directos</p>
+              <p className="text-sm font-medium text-red-600 mt-3">5 a 0 violaciones de política</p>
+            </div>
+            {/* Producto */}
+            <div className="border border-purple-200 bg-purple-50 rounded-lg p-5">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: PRODUCTO</p>
+              <h3 className="text-lg font-semibold text-gray-900 mt-1">Exposición de KPIs en API</h3>
+              <p className="text-xs text-gray-600 mt-3">Exponer plan del asesor (Free/Basic/Pro) y tipo de asesor (Inmobiliaria/Independiente) en API pública</p>
+              <p className="text-sm font-medium text-purple-700 mt-3">Habilita 2 KPIs estratégicos</p>
+            </div>
+            {/* Marketing */}
+            <div className="border border-gray-200 bg-gray-50 rounded-lg p-5">
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">MARKETING</p>
+              <h3 className="text-sm font-medium text-gray-500 mt-1">Sin acciones derivadas del diagnóstico actual</h3>
             </div>
           </div>
 

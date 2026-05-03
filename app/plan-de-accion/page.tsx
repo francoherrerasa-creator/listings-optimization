@@ -1,74 +1,11 @@
 import { config } from "@/lib/config";
-import { loadScoringResults } from "@/lib/loadResults";
 import Link from "next/link";
 
-// ─── Flag classification ───
-
-interface ActionItem {
-  channel: "quick_wins" | "bot_mona" | "comercial_team" | "marketing" | "trust_safety";
-  action: string;
-  count: number;
-}
-
-function classifyFlags(flags: string[]): ActionItem[] {
-  const buckets: Record<string, { channel: ActionItem["channel"]; action: string; count: number }> = {};
-  const rules: Array<{ keywords: RegExp; channel: ActionItem["channel"]; action: string }> = [
-    { keywords: /descripci[oó]n|texto|truncad|incompleta|contenido|completar/i, channel: "quick_wins", action: "Optimización de descripciones: copy persuasivo basado en datos del listing" },
-    { keywords: /datos|campos|amenidades|informaci[oó]n|m²|baño/i, channel: "quick_wins", action: "Auto-completado de campos vacíos: m², amenidades inferidos automáticamente" },
-    { keywords: /contacto|agencia|promoci[oó]n|llame|marca/i, channel: "quick_wins", action: "Limpiar contenido no permitido: datos de contacto y texto promocional" },
-    { keywords: /t[ií]tulo/i, channel: "quick_wins", action: "Optimización de títulos para SEO: tipo + operación + zona" },
-    { keywords: /foto|im[aá]gen/i, channel: "bot_mona", action: "Solicitud de fotos faltantes vía WhatsApp: meta 6 fotos en 24h" },
-    { keywords: /ubicaci[oó]n|coordenadas|geogr[aá]f/i, channel: "bot_mona", action: "Validación de ubicación con el asesor: confirmar pin en mapa" },
-    { keywords: /precio|valor|mercado|discrepancia/i, channel: "comercial_team", action: "Validación de precio: confirmar alineación con mercado real" },
-    { keywords: /zona|regional/i, channel: "marketing", action: "-" },
-    { keywords: /fraude|duplicad|anzuelo|sospech|inconsisten/i, channel: "trust_safety", action: "-" },
-  ];
-
-  for (const flag of flags) {
-    let matched = false;
-    for (const rule of rules) {
-      if (rule.keywords.test(flag)) {
-        const key = `${rule.channel}:${rule.action}`;
-        if (!buckets[key]) buckets[key] = { channel: rule.channel, action: rule.action, count: 0 };
-        buckets[key].count++;
-        matched = true;
-        break;
-      }
-    }
-    if (!matched) {
-      const key = "quick_wins:Revisar flag manualmente";
-      if (!buckets[key]) buckets[key] = { channel: "quick_wins", action: "Revisar flag manualmente", count: 0 };
-      buckets[key].count++;
-    }
-  }
-
-  const channelOrder: ActionItem["channel"][] = ["quick_wins", "bot_mona", "comercial_team", "marketing", "trust_safety"];
-  const placeholders: Record<string, string> = { comercial_team: "Validación de precio: confirmar alineación con mercado real", marketing: "-", trust_safety: "-" };
-  for (const ch of channelOrder) {
-    if (!Object.values(buckets).some((b) => b.channel === ch) && placeholders[ch]) {
-      buckets[`${ch}:placeholder`] = { channel: ch, action: placeholders[ch], count: 0 };
-    }
-  }
-
-  const order: Record<string, number> = { quick_wins: 0, bot_mona: 1, comercial_team: 2, marketing: 3, trust_safety: 4 };
-  return Object.values(buckets).sort((a, b) => order[a.channel] - order[b.channel] || b.count - a.count);
-}
-
-const channelLabels: Record<string, string> = { quick_wins: "Growth", bot_mona: "Mona", comercial_team: "Sales", marketing: "Marketing", trust_safety: "Trust & Safety" };
-const channelBg: Record<string, string> = { quick_wins: "bg-[#F5F5FE]", bot_mona: "bg-[#F0FDF4]", comercial_team: "bg-[#FFFBEB]", marketing: "bg-[#FDF2F8]", trust_safety: "bg-[#F9FAFB]" };
-const channelText: Record<string, string> = { quick_wins: "text-indigo-700", bot_mona: "text-green-700", comercial_team: "text-amber-700", marketing: "text-pink-700", trust_safety: "text-slate-700" };
 
 export default async function NextStepsPage() {
-  const data = await loadScoringResults();
-  const { results } = data;
-
-  const allFlags = results.flatMap((r) => r.flagsForModerationTeam);
 
 
 
-
-
-  const actions = classifyFlags(allFlags);
 
 
   return (
@@ -101,7 +38,7 @@ export default async function NextStepsPage() {
 
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
             <p className="text-base text-gray-700 leading-relaxed">
-              40 flags en 10 listings. La distribución no es aleatoria: hay patrones por tipo, por estado y por operación. El 78% se resuelve automáticamente por el equipo de Growth. El 22% restante requiere hablar con el asesor por WhatsApp, eso lo hace Mona. Sales, Marketing y Trust & Safety entran solo cuando los demás canales no resolvieron.
+              El diagnóstico revela 5 frentes simultáneos que requieren acciones concretas. Growth resuelve 40 flags de calidad con Automatización y Mona AI. Sales, Customer Success y Trust & Safety atacan los hallazgos operativos: listings sin asesor, inventario inactivo y violaciones de política. Producto cierra los gaps de visibilidad en la API.
             </p>
           </div>
 
@@ -157,26 +94,47 @@ export default async function NextStepsPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wide">
-                      <th className="px-4 py-3 font-medium w-36">Equipo</th>
-                      <th className="px-4 py-3 font-medium">Accionables</th>
-                      <th className="px-4 py-3 font-medium text-center w-24">Flags</th>
+                      <th className="px-4 py-3 font-medium w-40">Equipo</th>
+                      <th className="px-4 py-3 font-medium">Estrategia / Accionable</th>
+                      <th className="px-4 py-3 font-medium text-right w-28">Impacto</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-50">
-                    {actions.map((item, i) => (
-                      <tr key={i} className={channelBg[item.channel]}>
-                        <td className="px-4 py-3">
-                          <span className={`text-sm font-medium ${channelText[item.channel]}`}>{channelLabels[item.channel]}</span>
-                        </td>
-                        <td className={`px-4 py-3 ${item.count === 0 && item.action === "-" ? "text-gray-400" : "text-gray-700"}`}>
-                          {item.action}
-                          {item.count === 0 && item.action !== "-" && (
-                            <span className="ml-2 text-[10px] text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">demo</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-3 text-center font-medium text-gray-600">{item.count || "-"}</td>
-                      </tr>
-                    ))}
+                    <tr className="bg-green-50/50">
+                      <td className="px-4 py-3 text-sm font-medium text-green-700">Growth</td>
+                      <td className="px-4 py-3 text-gray-700">Automatización: optimizar descripciones, datos básicos, ubicación, fotos research vía API</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">31 flags</td>
+                    </tr>
+                    <tr className="bg-green-50/50">
+                      <td className="px-4 py-3 text-sm font-medium text-green-700">Growth</td>
+                      <td className="px-4 py-3 text-gray-700">Mona AI: solicitar fotos premium y validaciones vía WhatsApp</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">9 flags</td>
+                    </tr>
+                    <tr className="bg-yellow-50/50">
+                      <td className="px-4 py-3 text-sm font-medium text-yellow-700">Sales</td>
+                      <td className="px-4 py-3 text-gray-700">Asignar asesor responsable a listings sin agente</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">5 listings</td>
+                    </tr>
+                    <tr className="bg-cyan-50/50">
+                      <td className="px-4 py-3 text-sm font-medium text-cyan-700">Customer Success</td>
+                      <td className="px-4 py-3 text-gray-700">Reactivar asesores con inventario sin actualizar {">"}90 días</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">10 listings</td>
+                    </tr>
+                    <tr className="bg-red-50/50">
+                      <td className="px-4 py-3 text-sm font-medium text-red-600">Trust & Safety</td>
+                      <td className="px-4 py-3 text-gray-700">Resolver violaciones de política comercial</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">5 violaciones</td>
+                    </tr>
+                    <tr className="bg-purple-50/50">
+                      <td className="px-4 py-3 text-sm font-medium text-purple-700">Producto</td>
+                      <td className="px-4 py-3 text-gray-700">Exponer plan del asesor y tipo de asesor en API pública</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700">API GAP</td>
+                    </tr>
+                    <tr className="bg-gray-50/50">
+                      <td className="px-4 py-3 text-sm font-medium text-gray-500">Marketing</td>
+                      <td className="px-4 py-3 text-gray-500">Sin acciones derivadas del diagnóstico actual</td>
+                      <td className="px-4 py-3 text-right text-gray-400">-</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>

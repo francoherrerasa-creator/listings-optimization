@@ -47,6 +47,20 @@ export default async function Home() {
   const { aggregate } = health;
   const total = maturity.results.length;
 
+  // Calculate avg health per maturity level
+  const healthByPublicId: Record<string, number> = {};
+  for (const r of health.results) {
+    healthByPublicId[r.publicId] = r.overallHealthPercent;
+  }
+  const avgHealthByLevel: Record<number, number> = {};
+  for (const ml of MATURITY_LEVELS) {
+    const listingsAtLevel = maturity.results.filter((r) => r.level === ml.level);
+    if (listingsAtLevel.length > 0) {
+      const sum = listingsAtLevel.reduce((acc, r) => acc + (healthByPublicId[r.publicId] ?? 0), 0);
+      avgHealthByLevel[ml.level] = Math.round(sum / listingsAtLevel.length);
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
@@ -103,6 +117,7 @@ export default async function Home() {
           <h2 className="text-xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>
             Pipeline de Calidad
           </h2>
+          <p className="text-xs text-gray-400 mb-1">Distribución de listings por nivel</p>
           <p className="text-sm text-gray-500 mb-6">
             Cómo el inventario avanza desde publicado hasta listo para generar revenue.
           </p>
@@ -111,6 +126,7 @@ export default async function Home() {
             {MATURITY_LEVELS.map((ml) => {
               const count = maturity.counts[String(ml.level)] ?? 0;
               const widthPercent = total > 0 ? Math.max((count / total) * 100, 4) : 4;
+              const levelAvgHealth = avgHealthByLevel[ml.level];
               return (
                 <div key={ml.level} className={`flex items-center gap-4 p-4 border rounded-lg ${ml.color}`}>
                   <div className="text-3xl font-bold w-12 text-center">{count}</div>
@@ -125,6 +141,10 @@ export default async function Home() {
                         style={{ width: `${widthPercent}%` }}
                       />
                     </div>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <p className="text-xs text-gray-500">Calidad promedio</p>
+                    <p className="text-lg font-bold">{levelAvgHealth !== undefined ? `${levelAvgHealth}%` : "-"}</p>
                   </div>
                 </div>
               );
