@@ -25,11 +25,11 @@ export default async function PincaliPage() {
             </span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
-            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Cómo estamos</Link>
+            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Medimos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Plan de Acción</Link>
+            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Accionamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Road to Excellence</Link>
+            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
             <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
             <span className="text-gray-300">·</span>
@@ -152,7 +152,7 @@ function EmptyState({
         ⊘
       </div>
       <h2 className="text-2xl font-bold text-gray-900 mb-3">
-        0 listings cumplen el threshold de calidad
+        0 listings cumplen el mínimo esperado de calidad
       </h2>
       <p className="text-gray-500 max-w-lg leading-relaxed mb-8">
         De {totalAnalyzed.toLocaleString()} propiedades analizadas, ninguna

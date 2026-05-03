@@ -66,13 +66,13 @@ export default async function GrowthPage() {
             </Link>
             <span className="text-gray-300">·</span>
             <span className="text-sm text-gray-500">
-              Cómo Estamos · {config.project.name}
+              Medimos · {config.project.name}
             </span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
-            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Plan de Acción</Link>
+            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Accionamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Road to Excellence</Link>
+            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
             <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
             <span className="text-gray-300">·</span>
@@ -86,13 +86,13 @@ export default async function GrowthPage() {
       <main className="flex-1 px-6 py-10">
         <div className="max-w-7xl mx-auto space-y-12">
           <div>
-            <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>CÓMO ESTAMOS</h1>
+            <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>MEDIMOS</h1>
             <p className="text-sm text-gray-500">Estado actual de EasyBroker</p>
           </div>
 
-          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 max-w-4xl">
+          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6">
             <p className="text-base text-gray-700 leading-relaxed">
-              Analizamos 10 listings de los 1,437 publicados. Ninguno pasa el mínimo de calidad. Score promedio: 53. La calidad del inventario mueve directo el funnel free-to-paid: cada listing flojo es un lead que no llega y un upgrade de plan que no pasa.
+              Analizamos 10 listings de los 1,437 publicados. Ninguno pasa el mínimo de calidad. El promedio fue 53/100 con 40 flags totales — 4 flags por listing. La descripción es el cuello de botella claro: afecta a los 10 listings auditados con 19 flags, casi la mitad del total. Detrás de cada flag hay un asesor que publicó rápido y un comprador que se va. La calidad del inventario es la palanca directa del funnel free-to-paid.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export default async function GrowthPage() {
               <AggregateCard
                 label="Avg Score"
                 value={`${aggregates.avgScore}`}
-                detail={`Threshold: ${config.scoring.passingThreshold}`}
+                detail={`Mínimo: ${config.scoring.passingThreshold}`}
                 numericScore={aggregates.avgScore}
               />
               <AggregateCard
@@ -221,7 +221,7 @@ export default async function GrowthPage() {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-white font-medium text-lg transition-opacity hover:opacity-90"
               style={{ backgroundColor: config.brand.primaryColor }}
             >
-              Plan de Acción →
+              Accionamos →
             </Link>
           </div>
         </div>

@@ -145,12 +145,12 @@ export default async function NextStepsPage() {
           <div className="flex items-center gap-2">
             <Link href="/" className="font-semibold text-sm tracking-tight hover:opacity-70 transition-opacity" style={{ color: config.brand.primaryColor }}>{config.brand.shortName}</Link>
             <span className="text-gray-300">·</span>
-            <span className="text-sm text-gray-500">Plan de Acción · {config.project.name}</span>
+            <span className="text-sm text-gray-500">Accionamos · {config.project.name}</span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
-            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Cómo estamos</Link>
+            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Medimos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Road to Excellence</Link>
+            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
             <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
             <span className="text-gray-300">·</span>
@@ -163,12 +163,12 @@ export default async function NextStepsPage() {
 
       <main className="flex-1 px-6 py-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>PLAN DE ACCIÓN</h1>
-          <p className="text-sm text-gray-500 mb-8">Accionables priorizados por equipo</p>
+          <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>ACCIONAMOS</h1>
+          <p className="text-sm text-gray-500 mb-8">Cada flag clasificado por equipo</p>
 
-          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 max-w-4xl mb-10">
+          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
             <p className="text-base text-gray-700 leading-relaxed">
-              40 flags en 10 listings. La distribución no es aleatoria: hay patrones por tipo, por estado y por operación. El 78% se resuelve automático con Growth. El 22% restante requiere hablar con el asesor por WhatsApp, eso lo hace Mona. Sales, Marketing y Trust & Safety entran solo cuando los demás canales no resolvieron.
+              40 flags en 10 listings. La distribución no es aleatoria: hay patrones por tipo, por estado y por operación. El 78% se resuelve automáticamente por el equipo de Growth. El 22% restante requiere hablar con el asesor por WhatsApp, eso lo hace Mona. Sales, Marketing y Trust & Safety entran solo cuando los demás canales no resolvieron.
             </p>
           </div>
 
@@ -301,7 +301,7 @@ export default async function NextStepsPage() {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-white font-medium text-lg transition-opacity hover:opacity-90"
               style={{ backgroundColor: config.brand.primaryColor }}
             >
-              Road to Excellence →
+              Entregamos →
             </Link>
           </div>
         </div>
@@ -309,7 +309,7 @@ export default async function NextStepsPage() {
 
       <footer className="border-t border-gray-100 px-6 py-6">
         <div className="max-w-5xl mx-auto flex items-center justify-between text-sm text-gray-400">
-          <Link href="/donde-estamos" className="hover:text-gray-900">← Cómo estamos</Link>
+          <Link href="/donde-estamos" className="hover:text-gray-900">← Medimos</Link>
           <Link href="/" className="hover:text-gray-900">{config.brand.shortName}</Link>
         </div>
       </footer>

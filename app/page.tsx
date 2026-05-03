@@ -35,9 +35,6 @@ export default async function Home() {
   const data = await loadScoringResults();
   const { results } = data;
 
-  const totalFlags = results.reduce((s, r) => s + r.flagsForModerationTeam.length, 0);
-  const flagsPerListing = (totalFlags / results.length).toFixed(1);
-  const activationRate = Math.round((results.filter((r) => r.passes).length / results.length) * 100);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -90,19 +87,55 @@ export default async function Home() {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-3xl mx-auto w-full">
-          <StatBox label="Listings analizados" value={String(data.sampled)} />
-          <StatBox label="Flags detectados" value={String(totalFlags)} highlight />
-          <StatBox label="Flags por listing" value={flagsPerListing} />
-          <StatBox label="Activation rate" value={`${activationRate}%`} subtitle={`${results.filter((r) => r.passes).length} activados`} />
+        {/* Funnel */}
+        <div className="mt-8 max-w-5xl mx-auto w-full">
+          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide text-center mb-4">
+            PIPELINE DEL LISTING · ERROR MÁS COMÚN: DESCRIPCIÓN INCOMPLETA
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 items-stretch">
+            {/* Stage 1 */}
+            <div className="border-b-4 border-gray-300 rounded-lg p-4 text-center border border-gray-100">
+              <p className="text-2xl font-bold text-gray-700">{results.length}</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Listings revisados</p>
+              <p className="text-[11px] text-gray-500 mt-0.5">muestra auditada · {results.reduce((s, r) => s + r.flagsForModerationTeam.length, 0)} flags encontradas</p>
+            </div>
+            {/* Stage 2 */}
+            <div className="border-b-4 border-red-400 rounded-lg p-4 text-center border border-gray-100 relative">
+              <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">CUELLO DE BOTELLA</span>
+              <p className="text-2xl font-bold text-red-600">19</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Descripción incompleta</p>
+              <p className="text-[11px] text-gray-500 mt-0.5">flags · 10 de 10 listings afectados</p>
+            </div>
+            {/* Stage 3 */}
+            <div className="border-b-4 border-green-300 rounded-lg p-4 text-center border border-gray-100">
+              <p className="text-2xl font-bold text-green-700">9</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Growth</p>
+              <p className="text-[11px] text-gray-500 mt-0.5">+9 listings a activar con automatización</p>
+            </div>
+            {/* Stage 4 */}
+            <div className="border-b-4 border-green-500 rounded-lg p-4 text-center border border-gray-100">
+              <p className="text-2xl font-bold text-green-700">10</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Mona</p>
+              <p className="text-[11px] text-gray-500 mt-0.5">10 listings a activar vía WhatsApp</p>
+            </div>
+            {/* Stage 5 */}
+            <div className="border-b-4 border-green-700 rounded-lg p-4 text-center border border-gray-100 relative">
+              <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">4 listings con Red Flags</span>
+              <p className="text-2xl font-bold text-green-800">{results.length - 4}</p>
+              <p className="text-xs font-medium text-gray-700 mt-1">Pincali Ready</p>
+              <p className="text-[11px] text-gray-500 mt-0.5">después de optimizaciones</p>
+            </div>
+          </div>
+          <p className="text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto mt-6 text-center">
+            De los 10 listings analizados, 0 cumplen el mínimo de calidad hoy. El equipo de Growth puede recuperar 9 al mínimo esperado. Mona, vía WhatsApp, cierra el 100%. Red Flags con acción inmediata.
+          </p>
         </div>
 
         {/* Buttons - 6 in 3x2 grid, columns color-matched */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 max-w-4xl mx-auto w-full">
-          <Link href="/donde-estamos" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">1) CÓMO ESTAMOS</Link>
-          <Link href="/plan-de-accion" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>2) PLAN DE ACCIÓN</Link>
-          <Link href="/road-to-excellence" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">3) ROAD TO EXCELLENCE</Link>
+          <Link href="/donde-estamos" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">1) MEDIMOS</Link>
+          <Link href="/plan-de-accion" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>2) ACCIONAMOS</Link>
+          <Link href="/road-to-excellence" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">3) ENTREGAMOS</Link>
           <Link href="/red-flags" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">RED FLAGS</Link>
           <Link href="/listings" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>LISTINGS</Link>
           <Link href="/pincali" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">PINCALI READY</Link>
@@ -190,33 +223,3 @@ export default async function Home() {
   );
 }
 
-function StatBox({
-  label,
-  value,
-  small,
-  highlight,
-  subtitle,
-}: {
-  label: string;
-  value: string;
-  small?: boolean;
-  highlight?: boolean;
-  subtitle?: string;
-}) {
-  return (
-    <div className="border border-gray-100 rounded-lg p-4 text-center">
-      <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
-        {label}
-      </p>
-      <p
-        className={`font-semibold ${small ? "text-sm" : "text-xl"}`}
-        style={{ color: highlight ? config.brand.secondaryColor : config.brand.primaryColor }}
-      >
-        {value}
-      </p>
-      {subtitle && (
-        <p className="text-[11px] text-gray-400 mt-0.5">{subtitle}</p>
-      )}
-    </div>
-  );
-}

@@ -115,11 +115,11 @@ export default async function RedFlagsPage() {
             <span className="text-sm text-gray-500">Red Flags · {config.project.name}</span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
-            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Cómo estamos</Link>
+            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Medimos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Plan de Acción</Link>
+            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Accionamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Road to Excellence</Link>
+            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
             <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
             <span className="text-gray-300">·</span>
@@ -216,7 +216,7 @@ export default async function RedFlagsPage() {
 
       <footer className="border-t border-gray-100 px-6 py-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between text-sm text-gray-400">
-          <Link href="/donde-estamos" className="hover:text-gray-900">← Cómo estamos</Link>
+          <Link href="/donde-estamos" className="hover:text-gray-900">← Medimos</Link>
           <Link href="/" className="hover:text-gray-900">{config.brand.shortName}</Link>
         </div>
       </footer>

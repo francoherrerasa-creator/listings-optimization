@@ -25,11 +25,11 @@ export default async function ListingsPage() {
             </span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
-            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Cómo estamos</Link>
+            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Medimos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Plan de Acción</Link>
+            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Accionamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Road to Excellence</Link>
+            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
             <span className="text-gray-300">·</span>
             <Link href="/pincali" className="hover:text-gray-900 transition-colors">Pincali</Link>
             <span className="text-gray-300">·</span>

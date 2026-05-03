@@ -65,12 +65,12 @@ export default async function RoadToExcellencePage() {
           <div className="flex items-center gap-2">
             <Link href="/" className="font-semibold text-sm tracking-tight hover:opacity-70 transition-opacity" style={{ color: config.brand.primaryColor }}>{config.brand.shortName}</Link>
             <span className="text-gray-300">·</span>
-            <span className="text-sm text-gray-500">Road to Excellence · {config.project.name}</span>
+            <span className="text-sm text-gray-500">Entregamos · {config.project.name}</span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-500">
-            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Plan de Acción</Link>
+            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Accionamos</Link>
             <span className="text-gray-300">·</span>
-            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Cómo estamos</Link>
+            <Link href="/donde-estamos" className="hover:text-gray-900 transition-colors">Medimos</Link>
             <span className="text-gray-300">·</span>
             <Link href="/listings" className="hover:text-gray-900 transition-colors">Listings</Link>
             <span className="text-gray-300">·</span>
@@ -83,12 +83,12 @@ export default async function RoadToExcellencePage() {
 
       <main className="flex-1 px-6 py-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>ROAD TO EXCELLENCE</h1>
-          <p className="text-sm text-gray-500 mb-8">Dónde queremos estar</p>
+          <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>ENTREGAMOS</h1>
+          <p className="text-sm text-gray-500 mb-8">De score 53 a 100</p>
 
-          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 max-w-4xl mb-10">
+          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
             <p className="text-base text-gray-700 leading-relaxed">
-              De 0 listings activados hoy a 10 listings al 100. Empezamos con lo que controlamos directo: TIER GO con Growth optimiza descripción y datos automáticamente. Después TIER PRO con Mona pide fotos y valida ubicación por WhatsApp. Y para cerrar, atacamos el LEAK: 4 listings con violaciones de política que requieren limpieza editorial. Threshold mínimo propuesto: 70. Meta deseable: 100. Hoy con la muestra de 10 podemos llegar al 10/10.
+              100% de listings al 100. El equipo de Growth optimiza descripción y datos automáticamente, después, Mona pide fotos y valida ubicación por WhatsApp. En paralelo, atacamos las Red Flags: 4 listings con violaciones de política que requieren acción inmediata. Mínimo esperado: 70. Meta deseable: 100.
             </p>
           </div>
 
@@ -96,8 +96,8 @@ export default async function RoadToExcellencePage() {
             {/* TIER GO */}
             <div className="border border-gray-100 rounded-lg p-6 bg-[#A7F3D0]">
               <div className="mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">TIER GO</h3>
-                <p className="text-xs text-green-700 mt-1">Growth</p>
+                <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER</p>
+                <h3 className="text-lg font-semibold text-gray-900">Growth</h3>
               </div>
               <p className="text-sm text-gray-700 mb-4">Acción: <strong>Optimizar Descripción + Datos faltantes</strong></p>
               <div className="flex items-center gap-3 mb-1 text-[10px] text-gray-400 uppercase">
@@ -116,8 +116,8 @@ export default async function RoadToExcellencePage() {
             {/* TIER PRO */}
             <div className="border border-gray-100 rounded-lg p-6 bg-[#DCFCE7]">
               <div className="mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">TIER PRO</h3>
-                <p className="text-xs text-green-600 mt-1">Mona</p>
+                <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER</p>
+                <h3 className="text-lg font-semibold text-gray-900">Mona</h3>
               </div>
               <p className="text-sm text-gray-600 mb-4">Acción: <strong>Pedir Fotos + Validar Ubicación + Confirmar Precio</strong></p>
               <div className="flex items-center gap-3 mb-1 text-[10px] text-gray-400 uppercase">
@@ -138,15 +138,16 @@ export default async function RoadToExcellencePage() {
           {/* Separator */}
           <div className="flex items-center gap-4 my-8">
             <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400">Y cuando atacamos el LEAK...</span>
+            <span className="text-xs text-gray-400">Acción Inmediata</span>
             <div className="flex-1 h-px bg-gray-200" />
           </div>
 
           {/* LEAK */}
           <div className="border border-red-200 bg-red-50 rounded-lg p-6">
             <div className="mb-3">
-              <h3 className="text-lg font-semibold text-gray-900">LEAK</h3>
-              <p className="text-xs text-red-600 mt-1">Growth</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER</p>
+              <h3 className="text-lg font-semibold text-gray-900">Red Flags</h3>
+              <p className="text-xs text-red-600 mt-1">Growth · Limpieza editorial automática</p>
             </div>
             <p className="text-sm text-gray-600 mb-3">Acción: Limpieza editorial automática de descripciones</p>
             <ul className="text-xs text-gray-600 space-y-1 mb-4 list-disc list-inside">
@@ -194,7 +195,7 @@ export default async function RoadToExcellencePage() {
               <p className="text-sm font-medium text-white">Con TIER GO + PRO: {level2.newScores.filter((s) => s >= 70).length} listings activados · Score {level2.avgScore}</p>
             </div>
             <div className="px-4 py-3 rounded-lg bg-red-50/50 border border-red-100/50">
-              <p className="text-sm font-medium text-red-500">Con LEAK fix: 0 listings con violaciones de política · base limpia</p>
+              <p className="text-sm font-medium text-red-500">Con Red Flags fix: 0 listings con violaciones de política · base limpia</p>
             </div>
           </div>
 
@@ -217,7 +218,7 @@ export default async function RoadToExcellencePage() {
 
       <footer className="border-t border-gray-100 px-6 py-6">
         <div className="max-w-5xl mx-auto flex items-center justify-between text-sm text-gray-400">
-          <Link href="/plan-de-accion" className="hover:text-gray-900">← Plan de Acción</Link>
+          <Link href="/plan-de-accion" className="hover:text-gray-900">← Accionamos</Link>
           <Link href="/" className="hover:text-gray-900">{config.brand.shortName}</Link>
         </div>
       </footer>
