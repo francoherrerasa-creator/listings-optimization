@@ -52,14 +52,22 @@ export default async function RoadToExcellencePage() {
                 <p>Automatización · 90% éxito · resuelve 31 flags</p>
                 <p>Mona AI · 50% respuesta · resuelve 9 flags</p>
               </div>
-              <p className="text-sm font-medium text-green-700 mt-3">Calidad: 54% a 93%</p>
+              <p className="text-sm font-medium text-green-700 mt-3">Calidad: 54% → 93%</p>
             </div>
             {/* Sales */}
             <div className="border border-yellow-200 bg-yellow-50 rounded-lg p-5">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: SALES</p>
               <h3 className="text-lg font-semibold text-gray-900 mt-1">Asignación de Asesor</h3>
-              <p className="text-xs text-gray-600 mt-3">Identificar y asignar asesor responsable a las 5 propiedades sin agente</p>
-              <p className="text-sm font-medium text-yellow-700 mt-3">5 → 0 propiedades sin asesor</p>
+              <div className="mt-3 space-y-3 text-xs text-gray-600">
+                <div>
+                  <p>▸ Identificar y asignar asesor responsable a las 5 propiedades sin agente</p>
+                  <p className="text-sm font-medium text-yellow-700 mt-1">5 → 0 propiedades sin asesor</p>
+                </div>
+                <div>
+                  <p>▸ Intervención humana cuando Mona AI no obtiene respuesta del asesor</p>
+                  <p className="text-sm font-medium text-yellow-700 mt-1">Calidad: 93% → 100%</p>
+                </div>
+              </div>
             </div>
             {/* Customer Success */}
             <div className="border border-cyan-200 bg-cyan-50 rounded-lg p-5">
@@ -67,13 +75,15 @@ export default async function RoadToExcellencePage() {
               <h3 className="text-lg font-semibold text-gray-900 mt-1">Reactivación de Propiedades</h3>
               <p className="text-xs text-gray-600 mt-3">Contactar a los asesores con propiedades sin actualizar {">"}90 días</p>
               <p className="text-sm font-medium text-cyan-700 mt-3">10 → 0 propiedades inactivas</p>
+              <p className="text-xs text-gray-400 italic mt-2">Habilita: respuesta del asesor cuando Mona AI contacta</p>
             </div>
             {/* Trust & Safety */}
             <div className="border border-red-200 bg-red-50 rounded-lg p-5">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: TRUST & SAFETY</p>
               <h3 className="text-lg font-semibold text-gray-900 mt-1">Resolución de Violaciones</h3>
               <p className="text-xs text-gray-600 mt-3">Limpieza editorial de descripciones con datos de contacto, nombres comerciales, CTAs directos</p>
-              <p className="text-sm font-medium text-red-600 mt-3">5 a 0 violaciones de política</p>
+              <p className="text-sm font-medium text-red-600 mt-3">5 → 0 violaciones de política</p>
+              <p className="text-xs text-gray-400 italic mt-2">Habilita: Pincali Ready en las 4 propiedades con Red Flags</p>
             </div>
           </div>
           {/* Marketing */}
