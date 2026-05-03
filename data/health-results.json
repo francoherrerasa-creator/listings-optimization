@@ -1,0 +1,2777 @@
+{
+  "timestamp": "2026-05-03T15:08:23.545Z",
+  "results": [
+    {
+      "publicId": "EB-B5525",
+      "totalFields": 15,
+      "totalHealthy": 6,
+      "overallHealthPercent": 40,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 33,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": false,
+      "redFlagsCount": 0
+    },
+    {
+      "publicId": "EB-B5526",
+      "totalFields": 15,
+      "totalHealthy": 8,
+      "overallHealthPercent": 53,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 2,
+          "healthyFields": 1,
+          "healthPercent": 33,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 3,
+          "fieldsWithFlags": 0,
+          "healthyFields": 3,
+          "healthPercent": 60,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 33,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": false,
+      "redFlagsCount": 0
+    },
+    {
+      "publicId": "EB-B5531",
+      "totalFields": 15,
+      "totalHealthy": 10,
+      "overallHealthPercent": 67,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 5,
+          "fieldsWithFlags": 1,
+          "healthyFields": 4,
+          "healthPercent": 80,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 33,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": false,
+      "redFlagsCount": 0
+    },
+    {
+      "publicId": "EB-B5534",
+      "totalFields": 15,
+      "totalHealthy": 7,
+      "overallHealthPercent": 47,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 20,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 33,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": false,
+      "redFlagsCount": 0
+    },
+    {
+      "publicId": "EB-C0135",
+      "totalFields": 15,
+      "totalHealthy": 11,
+      "overallHealthPercent": 73,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 2,
+          "healthyFields": 1,
+          "healthPercent": 33,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 5,
+          "fieldsWithFlags": 1,
+          "healthyFields": 4,
+          "healthPercent": 80,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 0,
+          "healthyFields": 3,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": false,
+      "redFlagsCount": 0
+    },
+    {
+      "publicId": "EB-C0152",
+      "totalFields": 15,
+      "totalHealthy": 7,
+      "overallHealthPercent": 47,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 2,
+          "healthyFields": 1,
+          "healthPercent": 33,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 40,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": false,
+      "redFlagsCount": 0
+    },
+    {
+      "publicId": "EB-C6349",
+      "totalFields": 15,
+      "totalHealthy": 9,
+      "overallHealthPercent": 60,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 3,
+          "healthPercent": 60,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": false,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": true,
+      "redFlagsCount": 2
+    },
+    {
+      "publicId": "EB-C6350",
+      "totalFields": 15,
+      "totalHealthy": 6,
+      "overallHealthPercent": 40,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 20,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 0,
+          "fieldsWithFlags": 1,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": true,
+      "redFlagsCount": 1
+    },
+    {
+      "publicId": "EB-C6351",
+      "totalFields": 15,
+      "totalHealthy": 8,
+      "overallHealthPercent": 53,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 4,
+          "fieldsWithFlags": 1,
+          "healthyFields": 3,
+          "healthPercent": 60,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": true,
+      "redFlagsCount": 1
+    },
+    {
+      "publicId": "EB-C6352",
+      "totalFields": 15,
+      "totalHealthy": 9,
+      "overallHealthPercent": 60,
+      "sections": [
+        {
+          "sectionId": "datos_basicos",
+          "sectionLabel": "Datos básicos",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 3,
+          "fieldsWithFlags": 1,
+          "healthyFields": 2,
+          "healthPercent": 67,
+          "fieldStatus": [
+            {
+              "key": "title",
+              "label": "Título",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "description",
+              "label": "Descripción",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "property_type",
+              "label": "Tipo de propiedad",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "precio_operacion",
+          "sectionLabel": "Precio y operación",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 2,
+          "fieldsWithFlags": 0,
+          "healthyFields": 2,
+          "healthPercent": 100,
+          "fieldStatus": [
+            {
+              "key": "operations[0].amount",
+              "label": "Precio",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "operations[0].commission.type",
+              "label": "Tipo de comisión",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "caracteristicas",
+          "sectionLabel": "Características",
+          "apiAvailable": true,
+          "totalFields": 5,
+          "filledFields": 5,
+          "fieldsWithFlags": 1,
+          "healthyFields": 4,
+          "healthPercent": 80,
+          "fieldStatus": [
+            {
+              "key": "bedrooms",
+              "label": "Recámaras",
+              "filled": true,
+              "hasFlag": true,
+              "healthy": false
+            },
+            {
+              "key": "bathrooms",
+              "label": "Baños",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "parking_spaces",
+              "label": "Estacionamientos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "construction_size",
+              "label": "M² construidos",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "lot_size",
+              "label": "M² terreno",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            }
+          ]
+        },
+        {
+          "sectionId": "ubicacion",
+          "sectionLabel": "Ubicación",
+          "apiAvailable": true,
+          "totalFields": 3,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "location.street",
+              "label": "Calle",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.postal_code",
+              "label": "Código postal",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "location.latitude",
+              "label": "Coordenadas (lat)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "amenidades",
+          "sectionLabel": "Amenidades",
+          "apiAvailable": false,
+          "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "features",
+              "label": "Amenidades (≥5)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "colaboracion",
+          "sectionLabel": "Colaboración y exclusividad",
+          "apiAvailable": false,
+          "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+          "totalFields": 2,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "exclusive",
+              "label": "Exclusividad",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            },
+            {
+              "key": "share_commission",
+              "label": "Comisión compartida",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "multimedia",
+          "sectionLabel": "Multimedia",
+          "apiAvailable": true,
+          "totalFields": 2,
+          "filledFields": 1,
+          "fieldsWithFlags": 0,
+          "healthyFields": 1,
+          "healthPercent": 50,
+          "fieldStatus": [
+            {
+              "key": "property_images_min_1",
+              "label": "Al menos 1 foto",
+              "filled": true,
+              "hasFlag": false,
+              "healthy": true
+            },
+            {
+              "key": "property_images_min_10",
+              "label": "≥10 fotos (recomendado)",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        },
+        {
+          "sectionId": "estatus",
+          "sectionLabel": "Estatus operativo",
+          "apiAvailable": false,
+          "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+          "totalFields": 1,
+          "filledFields": 0,
+          "fieldsWithFlags": 0,
+          "healthyFields": 0,
+          "healthPercent": 0,
+          "fieldStatus": [
+            {
+              "key": "status",
+              "label": "Estatus",
+              "filled": false,
+              "hasFlag": false,
+              "healthy": false
+            }
+          ]
+        }
+      ],
+      "hasRedFlags": true,
+      "redFlagsCount": 2
+    }
+  ],
+  "aggregate": {
+    "totalListings": 10,
+    "averageHealth": 54,
+    "bySection": {
+      "datos_basicos": {
+        "sectionLabel": "Datos básicos",
+        "apiAvailable": true,
+        "averageHealth": 57,
+        "totalListings": 10,
+        "listingsAt100": 0,
+        "listingsAt0": 0
+      },
+      "precio_operacion": {
+        "sectionLabel": "Precio y operación",
+        "apiAvailable": true,
+        "averageHealth": 100,
+        "totalListings": 10,
+        "listingsAt100": 10,
+        "listingsAt0": 0
+      },
+      "caracteristicas": {
+        "sectionLabel": "Características",
+        "apiAvailable": true,
+        "averageHealth": 50,
+        "totalListings": 10,
+        "listingsAt100": 0,
+        "listingsAt0": 1
+      },
+      "ubicacion": {
+        "sectionLabel": "Ubicación",
+        "apiAvailable": true,
+        "averageHealth": 30,
+        "totalListings": 10,
+        "listingsAt100": 1,
+        "listingsAt0": 4
+      },
+      "amenidades": {
+        "sectionLabel": "Amenidades",
+        "apiAvailable": false,
+        "apiGapNote": "El formulario tiene 30+ amenidades; la API pública solo expone 'features'",
+        "averageHealth": 0,
+        "totalListings": 10,
+        "listingsAt100": 0,
+        "listingsAt0": 10
+      },
+      "colaboracion": {
+        "sectionLabel": "Colaboración y exclusividad",
+        "apiAvailable": false,
+        "apiGapNote": "Campos exclusivity y commission_sharing no expuestos completamente en API pública",
+        "averageHealth": 0,
+        "totalListings": 10,
+        "listingsAt100": 0,
+        "listingsAt0": 10
+      },
+      "multimedia": {
+        "sectionLabel": "Multimedia",
+        "apiAvailable": true,
+        "averageHealth": 50,
+        "totalListings": 10,
+        "listingsAt100": 1,
+        "listingsAt0": 1
+      },
+      "estatus": {
+        "sectionLabel": "Estatus operativo",
+        "apiAvailable": false,
+        "apiGapNote": "El status (publicada/no publicada/reservada/etc.) no se expone en API pública",
+        "averageHealth": 0,
+        "totalListings": 10,
+        "listingsAt100": 0,
+        "listingsAt0": 10
+      }
+    },
+    "listingsByHealthBucket": {
+      "excellent": 0,
+      "good": 4,
+      "poor": 6
+    },
+    "totalRedFlags": 6,
+    "listingsWithRedFlags": 4
+  },
+  "projections": {
+    "postAutomation": {
+      "optimistic": {
+        "successRate": 1,
+        "avgHealth": 94,
+        "listingsAbove80": 10,
+        "pincaliReady": 6,
+        "perListing": [
+          {
+            "publicId": "EB-B5525",
+            "before": 40,
+            "after": 93
+          },
+          {
+            "publicId": "EB-B5526",
+            "before": 53,
+            "after": 93
+          },
+          {
+            "publicId": "EB-B5531",
+            "before": 67,
+            "after": 93
+          },
+          {
+            "publicId": "EB-B5534",
+            "before": 47,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C0135",
+            "before": 73,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C0152",
+            "before": 47,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6349",
+            "before": 60,
+            "after": 100
+          },
+          {
+            "publicId": "EB-C6350",
+            "before": 40,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6351",
+            "before": 53,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6352",
+            "before": 60,
+            "after": 93
+          }
+        ]
+      },
+      "conservative": {
+        "successRate": 0.9,
+        "avgHealth": 88,
+        "listingsAbove80": 10,
+        "pincaliReady": 6,
+        "perListing": [
+          {
+            "publicId": "EB-B5525",
+            "before": 40,
+            "after": 87
+          },
+          {
+            "publicId": "EB-B5526",
+            "before": 53,
+            "after": 87
+          },
+          {
+            "publicId": "EB-B5531",
+            "before": 67,
+            "after": 87
+          },
+          {
+            "publicId": "EB-B5534",
+            "before": 47,
+            "after": 87
+          },
+          {
+            "publicId": "EB-C0135",
+            "before": 73,
+            "after": 87
+          },
+          {
+            "publicId": "EB-C0152",
+            "before": 47,
+            "after": 87
+          },
+          {
+            "publicId": "EB-C6349",
+            "before": 60,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6350",
+            "before": 40,
+            "after": 87
+          },
+          {
+            "publicId": "EB-C6351",
+            "before": 53,
+            "after": 87
+          },
+          {
+            "publicId": "EB-C6352",
+            "before": 60,
+            "after": 87
+          }
+        ]
+      }
+    },
+    "postAutomationAndBotMona": {
+      "optimistic": {
+        "automationRate": 1,
+        "botMonaThreshold": 0.8,
+        "avgHealth": 100,
+        "listingsAbove80": 10,
+        "pincaliReady": 6,
+        "perListing": [
+          {
+            "publicId": "EB-B5525",
+            "before": 40,
+            "after": 100
+          },
+          {
+            "publicId": "EB-B5526",
+            "before": 53,
+            "after": 100
+          },
+          {
+            "publicId": "EB-B5531",
+            "before": 67,
+            "after": 100
+          },
+          {
+            "publicId": "EB-B5534",
+            "before": 47,
+            "after": 100
+          },
+          {
+            "publicId": "EB-C0135",
+            "before": 73,
+            "after": 100
+          },
+          {
+            "publicId": "EB-C0152",
+            "before": 47,
+            "after": 100
+          },
+          {
+            "publicId": "EB-C6349",
+            "before": 60,
+            "after": 100
+          },
+          {
+            "publicId": "EB-C6350",
+            "before": 40,
+            "after": 100
+          },
+          {
+            "publicId": "EB-C6351",
+            "before": 53,
+            "after": 100
+          },
+          {
+            "publicId": "EB-C6352",
+            "before": 60,
+            "after": 100
+          }
+        ],
+        "botMonaBreakdown": {
+          "EB-B5525": true,
+          "EB-B5526": true,
+          "EB-B5531": true,
+          "EB-B5534": true,
+          "EB-C0135": true,
+          "EB-C0152": true,
+          "EB-C6349": false,
+          "EB-C6350": true,
+          "EB-C6351": true,
+          "EB-C6352": true
+        }
+      },
+      "conservative": {
+        "automationRate": 0.9,
+        "botMonaThreshold": 0.5,
+        "avgHealth": 93,
+        "listingsAbove80": 10,
+        "pincaliReady": 6,
+        "perListing": [
+          {
+            "publicId": "EB-B5525",
+            "before": 40,
+            "after": 93
+          },
+          {
+            "publicId": "EB-B5526",
+            "before": 53,
+            "after": 93
+          },
+          {
+            "publicId": "EB-B5531",
+            "before": 67,
+            "after": 93
+          },
+          {
+            "publicId": "EB-B5534",
+            "before": 47,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C0135",
+            "before": 73,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C0152",
+            "before": 47,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6349",
+            "before": 60,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6350",
+            "before": 40,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6351",
+            "before": 53,
+            "after": 93
+          },
+          {
+            "publicId": "EB-C6352",
+            "before": 60,
+            "after": 93
+          }
+        ],
+        "botMonaBreakdown": {
+          "EB-B5525": true,
+          "EB-B5526": true,
+          "EB-B5531": true,
+          "EB-B5534": true,
+          "EB-C0135": true,
+          "EB-C0152": true,
+          "EB-C6349": false,
+          "EB-C6350": true,
+          "EB-C6351": true,
+          "EB-C6352": true
+        }
+      }
+    },
+    "postRedFlagsResolved": {
+      "optimistic": {
+        "pincaliReady": 10
+      },
+      "conservative": {
+        "pincaliReady": 10
+      }
+    }
+  }
+}

@@ -43,8 +43,3 @@ next-env.d.ts
 
 # Claude Code local settings
 .claude/settings.local.json
-
-# Scoring results (regenerable con npm run test:api, contiene datos voluminosos de API + LLM)
-/data/scoring-results.json
-/data/health-results.json
-/data/maturity-results.json

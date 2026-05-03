@@ -1,0 +1,850 @@
+{
+  "generatedAt": "2026-05-02T21:40:46.109Z",
+  "source": "easybroker_api_staging",
+  "totalInPincali": 1437,
+  "sampled": 10,
+  "results": [
+    {
+      "publicId": "EB-B5525",
+      "title": "Oficinas en Venta Torre Albia en Monterrey",
+      "propertyType": "Oficina",
+      "location": "Santa María, Monterrey, Nuevo León",
+      "operations": [
+        {
+          "type": "sale",
+          "amount": 2370844,
+          "currency": "MXN",
+          "formatted_amount": "$2,370,844",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/25525/51470/EB-B5525.jpg?version=1555544616&width=200",
+      "totalScore": 55,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 45,
+          "reasoning": "La descripción está incompleta (se corta abruptamente con 'El'), es genérica sin detallar características específicas del inmueble como tamaño, distribución o amenidades. No diferencia esta oficina de otras en el edificio."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 40,
+          "reasoning": "Listing muy incompleto (6/15 campos). Faltan datos críticos: bedrooms, bathrooms, parking_spaces, construction_size, lot_size, location.street, location.postal_code, images (>=10), features"
+        },
+        "photos_signal": {
+          "score": 55,
+          "reasoning": "Solo 4 fotos cuando la recomendación oficial es mínimo 10 para un recorrido virtual completo. Insuficiente para mostrar adecuadamente una oficina comercial."
+        },
+        "location_clarity": {
+          "score": 95,
+          "reasoning": "Ubicación completa y precisa con colonia (Santa María), ciudad (Monterrey), estado (Nuevo León) y coordenadas GPS. Permite filtrado correcto en búsquedas."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 4 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción incompleta o truncada - texto termina abruptamente con 'El'",
+        "Faltan datos críticos: sin información de m² de construcción para oficina comercial",
+        "Sin amenidades listadas para inmueble de 'primer nivel con acabados de lujo'",
+        "Cantidad de fotos muy por debajo de la recomendación oficial (4 vs 10 mínimo)"
+      ]
+    },
+    {
+      "publicId": "EB-B5526",
+      "title": "Departamento Amueblado en Renta San Jeronimo Monterrey",
+      "propertyType": "Departamento",
+      "location": "Monterrey Centro, Monterrey, Nuevo León",
+      "operations": [
+        {
+          "type": "rental",
+          "amount": 19500,
+          "currency": "MXN",
+          "formatted_amount": "$19,500",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/25526/51474/EB-B5526.jpg?version=1555544618&width=200",
+      "totalScore": 64,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 62,
+          "reasoning": "La descripción menciona características atractivas (Torre Arboretum, doble balcón, vista al jardín y alberca, buena ubicación) pero está incompleta (termina abruptamente en 'arterias viales a'). Falta información sobre amenidades del edificio, detalles del acabado 'amueblado' mencionado en el título, y características específicas de los 160m² con 2 recámaras."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 60,
+          "reasoning": "Listing parcialmente completo (9/15 campos). Campos faltantes: parking_spaces, lot_size, location.street, location.postal_code, images (>=10), features"
+        },
+        "photos_signal": {
+          "score": 68,
+          "reasoning": "Cuenta con 7 fotos, por debajo de las 10 recomendadas por EasyBroker. Para un departamento amueblado de 160m² con doble balcón y vistas destacables, se esperarían más imágenes que muestren un recorrido completo del inmueble, especialmente considerando que se promociona como 'precioso'."
+        },
+        "location_clarity": {
+          "score": 85,
+          "reasoning": "Ubicación clara con ciudad (Monterrey), estado (Nuevo León), zona (Monterrey Centro) y coordenadas GPS precisas. Sin embargo, falta la colonia específica (solo indica 'Monterrey Centro') y no hay calle ni código postal, lo cual limitaría filtros de búsqueda más específicos."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 7 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción truncada o incompleta - el texto termina abruptamente sin punto final",
+        "El título menciona 'Amueblado' y 'San Jeronimo' pero estos detalles no se desarrollan en la descripción",
+        "No se especifican amenidades del edificio mencionado (Torre Arboretum) que según descripción tiene jardín y alberca"
+      ]
+    },
+    {
+      "publicId": "EB-B5531",
+      "title": "Casa en Venta en La Encomienda en Escobedo Nl",
+      "propertyType": "Casa",
+      "location": "La Encomienda, General Escobedo, Nuevo León",
+      "operations": [
+        {
+          "type": "sale",
+          "amount": 3150000,
+          "currency": "MXN",
+          "formatted_amount": "$3,150,000",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/25531/51545/EB-B5531.jpg?version=1555544662&width=200",
+      "totalScore": 58,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 55,
+          "reasoning": "La descripción detalla distribución de la casa pero está incompleta (termina abruptamente con 'Recámara'). Falta información sobre acabados, antigüedad, servicios o características que diferencien la propiedad. Cumple con no incluir datos de contacto."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 73,
+          "reasoning": "Listing parcialmente completo (11/15 campos). Campos faltantes: location.street, location.postal_code, images (>=10), features"
+        },
+        "photos_signal": {
+          "score": 25,
+          "reasoning": "Solo 2 fotos cuando la recomendación oficial es mínimo 10 para un recorrido virtual completo. Insuficiente para mostrar adecuadamente una casa de 240m² con múltiples espacios (cochera, bodega, sala/comedor, cocina, terraza, jardín, estancia, 3 recámaras)."
+        },
+        "location_clarity": {
+          "score": 95,
+          "reasoning": "Ubicación completa y precisa: incluye colonia (La Encomienda), municipio (General Escobedo), estado (Nuevo León) y coordenadas GPS. Permite filtrado correcto en búsquedas."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 2 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Cantidad insuficiente de fotos (2/10 recomendadas) - no cumple con estándar de recorrido virtual",
+        "Descripción incompleta - el texto termina abruptamente sin finalizar la lista de recámaras",
+        "Sin amenidades listadas - una propiedad de $3.15M MXN debería especificar acabados, servicios y amenidades del fraccionamiento"
+      ]
+    },
+    {
+      "publicId": "EB-B5534",
+      "title": "Local Comercial en Renta en Guadalupe Nuevo Leon",
+      "propertyType": "Local comercial",
+      "location": "Misión Santa Cruz, Guadalupe, Nuevo León",
+      "operations": [
+        {
+          "type": "rental",
+          "amount": 13000,
+          "currency": "MXN",
+          "formatted_amount": "$13,000",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/25534/51579/EB-B5534.jpg?version=1555544683&width=200",
+      "totalScore": 52,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 35,
+          "reasoning": "Descripción extremadamente corta y genérica que no detalla características del inmueble. Solo menciona 'para Tecnología' y un ID interno sin valor para el cliente. No cumple con el estándar de descripción concisa que detalle características importantes."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 47,
+          "reasoning": "Listing muy incompleto (7/15 campos). Faltan datos críticos: bedrooms, bathrooms, parking_spaces, lot_size, location.street, location.postal_code, images (>=10), features"
+        },
+        "photos_signal": {
+          "score": 55,
+          "reasoning": "Solo 3 fotos cuando la recomendación oficial es mínimo 10 para crear un recorrido virtual efectivo. Insuficiente para que un prospecto evalúe adecuadamente el local comercial."
+        },
+        "location_clarity": {
+          "score": 85,
+          "reasoning": "Ubicación clara con colonia (Misión Santa Cruz), ciudad (Guadalupe) y estado (Nuevo León), más coordenadas GPS. Solo le falta código postal y dirección exacta para ser perfecta."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 3 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción de muy baja calidad - no diferencia el inmueble ni aporta información útil al prospecto",
+        "Cantidad de fotos muy por debajo del estándar recomendado (3 vs 10 mínimo sugerido)",
+        "Descripción contiene ID interno (ID-1342) sin contexto que no aporta valor al cliente final"
+      ]
+    },
+    {
+      "publicId": "EB-C0135",
+      "title": "Estupenda mansión en Zárate, Gran Buenos Aires. La residencia cuenta con 30 recá",
+      "propertyType": "Casa",
+      "location": "3 de Mayo II, La Paz, Baja California Sur",
+      "operations": [
+        {
+          "type": "sale",
+          "amount": 3000000,
+          "currency": "USD",
+          "formatted_amount": "US$ 3,000,000",
+          "commission": {
+            "type": "percentage",
+            "value": "10.0"
+          },
+          "unit": "total"
+        },
+        {
+          "type": "rental",
+          "amount": 50000,
+          "currency": "USD",
+          "formatted_amount": "US$ 50,000",
+          "commission": {
+            "type": "percentage",
+            "value": "6.0"
+          },
+          "unit": "total"
+        },
+        {
+          "type": "temporary_rental",
+          "amount": 52000,
+          "currency": "USD",
+          "formatted_amount": "US$ 52,000 por mes",
+          "period": "monthly"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/30135/116394/EB-C0135.png?version=1596730015&width=200",
+      "totalScore": 47,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 15,
+          "reasoning": "La descripción es completamente inapropiada: contiene una biografía de Edward James copiada de Wikipedia en inglés. No describe ninguna característica del inmueble. Viola políticas por contenido irrelevante y copiado."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 93,
+          "reasoning": "Listing bastante completo (14/15 campos). Falta: images (>=10)"
+        },
+        "photos_signal": {
+          "score": 55,
+          "reasoning": "Solo 5 fotos, por debajo de las 10 recomendadas. No alcanza para un recorrido virtual completo de una propiedad de este precio y tamaño."
+        },
+        "location_clarity": {
+          "score": 25,
+          "reasoning": "Ubicación contradictoria: el título menciona 'Zárate, Gran Buenos Aires' pero la ubicación registrada es '3 de Mayo II, La Paz, Baja California Sur'. Las coordenadas (42.27, 3.01) no corresponden a ninguna de las dos ubicaciones (parecen estar en Europa)."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 5 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción completamente inapropiada: contiene biografía de Wikipedia en inglés en lugar de descripción del inmueble",
+        "Título truncado: el título está cortado a mitad de palabra ('30 recá')",
+        "Ubicación inconsistente: el título menciona Zárate, Argentina pero la ubicación registrada es La Paz, México",
+        "Coordenadas geográficas incorrectas: (42.27, 3.01) no corresponden a ninguna ubicación mencionada",
+        "Amenidades contradictorias: 'Mascotas permitidas' y 'No se aceptan mascotas' listadas simultáneamente",
+        "Amenidades contradictorias: 'Permitido fumar' y 'Prohibido fumar' listadas simultáneamente",
+        "Inconsistencia en datos: 1 recámara con 3 baños y 400m² de construcción en 34m² de terreno es incoherente"
+      ]
+    },
+    {
+      "publicId": "EB-C0152",
+      "title": "Cambio en moneda",
+      "propertyType": "Casa",
+      "location": "20 de Noviembre, La Paz, Baja California Sur",
+      "operations": [
+        {
+          "type": "sale",
+          "amount": 8000000,
+          "currency": "MXN",
+          "formatted_amount": "$8,000,000",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": null,
+      "totalScore": 36,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 5,
+          "reasoning": "Descripción inválida: 'fasfas' es texto sin sentido que no describe el inmueble. Viola estándares de calidad mínimos."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 60,
+          "reasoning": "Listing parcialmente completo (9/15 campos). Campos faltantes: parking_spaces, construction_size, lot_size, location.postal_code, images (>=10), images (>=1)"
+        },
+        "photos_signal": {
+          "score": 0,
+          "reasoning": "Sin fotos (images_count: 0). No cumple con la recomendación mínima de 10 fotos para promover el inmueble."
+        },
+        "location_clarity": {
+          "score": 85,
+          "reasoning": "Ubicación completa con colonia, ciudad, estado y coordenadas verificables. Falta código postal pero es identificable para búsquedas."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": false,
+          "note": "Tiene 0 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción sin contenido válido: texto 'fasfas' no describe el inmueble",
+        "Sin fotografías: images_count es 0, no puede publicarse sin imágenes del inmueble",
+        "Título genérico 'Cambio en moneda' no sigue formato estándar (debería ser 'Casa en Venta en 20 de Noviembre, La Paz')",
+        "Falta información crítica: sin m² de construcción ni de terreno"
+      ]
+    },
+    {
+      "publicId": "EB-C6349",
+      "title": "DEPARTAMENTO EN RENTA EN EL AGUACATAL EN VALLE PONIENTE",
+      "propertyType": "Departamento",
+      "location": "El Aguacatal, Santa Catarina, Nuevo León",
+      "operations": [
+        {
+          "type": "rental",
+          "amount": 33200,
+          "currency": "MXN",
+          "formatted_amount": "$33,200",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/36349/126557/EB-C6349.jpg?version=1611968228&width=200",
+      "totalScore": 59,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 45,
+          "reasoning": "La descripción contiene información relevante del inmueble, pero viola políticas al incluir datos de contacto ('llame!') y promoción de la agencia ('Hassaf Bienes Raices'). El formato también tiene espacios excesivos que afectan la presentación."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 60,
+          "reasoning": "Listing parcialmente completo (9/15 campos). Campos faltantes: bathrooms, lot_size, location.street, location.postal_code, location.latitude, features"
+        },
+        "photos_signal": {
+          "score": 85,
+          "reasoning": "Cuenta con 11 fotos, cumpliendo la recomendación oficial de al menos 10. Aunque no podemos verificar el orden o calidad, la cantidad sugiere cobertura adecuada del inmueble."
+        },
+        "location_clarity": {
+          "score": 55,
+          "reasoning": "La ubicación indica colonia, ciudad y estado (El Aguacatal, Santa Catarina, Nuevo León), pero carece de coordenadas GPS, calle, código postal y número exterior, lo que limita su precisión en búsquedas y mapas."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Cumple: tiene 10+ imágenes"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción contiene información de contacto ('llame!') que viola políticas de EasyBroker",
+        "Descripción incluye promoción de agencia ('Hassaf Bienes Raices') que no corresponde al inmueble",
+        "Ubicación sin coordenadas GPS dificulta aparecer correctamente en filtros de búsqueda",
+        "Falta información de baños (campo en null) siendo un dato importante para compradores/inquilinos"
+      ]
+    },
+    {
+      "publicId": "EB-C6350",
+      "title": "LOCAL EN VENTA EN COLONIA DEL VALLE EN SAN PEDRO GARZA GARCÍA",
+      "propertyType": "Local",
+      "location": "Del Valle, San Pedro Garza García, Nuevo León",
+      "operations": [
+        {
+          "type": "sale",
+          "amount": 18125000,
+          "currency": "MXN",
+          "formatted_amount": "$18,125,000",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/36350/126568/EB-C6350.jpg?version=1611968237&width=200",
+      "totalScore": 45,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 45,
+          "reasoning": "La descripción incluye datos de contacto explícitos ('llame!', nombre de la agencia) lo cual viola las políticas de EasyBroker. Aunque detalla características del local (m2, ubicación en plaza, obra gris), la presencia de información de contacto es motivo de rechazo."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 40,
+          "reasoning": "Listing muy incompleto (6/15 campos). Faltan datos críticos: bedrooms, bathrooms, parking_spaces, lot_size, location.street, location.postal_code, location.latitude, images (>=10), features"
+        },
+        "photos_signal": {
+          "score": 35,
+          "reasoning": "Solo 3 fotos cuando la recomendación oficial es mínimo 10 para mostrar el inmueble como recorrido virtual. Insuficiente para que un comprador potencial evalúe adecuadamente un local comercial de este precio."
+        },
+        "location_clarity": {
+          "score": 55,
+          "reasoning": "Ubicación parcial con colonia, ciudad y estado, pero sin coordenadas (latitude/longitude null), calle, código postal ni números exteriores. Esto dificulta que aparezca correctamente en filtros de búsqueda geográfica."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 3 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción contiene datos de contacto (nombre de agencia 'Hassaf Bienes Raices' y llamado a acción 'llame!') - violación directa de políticas",
+        "Número insuficiente de fotos (3) para inmueble comercial de $18M MXN - experiencia de usuario deficiente",
+        "Falta información de ubicación precisa (coordenadas, calle, CP) - afecta visibilidad en búsquedas"
+      ]
+    },
+    {
+      "publicId": "EB-C6351",
+      "title": "CASA EN VENTA EN COLONIA DEL VALLE EN SAN PEDRO GARZA GARCÍA",
+      "propertyType": "Casa",
+      "location": "Del Valle, San Pedro Garza García, Nuevo León",
+      "operations": [
+        {
+          "type": "sale",
+          "amount": 30850000,
+          "currency": "MXN",
+          "formatted_amount": "$30,850,000",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/36351/126571/EB-C6351.jpg?version=1611968241&width=200",
+      "totalScore": 55,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 45,
+          "reasoning": "La descripción detalla características del inmueble pero viola política al incluir información de contacto ('Hassaf Bienes Raices') y llamado a acción comercial ('llame!'). Debe eliminarse el párrafo promocional de la empresa."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 60,
+          "reasoning": "Listing parcialmente completo (9/15 campos). Campos faltantes: parking_spaces, location.street, location.postal_code, location.latitude, images (>=10), features"
+        },
+        "photos_signal": {
+          "score": 65,
+          "reasoning": "Solo 6 fotos cuando la recomendación oficial es mínimo 10 para un recorrido virtual completo. Para una casa de 610 m² con múltiples espacios, faltan fotos que cubran todas las áreas mencionadas."
+        },
+        "location_clarity": {
+          "score": 55,
+          "reasoning": "Ubicación identificable (Del Valle, San Pedro Garza García, NL) pero sin coordenadas, calle, ni código postal. Esto limita la precisión en filtros de búsqueda y mapas."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 6 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción contiene información de contacto y promoción de marca ('Hassaf Bienes Raices' y 'llame!') que debe ser removida según políticas",
+        "Discrepancia crítica: indica 3 recámaras con baño cada una pero el sistema registra solo 1 baño total",
+        "Faltan amenidades importantes: no se listaron amenidades básicas mencionadas en descripción (jardín, terraza, área de asador, bodega, cuarto de servicio, lavandería)",
+        "Sin coordenadas geográficas para verificación exacta de ubicación"
+      ]
+    },
+    {
+      "publicId": "EB-C6352",
+      "title": "CASA EN VENTA EN FUENTES DEL VALLE EN SAN PEDRO GARZA GARCIA",
+      "propertyType": "Casa",
+      "location": "Fuentes del Valle, San Pedro Garza García, Nuevo León",
+      "operations": [
+        {
+          "type": "sale",
+          "amount": 28300000,
+          "currency": "MXN",
+          "formatted_amount": "$28,300,000",
+          "commission": {
+            "type": "percentage"
+          },
+          "unit": "total"
+        }
+      ],
+      "titleImageThumb": "https://assets.stagingeb.com/property_images/36352/126577/EB-C6352.jpg?version=1611968245&width=200",
+      "totalScore": 55,
+      "passes": false,
+      "dimensions": {
+        "description_quality": {
+          "score": 45,
+          "reasoning": "La descripción es detallada sobre la propiedad, pero viola políticas críticas de EasyBroker: incluye nombre de la inmobiliaria (Hassaf Bienes Raices), llamado a la acción de contacto directo ('llame!'), y lenguaje promocional de servicios externos. Debe enfocarse únicamente en el inmueble sin datos de contacto ni promoción de agente."
+        },
+        "price_plausibility": {
+          "score": 50,
+          "reasoning": "Pendiente: requiere datos de mercado para análisis comparativo. Score neutral asignado."
+        },
+        "data_completeness": {
+          "score": 67,
+          "reasoning": "Listing parcialmente completo (10/15 campos). Campos faltantes: location.street, location.postal_code, location.latitude, images (>=10), features"
+        },
+        "photos_signal": {
+          "score": 62,
+          "reasoning": "Con 6 fotos está por debajo de la recomendación oficial de 10+ para un recorrido virtual completo. Para una casa de 628 m² con múltiples áreas, se necesitan más imágenes que muestren todas las características descritas (recámaras, jardín, terraza, área de asador, etc.)."
+        },
+        "location_clarity": {
+          "score": 55,
+          "reasoning": "Tiene colonia, ciudad y estado identificables (Fuentes del Valle, San Pedro Garza García, Nuevo León), pero faltan coordenadas geográficas (latitude/longitude null) que son esenciales para aparecer correctamente en mapas y filtros de búsqueda. También falta calle y código postal."
+        }
+      },
+      "policyAlignment": {
+        "no_duplicates": {
+          "compliant": "unknown",
+          "note": "Requiere comparación con otros listings del mismo agente (futuro)"
+        },
+        "available_properties": {
+          "compliant": true,
+          "note": "El listing está publicado en la API, se asume disponible"
+        },
+        "images_promote_property": {
+          "compliant": true,
+          "note": "Tiene 6 imagen(es), se recomiendan al menos 10"
+        },
+        "real_price_location": {
+          "compliant": true,
+          "note": "Precio parece razonable (no es $1 MXN anzuelo)"
+        },
+        "matching_characteristics": {
+          "compliant": "unknown",
+          "note": "Requiere verificación cruzada con imágenes (futuro: visión por computadora)"
+        },
+        "no_fraudulent": {
+          "compliant": "requires_human",
+          "note": "Validación de fraude requiere revisión humana"
+        },
+        "bank_auctions_classified": {
+          "compliant": "requires_human",
+          "note": "No marcado como remate — si lo es, requiere reclasificación humana"
+        }
+      },
+      "flagsForModerationTeam": [
+        "Descripción contiene nombre de inmobiliaria (Hassaf Bienes Raices) y llamado a contacto directo",
+        "Texto promocional de servicios del agente en lugar de enfocarse únicamente en el inmueble",
+        "Ubicación sin coordenadas geográficas dificulta filtros de búsqueda por zona",
+        "Discrepancia: indica 4 recámaras cada una con baño, pero solo registra 1 baño en los datos estructurados",
+        "Sin amenidades listadas a pesar de mencionar múltiples features (terraza, jardín, área de asador, bodegas)"
+      ]
+    }
+  ],
+  "aggregates": {
+    "passRate": 0,
+    "avgScore": 53,
+    "avgByDimension": {
+      "description_quality": 40,
+      "price_plausibility": 50,
+      "data_completeness": 60,
+      "photos_signal": 51,
+      "location_clarity": 69
+    },
+    "topFlags": [
+      {
+        "flag": "Descripción incompleta o truncada - texto termina abruptamente con 'El'",
+        "count": 1
+      },
+      {
+        "flag": "Faltan datos críticos: sin información de m² de construcción para oficina comercial",
+        "count": 1
+      },
+      {
+        "flag": "Sin amenidades listadas para inmueble de 'primer nivel con acabados de lujo'",
+        "count": 1
+      },
+      {
+        "flag": "Cantidad de fotos muy por debajo de la recomendación oficial (4 vs 10 mínimo)",
+        "count": 1
+      },
+      {
+        "flag": "Descripción truncada o incompleta - el texto termina abruptamente sin punto final",
+        "count": 1
+      }
+    ]
+  }
+}
