@@ -38,7 +38,7 @@ export default function JourneyChart({ data }: JourneyChartProps) {
           <YAxis domain={[0, 100]} tick={{ fontSize: 12 }} />
           <Tooltip
             formatter={(value, name) => {
-              if (name === "health") return [`${value}%`, "Health"];
+              if (name === "health") return [`${value}%`, "Calidad"];
               return [value, "Pincali Ready"];
             }}
           />
@@ -70,7 +70,7 @@ export default function JourneyChart({ data }: JourneyChartProps) {
         ))}
       </div>
       <p className="text-[11px] text-gray-400 mt-3 text-center">
-        Threshold &ge;80% basado en estandar Amazon (LQS).
+        Threshold &ge;80% basado en estándar de calidad (LQS).
       </p>
     </div>
   );

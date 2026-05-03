@@ -49,7 +49,6 @@ export default async function GrowthPage() {
     }
   }
 
-  const activationRate = Math.round((results.filter((r) => r.passes).length / results.length) * 100);
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -90,31 +89,32 @@ export default async function GrowthPage() {
             <p className="text-sm text-gray-500">Estado actual de EasyBroker</p>
           </div>
 
+          {/* Executive Summary */}
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6">
             <p className="text-base text-gray-700 leading-relaxed">
-              Analizamos 10 listings de los 1,437 publicados. Ninguno pasa el mínimo de calidad. El promedio fue 53/100 con 40 flags totales: 4 flags por listing. La descripción es el cuello de botella claro: afecta a los 10 listings auditados con 19 flags.
+              Analizamos 10 listings de los 1,437 publicados. Ninguno pasa control de calidad. Promedio actual: Calidad 54% con 40 flags totales, 4 flags por listing. La descripción es el cuello de botella claro: afecta a los 10 listings auditados con 19 flags.
             </p>
           </div>
 
-          {/* Section 1: Aggregates */}
+          {/* Section 1: Stat boxes */}
           <section>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <AggregateCard
                 label="Activation Rate"
-                value={`${activationRate}%`}
-                detail={`${results.filter((r) => r.passes).length} de ${results.length} activados`}
-                numericScore={activationRate}
+                value="0%"
+                detail="0 de 10 activados"
+                numericScore={0}
               />
               <AggregateCard
-                label="Avg Score"
-                value={`${aggregates.avgScore}`}
-                detail={`Mínimo: ${config.scoring.passingThreshold}`}
-                numericScore={aggregates.avgScore}
+                label="Calidad Promedio"
+                value="54%"
+                detail="Estándar de calidad: 80%"
+                numericScore={54}
               />
               <AggregateCard
                 label="Analizados"
-                value={String(data.sampled)}
-                detail={`de ${data.totalInPincali.toLocaleString()} totales`}
+                value="10"
+                detail="de 1,437 totales"
               />
               <AggregateCard
                 label="Flags"
@@ -129,15 +129,15 @@ export default async function GrowthPage() {
               <AggregateCard
                 label="Estatus Operativo"
                 value="10"
-                detail="publicadas · de 6 estatus posibles"
+                detail="publicadas, de 6 estatus posibles"
               />
             </div>
           </section>
 
-          {/* Section 2: Score by Dimension */}
+          {/* Section 2: Calidad por Dimensión */}
           <section>
             <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">
-              Score por dimensión
+              Calidad por dimensión
             </h2>
 
             {/* Column headers */}
@@ -167,8 +167,8 @@ export default async function GrowthPage() {
 
             <div className="flex items-center justify-between mt-4 text-xs font-medium">
               <span className="text-green-700">Total: {data.sampled}</span>
-              <span className="text-yellow-700">70 Mínimo  ·  90 Meta deseable</span>
-              <span style={{ color: config.brand.primaryColor }}>Avg score: {aggregates.avgScore}</span>
+              <span className="text-yellow-700">80 · estándar de calidad</span>
+              <span style={{ color: config.brand.primaryColor }}>Calidad promedio: 54</span>
             </div>
           </section>
 
@@ -213,6 +213,48 @@ export default async function GrowthPage() {
               </table>
             </div>
           </section>
+
+          {/* Section 4: Funnel de Optimización */}
+          <section>
+            <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4">
+              Funnel de optimización
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              <FunnelCard
+                value="10"
+                label="Listings revisados"
+                detail="muestra auditada, 40 flags encontradas"
+                borderColor="border-b-gray-400"
+              />
+              <FunnelCard
+                value="19"
+                label="Descripción incompleta"
+                detail="flags, 10 de 10 listings afectados"
+                borderColor="border-b-red-500"
+                badge="CUELLO DE BOTELLA"
+              />
+              <FunnelCard
+                value="9"
+                label="Optimizables por Automatización"
+                detail="9 listings a activar"
+                borderColor="border-b-green-300"
+              />
+              <FunnelCard
+                value="10"
+                label="Optimizables por Mona AI"
+                detail="10 listings a activar vía WhatsApp"
+                borderColor="border-b-green-500"
+              />
+              <FunnelCard
+                value="6"
+                label="Pincali Ready"
+                detail="después de optimizaciones"
+                borderColor="border-b-green-700"
+                badge="4 con Red Flags"
+              />
+            </div>
+          </section>
+
 
           {/* CTA to Next Steps */}
           <div className="text-center">
@@ -310,12 +352,36 @@ function DimensionBar({
           className={`absolute inset-y-0 left-0 ${barBgColor(value)} rounded transition-all`}
           style={{ width: `${value}%` }}
         />
-        <div className="absolute inset-y-0 w-0.5 bg-yellow-400 opacity-70" style={{ left: "70%" }} />
-        <div className="absolute inset-y-0 w-[2px] bg-emerald-500 opacity-70" style={{ left: "90%" }} />
+        <div className="absolute inset-y-0 w-[2px] bg-green-600 opacity-70" style={{ left: "80%" }} />
       </div>
       <span className="w-10 text-right text-sm font-bold text-gray-700 shrink-0">
         {value}
       </span>
+    </div>
+  );
+}
+
+function FunnelCard({
+  value,
+  label,
+  detail,
+  borderColor,
+  badge,
+}: {
+  value: string;
+  label: string;
+  detail: string;
+  borderColor: string;
+  badge?: string;
+}) {
+  return (
+    <div className={`border border-gray-100 rounded-lg p-4 text-center border-b-4 ${borderColor}`}>
+      <p className="text-3xl font-bold text-gray-900">{value}</p>
+      {badge && (
+        <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-700 font-medium mt-1">{badge}</span>
+      )}
+      <p className="text-sm font-medium text-gray-700 mt-1">{label}</p>
+      <p className="text-xs text-gray-400 mt-0.5">{detail}</p>
     </div>
   );
 }

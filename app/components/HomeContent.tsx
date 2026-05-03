@@ -33,14 +33,14 @@ export default function HomeContent(props: HomeContentProps) {
   const chartData = [
     { name: "Hoy", health: props.currentHealth, pincaliReady: props.listingsAbove80Today },
     { name: "Automatizacion", health: s.postAutomation.avgHealth, pincaliReady: s.postAutomation.pincaliReady },
-    { name: "Bot Mona", health: s.postBotMona.avgHealth, pincaliReady: s.postBotMona.pincaliReady },
+    { name: "Mona AI", health: s.postBotMona.avgHealth, pincaliReady: s.postBotMona.pincaliReady },
     { name: "Red Flags", health: s.postBotMona.avgHealth, pincaliReady: s.postRedFlags.pincaliReady },
   ];
 
   const paragraph =
     scenario === "conservative"
-      ? `De los ${props.totalListings} listings analizados, ${props.listingsAbove80Today} cumplen el estandar de marketplace hoy (Health >=80%). Asumiendo 90% de exito en automatizacion y 50% de respuesta del asesor a Bot Mona, llevamos el inventario a Health ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`
-      : `De los ${props.totalListings} listings analizados, ${props.listingsAbove80Today} cumplen el estandar de marketplace hoy (Health >=80%). En escenario optimista (100% exito automatizacion + 80% respuesta a Bot Mona), llevamos el inventario a Health ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`;
+      ? `De los ${props.totalListings} listings analizados, ${props.listingsAbove80Today} cumplen el estándar de calidad hoy (Calidad >=80%). Asumiendo 90% de éxito en automatización y 50% de respuesta del asesor a Mona AI, llevamos el inventario a Calidad ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`
+      : `De los ${props.totalListings} listings analizados, ${props.listingsAbove80Today} cumplen el estándar de calidad hoy (Calidad >=80%). En escenario optimista (100% éxito automatización + 80% respuesta a Mona AI), llevamos el inventario a Calidad ${s.postBotMona.avgHealth}% promedio. Resolviendo Red Flags llegamos a ${s.postRedFlags.pincaliReady} Pincali Ready.`;
 
   return (
     <div className="mt-8 max-w-5xl mx-auto w-full">

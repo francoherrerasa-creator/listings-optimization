@@ -53,10 +53,26 @@ export default async function RoadToExcellencePage() {
             }}
           />
 
+          {/* Lateral cards */}
+          <div className="grid grid-cols-3 gap-3 mt-6">
+            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
+              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Sales</h4>
+              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">Sin acciones</span>
+            </div>
+            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
+              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Marketing</h4>
+              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">Sin acciones</span>
+            </div>
+            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
+              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Trust & Safety</h4>
+              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">Sin acciones</span>
+            </div>
+          </div>
+
           {/* Separator */}
           <div className="flex items-center gap-4 my-8">
             <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400">Accion Inmediata</span>
+            <span className="text-xs text-gray-400">Acción Inmediata</span>
             <div className="flex-1 h-px bg-gray-200" />
           </div>
 
@@ -65,13 +81,13 @@ export default async function RoadToExcellencePage() {
             <div className="mb-3">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER</p>
               <h3 className="text-lg font-semibold text-gray-900">Red Flags</h3>
-              <p className="text-xs text-red-600 mt-1">Growth, limpieza editorial automatica</p>
+              <p className="text-xs text-red-600 mt-1">Growth, limpieza editorial automática</p>
             </div>
-            <p className="text-sm text-gray-600 mb-3">Accion: Limpieza editorial automatica de descripciones</p>
+            <p className="text-sm text-gray-600 mb-3">Acción: Limpieza editorial automática de descripciones</p>
             <ul className="text-xs text-gray-600 space-y-1 mb-4 list-disc list-inside">
-              <li>Datos de contacto en descripcion (telefonos, emails, URLs)</li>
+              <li>Datos de contacto en descripción (teléfonos, emails, URLs)</li>
               <li>Nombres comerciales/inmobiliarias promocionados en copy</li>
-              <li>Llamados a accion comerciales directos</li>
+              <li>Llamados a acción comerciales directos</li>
               <li>Fraude potencial (precios anzuelo, remates clasificados)</li>
             </ul>
             <p className="text-sm font-medium text-red-700 mb-4">
@@ -83,22 +99,6 @@ export default async function RoadToExcellencePage() {
             >
               Ver Red Flags →
             </Link>
-          </div>
-
-          {/* Lateral cards */}
-          <div className="grid grid-cols-3 gap-3 mt-6">
-            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
-              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Sales</h4>
-              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">0 flags</span>
-            </div>
-            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
-              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Marketing</h4>
-              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">sin acciones</span>
-            </div>
-            <div className="border border-gray-100 rounded-lg p-4 bg-gray-50 text-center">
-              <h4 className="text-sm font-semibold text-gray-700 mb-1.5">Trust & Safety</h4>
-              <span className="px-3 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">0 alertas</span>
-            </div>
           </div>
 
           {/* Final phrase */}

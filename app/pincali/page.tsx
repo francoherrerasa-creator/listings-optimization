@@ -157,7 +157,7 @@ function EmptyState({
       <p className="text-gray-500 max-w-lg leading-relaxed mb-8">
         De {totalAnalyzed.toLocaleString()} propiedades analizadas, ninguna
         alcanza el criterio mínimo (score ≥ {threshold}). Esta vista demuestra
-        el filtro automático que se aplicaría en producción — solo listings de
+        el filtro automático que se aplicaría en producción: solo listings de
         alta calidad llegan al buscador.
       </p>
       <Link

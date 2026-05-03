@@ -1,8 +1,8 @@
 import { config } from "@/lib/config";
-import { loadScoringResults } from "@/lib/loadResults";
 import { loadHealthData } from "@/lib/loadHealth";
+import { loadMaturityData } from "@/lib/loadMaturity";
+import { MATURITY_LEVELS } from "@/lib/maturity";
 import Link from "next/link";
-import HomeContent from "./components/HomeContent";
 
 const features = [
   {
@@ -33,11 +33,19 @@ const stack = [
   "Vercel",
 ];
 
-export default async function Home() {
-  const data = await loadScoringResults();
-  const health = await loadHealthData();
+const levelDescriptions: Record<number, string> = {
+  1: "Asesor asignado + datos básicos (título, descripción, tipo)",
+  2: "5+ fotos + ubicación con colonia y ciudad",
+  3: "10+ fotos + Calidad 80%+",
+  4: "Video o tour virtual + comisión compartida",
+};
 
-  const { aggregate, projections } = health;
+export default async function Home() {
+  const health = await loadHealthData();
+  const maturity = await loadMaturityData();
+
+  const { aggregate } = health;
+  const total = maturity.results.length;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -73,7 +81,7 @@ export default async function Home() {
             }}
           >
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: config.brand.secondaryColor }} />
-            Live demo · {data.sampled} listings reales analizados
+            Live demo · {aggregate.totalListings} listings reales analizados
           </div>
 
           <h1
@@ -90,38 +98,47 @@ export default async function Home() {
           </p>
         </div>
 
-        {/* Dynamic section: toggle + chart + paragraph */}
-        <HomeContent
-          currentHealth={aggregate.averageHealth}
-          totalListings={aggregate.totalListings}
-          listingsAbove80Today={aggregate.listingsByHealthBucket.excellent}
-          optimistic={{
-            postAutomation: {
-              avgHealth: projections.postAutomation.optimistic.avgHealth,
-              pincaliReady: projections.postAutomation.optimistic.pincaliReady,
-            },
-            postBotMona: {
-              avgHealth: projections.postAutomationAndBotMona.optimistic.avgHealth,
-              pincaliReady: projections.postAutomationAndBotMona.optimistic.pincaliReady,
-            },
-            postRedFlags: {
-              pincaliReady: projections.postRedFlagsResolved.optimistic.pincaliReady,
-            },
-          }}
-          conservative={{
-            postAutomation: {
-              avgHealth: projections.postAutomation.conservative.avgHealth,
-              pincaliReady: projections.postAutomation.conservative.pincaliReady,
-            },
-            postBotMona: {
-              avgHealth: projections.postAutomationAndBotMona.conservative.avgHealth,
-              pincaliReady: projections.postAutomationAndBotMona.conservative.pincaliReady,
-            },
-            postRedFlags: {
-              pincaliReady: projections.postRedFlagsResolved.conservative.pincaliReady,
-            },
-          }}
-        />
+        {/* Funnel de Madurez del Listing */}
+        <div className="mt-10 max-w-3xl mx-auto w-full">
+          <h2 className="text-xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>
+            Pipeline de Calidad
+          </h2>
+          <p className="text-sm text-gray-500 mb-6">
+            Cómo el inventario avanza desde publicado hasta listo para generar revenue.
+          </p>
+
+          <div className="space-y-3">
+            {MATURITY_LEVELS.map((ml) => {
+              const count = maturity.counts[String(ml.level)] ?? 0;
+              const widthPercent = total > 0 ? Math.max((count / total) * 100, 4) : 4;
+              return (
+                <div key={ml.level} className={`flex items-center gap-4 p-4 border rounded-lg ${ml.color}`}>
+                  <div className="text-3xl font-bold w-12 text-center">{count}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-medium">Nivel {ml.level}: {ml.label}</p>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-0.5">{levelDescriptions[ml.level]}</p>
+                    <div className="mt-2 h-2 bg-white/50 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-current opacity-40 rounded-full"
+                        style={{ width: `${widthPercent}%` }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+        {/* Declarative paragraph */}
+        <div className="mt-8 max-w-3xl mx-auto w-full">
+          <p className="text-sm text-gray-600 leading-relaxed text-center">
+            El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva el inventario de Calidad 54% a 93% promedio. 10 de 10 listings quedan Pincali Ready tras resolver Red Flags.
+          </p>
+        </div>
 
         {/* Buttons - 6 in 3x2 grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 max-w-4xl mx-auto w-full">
