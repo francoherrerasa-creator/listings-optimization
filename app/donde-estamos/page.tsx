@@ -92,7 +92,7 @@ export default async function GrowthPage() {
 
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6">
             <p className="text-base text-gray-700 leading-relaxed">
-              Analizamos 10 listings de los 1,437 publicados. Ninguno pasa el mínimo de calidad. El promedio fue 53/100 con 40 flags totales — 4 flags por listing. La descripción es el cuello de botella claro: afecta a los 10 listings auditados con 19 flags, casi la mitad del total. Detrás de cada flag hay un asesor que publicó rápido y un comprador que se va. La calidad del inventario es la palanca directa del funnel free-to-paid.
+              Analizamos 10 listings de los 1,437 publicados. Ninguno pasa el mínimo de calidad. El promedio fue 53/100 con 40 flags totales: 4 flags por listing. La descripción es el cuello de botella claro: afecta a los 10 listings auditados con 19 flags.
             </p>
           </div>
 

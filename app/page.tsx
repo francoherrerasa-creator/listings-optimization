@@ -119,9 +119,11 @@ export default async function Home() {
               <p className="text-[11px] text-gray-500 mt-0.5">10 listings a activar vía WhatsApp</p>
             </div>
             {/* Stage 5 */}
-            <div className="border-b-4 border-green-700 rounded-lg p-4 text-center border border-gray-100 relative">
-              <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">4 listings con Red Flags</span>
-              <p className="text-2xl font-bold text-green-800">{results.length - 4}</p>
+            <div className="border-b-4 border-green-700 rounded-lg p-4 text-center border border-gray-100">
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-2xl font-bold text-green-800">{results.length - 4}</p>
+                <span className="px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">4 con Red Flags</span>
+              </div>
               <p className="text-xs font-medium text-gray-700 mt-1">Pincali Ready</p>
               <p className="text-[11px] text-gray-500 mt-0.5">después de optimizaciones</p>
             </div>
