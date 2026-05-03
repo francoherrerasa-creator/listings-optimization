@@ -54,23 +54,24 @@ export interface Config {
 export const config: Config = {
   brand: {
     name: "Franco Herrera Growth Lab",
-    shortName: "FHGL",
+    shortName: "INICIO",
     tagline: "Growth systems built with AI",
-    primaryColor: "#0F172A",
-    secondaryColor: "#3B82F6",
-    ownerName: "Francisco Franco Herrera Sánchez",
+    primaryColor: "#2A2EBE",
+    secondaryColor: "#5B5FE6",
+    ownerName: "Franco Herrera",
     ownerLinkedIn: "https://www.linkedin.com/in/franco-herrera/",
   },
   project: {
-    name: "Listing Quality Sync",
-    description: "AI-powered quality scoring para listings inmobiliarios",
+    name: "Free-to-paid Engine",
+    description: "Optimiza la calidad y conversión del inventario inmobiliario",
     context: "Prototipo construido para EasyBroker/Pincali",
     demoMode: true,
   },
   urls: {
     dashboardUrl: "https://listing-quality-sync.vercel.app",
-    githubUrl: "https://github.com/francoherrerasa-creator/listing-quality-sync",
-    parentLabUrl: "https://github.com/francoherrerasa-creator/franco-herrera-growth-lab",
+    // TODO: actualizar cuando se pushee el repo real
+    githubUrl: "https://github.com/francoherrerasa-creator/listings-optimization",
+    parentLabUrl: "https://github.com/francoherrerasa-creator",
   },
   dataSources: {
     primary: "easybroker_api",

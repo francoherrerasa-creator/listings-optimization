@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Listing Quality Sync — Franco Herrera Growth Lab",
-  description: "AI-powered quality scoring para listings inmobiliarios",
+  title: "Listings Optimization — Franco Herrera Growth Lab",
+  description: "Optimiza la calidad y conversión del inventario inmobiliario",
 };
 
 export default function RootLayout({
