@@ -228,7 +228,7 @@ export default async function GrowthPage() {
               </div>
               <div className="border-b-4 border-red-400 rounded-lg p-4 text-center border border-gray-100">
                 <p className="text-2xl font-bold text-red-600">19</p>
-                <p className="text-xs font-medium text-gray-700 mt-1">Descripción incompleta</p>
+                <p className="text-xs font-medium text-gray-700 mt-1">flags por descripción incompleta</p>
                 <p className="text-[11px] text-gray-500 mt-0.5">10 de 10 propiedades afectadas</p>
                 <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">CUELLO DE BOTELLA</span>
               </div>

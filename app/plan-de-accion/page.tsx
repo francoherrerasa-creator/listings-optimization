@@ -58,11 +58,12 @@ export default async function NextStepsPage() {
                 <p className="text-2xl font-bold text-yellow-700">{">"}90 días: 10</p>
                 <p className="text-xs text-gray-500 mt-1">Todas las propiedades sin actualización desde agosto 2024</p>
               </div>
-              {/* Card 3: Por operación */}
-              <div className="border border-gray-200 rounded-lg p-5">
-                <h4 className="text-xs font-semibold text-gray-700 mb-2">Por operación</h4>
-                <p className="text-2xl font-bold text-gray-700">Venta: 10 (100%)</p>
-                <p className="text-xs text-gray-500 mt-1">Distribución por tipo de operación</p>
+              {/* Card 3: Pincali Ready */}
+              <div className="border border-red-200 bg-red-50 rounded-lg p-5">
+                <h4 className="text-xs font-semibold text-gray-700 mb-2">Pincali Ready</h4>
+                <p className="text-2xl font-bold text-red-600">0</p>
+                <p className="text-xs text-gray-600 mt-1">Pincali Ready hoy</p>
+                <p className="text-[10px] text-gray-400 mt-1">40 flags en 10 publicaciones bloquean activación</p>
               </div>
               {/* Card 4: Riesgo de Churn */}
               <div className="border border-red-200 bg-red-50 rounded-lg p-5">
@@ -97,39 +98,39 @@ export default async function NextStepsPage() {
                     <tr className="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wide">
                       <th className="px-4 py-3 font-medium w-40">Equipo</th>
                       <th className="px-4 py-3 font-medium">Estrategia / Accionable</th>
-                      <th className="px-4 py-3 font-medium text-right w-28">Impacto</th>
+                      <th className="px-4 py-3 font-medium text-right w-36 whitespace-nowrap">Impacto</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-50">
                     <tr className="bg-green-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-green-700">Growth</td>
                       <td className="px-4 py-3 text-gray-700">Automatización: optimizar descripciones, datos básicos, ubicación, fotos research vía API</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">31 flags</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">31 flags</td>
                     </tr>
                     <tr className="bg-green-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-green-700">Growth</td>
                       <td className="px-4 py-3 text-gray-700">Mona AI: solicitar fotos premium y validaciones vía WhatsApp</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">9 flags</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">9 flags</td>
                     </tr>
                     <tr className="bg-yellow-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-yellow-700">Sales</td>
                       <td className="px-4 py-3 text-gray-700">Asignar asesor responsable a propiedades sin agente</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">5 propiedades</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">5 propiedades</td>
                     </tr>
                     <tr className="bg-cyan-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-cyan-700">Customer Success</td>
                       <td className="px-4 py-3 text-gray-700">Reactivar asesores con propiedades sin actualizar {">"}90 días</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">10 propiedades</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">10 propiedades</td>
                     </tr>
                     <tr className="bg-red-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-red-600">Trust & Safety</td>
                       <td className="px-4 py-3 text-gray-700">Resolver violaciones de política comercial</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">5 violaciones</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">5 violaciones</td>
                     </tr>
                     <tr className="bg-purple-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-purple-700">Producto</td>
                       <td className="px-4 py-3 text-gray-700">Exponer plan del asesor y tipo de asesor en API pública</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-700">API GAP</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">API GAP</td>
                     </tr>
                     <tr className="bg-gray-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-gray-500">Marketing</td>
