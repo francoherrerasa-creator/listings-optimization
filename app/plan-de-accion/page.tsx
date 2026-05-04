@@ -85,54 +85,42 @@ export default async function NextStepsPage() {
             <p className="text-xs mt-3" style={{ color: "var(--ink-3)" }}>* Métricas identificadas como críticas para el funnel free-to-paid. No expuestas en la API pública de EasyBroker.</p>
           </section>
 
-          {/* [2] Qué hacemos */}
+          {/* [2] Sistema Eva Multi-Bot */}
           <section className="mb-10">
-            <h3 className="label-eyebrow mb-4" style={{ opacity: 1, color: "var(--eb-blue-deep)" }}>Qué hacemos</h3>
+            <h3 className="label-eyebrow mb-4" style={{ opacity: 1, color: "var(--eb-blue-deep)" }}>Plan de acción · Sistema Eva</h3>
             <div className="card overflow-hidden" style={{ padding: 0 }}>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr style={{ background: "var(--paper-2)" }}>
-                      <th className="px-4 py-3 text-left w-40">Equipo</th>
-                      <th className="px-4 py-3 text-left">Estrategia / Accionable</th>
-                      <th className="px-4 py-3 text-right w-36 whitespace-nowrap">Impacto</th>
+                      <th className="px-4 py-3 text-left">KPI</th>
+                      <th className="px-4 py-3 text-center">Estado actual</th>
+                      <th className="px-4 py-3 text-left">Quién mueve</th>
+                      <th className="px-4 py-3 text-left">Acción concreta</th>
+                      <th className="px-4 py-3 text-center">Target 90 días</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr style={{ background: "#F0FDF4" }}>
-                      <td className="px-4 py-3 text-sm font-medium" style={{ color: "var(--green)" }}>Growth</td>
-                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Automatización: optimizar descripciones, datos básicos, ubicación, fotos research vía API</td>
-                      <td className="px-4 py-3 text-right font-medium" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>31 flags</td>
-                    </tr>
-                    <tr style={{ background: "#F0FDF4" }}>
-                      <td className="px-4 py-3 text-sm font-medium" style={{ color: "var(--green)" }}>Growth</td>
-                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Eva Quality: solicitar fotos premium y validaciones vía WhatsApp</td>
-                      <td className="px-4 py-3 text-right font-medium" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>9 flags</td>
-                    </tr>
-                    <tr style={{ background: "#FFFBEB" }}>
-                      <td className="px-4 py-3 text-sm font-medium" style={{ color: "var(--amber)" }}>Sales</td>
-                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Asignar asesor responsable a propiedades sin agente</td>
-                      <td className="px-4 py-3 text-right font-medium" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>5 propiedades</td>
-                    </tr>
-                    <tr style={{ background: "var(--eb-blue-soft)" }}>
-                      <td className="px-4 py-3 text-sm font-medium" style={{ color: "var(--eb-blue)" }}>Customer Success</td>
-                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Reactivar asesores con propiedades sin actualizar {">"}90 días</td>
-                      <td className="px-4 py-3 text-right font-medium" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>10 propiedades</td>
-                    </tr>
-                    <tr style={{ background: "#FEF2F2" }}>
-                      <td className="px-4 py-3 text-sm font-medium" style={{ color: "var(--red)" }}>Trust & Safety</td>
-                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Resolver violaciones de política comercial</td>
-                      <td className="px-4 py-3 text-right font-medium" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>5 violaciones</td>
-                    </tr>
-                    <tr style={{ background: "var(--eb-blue-soft)" }}>
-                      <td className="px-4 py-3 text-sm font-medium" style={{ color: "var(--eb-blue)" }}>Producto</td>
-                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Exponer plan del asesor y tipo de asesor en API pública</td>
-                      <td className="px-4 py-3 text-right font-medium" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>API GAP</td>
+                    <tr>
+                      <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Pincali Ready %</td>
+                      <td className="px-4 py-3 text-center font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>0/10 (0%)</td>
+                      <td className="px-4 py-3" style={{ color: "var(--eb-blue)" }}>Growth + Eva Quality</td>
+                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Eva Quality contacta asesor por WhatsApp, completa descripción y datos faltantes vía API EasyBroker en menos de 3 minutos</td>
+                      <td className="px-4 py-3 text-center font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>60%+</td>
                     </tr>
                     <tr style={{ background: "var(--paper-2)" }}>
-                      <td className="px-4 py-3 text-sm font-medium" style={{ color: "var(--ink-3)" }}>Marketing</td>
-                      <td className="px-4 py-3" style={{ color: "var(--ink-3)" }}>Sin acciones derivadas del diagnóstico actual</td>
-                      <td className="px-4 py-3 text-right" style={{ color: "var(--ink-3)" }}>-</td>
+                      <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Inventario zombie {">"}90 días sin actualizar</td>
+                      <td className="px-4 py-3 text-center font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>10/10 (100%)</td>
+                      <td className="px-4 py-3" style={{ color: "var(--eb-blue)" }}>Growth + Eva Reactivate</td>
+                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Eva Reactivate contacta asesor inactivo con data de zona (&ldquo;3 ventas cerca este mes&rdquo;), reactiva o reasigna</td>
+                      <td className="px-4 py-3 text-center font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>&lt;30%</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Listings sin asesor (agent:null)</td>
+                      <td className="px-4 py-3 text-center font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>5/10 (50%)</td>
+                      <td className="px-4 py-3" style={{ color: "var(--eb-blue)" }}>Growth + Eva Match</td>
+                      <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Eva Match conecta lead/comprador con asesores activos de la zona en menos de 5 minutos. Sales valida match</td>
+                      <td className="px-4 py-3 text-center font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>&lt;10%</td>
                     </tr>
                   </tbody>
                 </table>

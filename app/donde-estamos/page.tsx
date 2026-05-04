@@ -1,10 +1,21 @@
 import { config } from "@/lib/config";
 import { loadScoringResults } from "@/lib/loadResults";
+import { loadListingDates } from "@/lib/loadDates";
+import { loadMaturityData } from "@/lib/loadMaturity";
+import { MATURITY_LEVELS } from "@/lib/maturity";
 import Link from "next/link";
 
 export default async function GrowthPage() {
   const data = await loadScoringResults();
+  const datesData = await loadListingDates();
+  const maturityData = await loadMaturityData();
   const { aggregates, results } = data;
+
+  // Build lookup maps
+  const datesMap: Record<string, { created_at: string; updated_at: string; published_at: string | null }> = {};
+  for (const d of datesData.results) datesMap[d.publicId] = d;
+  const maturityMap: Record<string, number> = {};
+  for (const m of maturityData.results) maturityMap[m.publicId] = m.level;
 
   const worstDim = Object.entries(aggregates.avgByDimension).sort(
     (a, b) => a[1] - b[1],
@@ -33,21 +44,6 @@ export default async function GrowthPage() {
   // Flag counts by dimension
   const allFlags = results.flatMap((r) => r.flagsForModerationTeam);
   const totalFlags = allFlags.length;
-  const dimKeywords: Record<string, RegExp> = {
-    description_quality: /descripci[oó]n|texto|truncad|incompleta|contenido|t[ií]tulo/i,
-    data_completeness: /datos|campos|amenidades|informaci[oó]n|m²|baño|contacto|agencia|promoci[oó]n|llame|marca/i,
-    photos_signal: /foto|im[aá]gen/i,
-    location_clarity: /ubicaci[oó]n|mapa|geocod|coordenadas|geogr[aá]f|zona/i,
-    price_plausibility: /precio|valor|mercado|discrepancia/i,
-  };
-
-  const dimFlagCounts: Record<string, number> = {};
-  for (const dim of Object.keys(dimKeywords)) dimFlagCounts[dim] = 0;
-  for (const flag of allFlags) {
-    for (const [dim, regex] of Object.entries(dimKeywords)) {
-      if (regex.test(flag)) { dimFlagCounts[dim]++; break; }
-    }
-  }
 
 
   return (
@@ -174,46 +170,56 @@ export default async function GrowthPage() {
             </div>
           </section>
 
-          {/* Section 3: Flags by Dimension */}
+          {/* Section 3: Inventario por Listing */}
           <section>
-            <p className="section-tag">Flags por Dimensión</p>
+            <p className="section-tag">Inventario Detallado</p>
             <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>
-              Flags por dimensión
+              Estado por propiedad
             </h2>
-            <div className="card overflow-hidden" style={{ padding: 0 }}>
-              <table className="w-full text-sm">
-                <thead>
-                  <tr style={{ background: "var(--paper-2)" }}>
-                    <th className="px-4 py-3 text-left">Dimensión</th>
-                    <th className="px-4 py-3 text-center">Flags</th>
-                    <th className="px-4 py-3 text-center">Propiedades afectadas</th>
-                    <th className="px-4 py-3 text-center">Score</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.entries(dimFlagCounts)
-                    .sort((a, b) => b[1] - a[1])
-                    .map(([dim, flags]) => {
-                      const avg = aggregates.avgByDimension[dim] ?? 0;
-                      const affected = results.filter(
-                        (r) => r.dimensions[dim as keyof typeof r.dimensions]?.score < 70
-                      ).length;
-                      const scoreBg = avg >= 85 ? { background: "#D1FAE5", color: "#065F46" } : avg >= 70 ? { background: "#FEF3C7", color: "#92400E" } : { background: "#FEE2E2", color: "#991B1B" };
-                      return (
-                        <tr key={dim} style={flags > 10 ? { background: "#FEF2F220" } : {}}>
-                          <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>{dimensionLabels[dim] ?? dim}</td>
-                          <td className="px-4 py-3 text-center font-medium" style={{ fontFamily: "var(--font-mono)", color: "var(--eb-ink)" }}>{flags}</td>
-                          <td className="px-4 py-3 text-center" style={{ color: "var(--ink-2)" }}>{affected}</td>
-                          <td className="px-4 py-3 text-center">
-                            <span className="inline-block px-2 py-0.5 rounded text-xs font-medium" style={scoreBg}>
-                              {avg}
-                            </span>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {results.map((r) => {
+                const dates = datesMap[r.publicId];
+                const level = maturityMap[r.publicId] ?? 1;
+                const levelInfo = MATURITY_LEVELS.find(ml => ml.level === level)!;
+                const now = new Date();
+
+                const publishedDate = dates?.published_at ? new Date(dates.published_at) : dates?.created_at ? new Date(dates.created_at) : null;
+                const updatedDate = dates?.updated_at ? new Date(dates.updated_at) : null;
+
+                const daysPublished = publishedDate ? Math.floor((now.getTime() - publishedDate.getTime()) / (1000 * 60 * 60 * 24)) : null;
+                const daysUpdated = updatedDate ? Math.floor((now.getTime() - updatedDate.getTime()) / (1000 * 60 * 60 * 24)) : null;
+
+                const isZombie = daysPublished !== null && daysPublished > 90 && (level === 1 || level === 2);
+
+                return (
+                  <div key={r.publicId} className="card" style={isZombie ? { borderColor: "var(--red)", borderLeft: "4px solid var(--red)" } : { borderLeft: `4px solid ${levelInfo.color}` }}>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-medium" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "var(--eb-ink)" }}>{r.publicId}</span>
+                      {isZombie && (
+                        <span className="inline-block px-2 py-0.5 text-[10px] font-bold rounded" style={{ background: "#FEE2E2", color: "var(--red)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Zombie</span>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                      <div>
+                        <span className="label-eyebrow">Calidad</span>
+                        <p className="font-bold text-sm" style={{ color: r.totalScore >= 80 ? "var(--green)" : r.totalScore >= 50 ? "var(--amber)" : "var(--red)", fontFamily: "var(--font-mono)" }}>{r.totalScore}%</p>
+                      </div>
+                      <div>
+                        <span className="label-eyebrow">Status</span>
+                        <p className="font-medium text-sm" style={{ color: levelInfo.color }}>{levelInfo.label}</p>
+                      </div>
+                      <div>
+                        <span className="label-eyebrow">Días publicado</span>
+                        <p style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>{daysPublished !== null ? `${daysPublished} días` : "—"}</p>
+                      </div>
+                      <div>
+                        <span className="label-eyebrow">Última actualización</span>
+                        <p style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>{daysUpdated !== null ? `hace ${daysUpdated} días` : "—"}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
 

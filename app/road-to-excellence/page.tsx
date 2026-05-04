@@ -42,100 +42,61 @@ export default async function RoadToExcellencePage() {
             Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Eva Quality. Sales asigna asesor a las 5 propiedades huérfanas. Customer Success reactiva las 10 propiedades inactivas. Trust & Safety resuelve las 5 violaciones de política. Resultado: de 0 propiedades Pincali Ready hoy, llegamos a 10 cuando los frentes ejecutan en paralelo.
           </div>
 
-          {/* Ownership */}
-          <p className="section-tag">Ownership</p>
-          <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>Ownership</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            {/* Growth */}
-            <div className="card" style={{ borderColor: "var(--green)", background: "#F0FDF4" }}>
-              <p className="label-eyebrow">OWNER: GROWTH</p>
-              <h3 className="text-lg font-semibold mt-1" style={{ color: "var(--eb-ink)" }}>Calidad de la Propiedad</h3>
-              <div className="mt-3 space-y-2 text-xs" style={{ color: "var(--ink-2)" }}>
-                <p>Automatización · 90% éxito · resuelve 31 flags</p>
-                <p>Eva Quality · 50% respuesta · resuelve 9 flags</p>
-              </div>
-              <p className="text-sm font-medium mt-3" style={{ color: "var(--eb-blue)" }}>Calidad: 54% → 93%</p>
-            </div>
-            {/* Sales */}
-            <div className="card" style={{ borderColor: "var(--amber)", background: "#FFFBEB" }}>
-              <p className="label-eyebrow">OWNER: SALES</p>
-              <h3 className="text-lg font-semibold mt-1" style={{ color: "var(--eb-ink)" }}>Asignación de Asesor</h3>
-              <div className="mt-3 space-y-3 text-xs" style={{ color: "var(--ink-2)" }}>
-                <div>
-                  <p>Identificar y asignar asesor responsable a las 5 propiedades sin agente</p>
-                  <p className="text-sm font-medium mt-1" style={{ color: "var(--amber)" }}>5 → 0 propiedades sin asesor</p>
-                </div>
-                <div>
-                  <p>Intervención humana cuando el equipo de Growth no obtiene respuesta del asesor</p>
-                  <p className="text-sm font-medium mt-1" style={{ color: "var(--eb-blue)" }}>Calidad: 93% → 100%</p>
-                </div>
-              </div>
-            </div>
-            {/* Customer Success */}
-            <div className="card" style={{ borderColor: "var(--eb-blue)", background: "var(--eb-blue-soft)" }}>
-              <p className="label-eyebrow">OWNER: CUSTOMER SUCCESS</p>
-              <h3 className="text-lg font-semibold mt-1" style={{ color: "var(--eb-ink)" }}>Reactivación de Propiedades</h3>
-              <p className="text-xs mt-3" style={{ color: "var(--ink-2)" }}>Contactar a los asesores con propiedades sin actualizar {">"}90 días</p>
-              <p className="text-sm font-medium mt-3" style={{ color: "var(--eb-blue)" }}>10 → 0 propiedades inactivas</p>
-            </div>
-            {/* Trust & Safety */}
-            <div className="card" style={{ borderColor: "var(--red)", background: "#FEF2F2" }}>
-              <p className="label-eyebrow">OWNER: TRUST & SAFETY</p>
-              <h3 className="text-lg font-semibold mt-1" style={{ color: "var(--eb-ink)" }}>Resolución de Violaciones</h3>
-              <p className="text-xs mt-3" style={{ color: "var(--ink-2)" }}>Limpieza editorial de descripciones con datos de contacto, nombres comerciales, CTAs directos</p>
-              <p className="text-sm font-medium mt-3" style={{ color: "var(--red)" }}>5 → 0 violaciones de política</p>
-              <p className="text-xs italic mt-2" style={{ color: "var(--ink-3)" }}>Habilita: Pincali Ready en las 4 propiedades con Red Flags</p>
-            </div>
-          </div>
-          {/* Marketing */}
-          <div className="card mb-8" style={{ background: "var(--paper-2)" }}>
-            <p className="label-eyebrow">MARKETING</p>
-            <h3 className="text-sm font-medium mt-1" style={{ color: "var(--ink-3)" }}>Sin acciones derivadas del diagnóstico actual</h3>
-          </div>
-
-          {/* Resultado Final */}
-          <p className="section-tag mt-10">Resultado Final</p>
-          <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>Resultado Final</h2>
-          <p className="text-xs mb-4" style={{ color: "var(--ink-3)" }}>Foto del inventario después de la ejecución multi-equipo</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {/* Pincali Ready */}
-            <div className="card" style={{ borderColor: "var(--green)", background: "#F0FDF4" }}>
-              <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>10</p>
-              <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Pincali Ready activadas</p>
-              <p className="text-[11px] mt-1" style={{ color: "var(--ink-3)" }}>100% del inventario auditado listo para marketplace</p>
-            </div>
-            {/* Sin asesor */}
-            <div className="card" style={{ borderColor: "var(--green)", background: "#F0FDF4" }}>
-              <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>0</p>
-              <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Propiedades sin asesor</p>
-              <p className="text-[11px] mt-1" style={{ color: "var(--ink-3)" }}>Sales asignó asesor a las 5 propiedades huérfanas</p>
-            </div>
-            {/* Inactivas */}
-            <div className="card" style={{ borderColor: "var(--green)", background: "#F0FDF4" }}>
-              <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>0</p>
-              <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Propiedades inactivas</p>
-              <p className="text-[11px] mt-1" style={{ color: "var(--ink-3)" }}>Customer Success reactivó las 10 propiedades {">"}90 días</p>
-            </div>
-            {/* Churn */}
-            <div className="card" style={{ borderColor: "var(--green)", background: "#F0FDF4" }}>
-              <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>0 de 10</p>
-              <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Riesgo de Churn del Asesor</p>
-              <p className="text-[11px] mt-1" style={{ color: "var(--ink-3)" }}>Inventario activo, asesores conectados</p>
-            </div>
-            {/* API GAP 1 */}
-            <div className="card" style={{ background: "var(--paper-2)" }}>
-              <span className="badge inline-block mb-2">API GAP</span>
-              <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Por tipo de plan</p>
-              <p className="text-[11px] mt-1" style={{ color: "var(--ink-3)" }}>Pendiente: requiere acceso a datos internos de Producto</p>
-            </div>
-            {/* API GAP 2 */}
-            <div className="card" style={{ background: "var(--paper-2)" }}>
-              <span className="badge inline-block mb-2">API GAP</span>
-              <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Por tipo de asesor</p>
-              <p className="text-[11px] mt-1" style={{ color: "var(--ink-3)" }}>Pendiente: requiere acceso a datos internos de Producto</p>
+          {/* KPI Tracking Table */}
+          <p className="section-tag">KPIs de Seguimiento</p>
+          <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>Cómo medimos el éxito</h2>
+          <div className="card overflow-hidden mb-10" style={{ padding: 0 }}>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr style={{ background: "var(--paper-2)" }}>
+                    <th className="px-4 py-3 text-left">KPI</th>
+                    <th className="px-4 py-3 text-left">Métrica</th>
+                    <th className="px-4 py-3 text-center">Frecuencia</th>
+                    <th className="px-4 py-3 text-center">Owner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Pincali Ready %</td>
+                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>(Listings con calidad &ge;80%) / (Total listings activos)</td>
+                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
+                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth</td>
+                  </tr>
+                  <tr style={{ background: "var(--paper-2)" }}>
+                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Inventario zombie %</td>
+                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>(Listings {">"}90 días sin actualizar) / (Total listings)</td>
+                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
+                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth + CS</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Listings sin asesor %</td>
+                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>(Listings con agent:null) / (Total listings)</td>
+                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
+                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth + Sales</td>
+                  </tr>
+                  <tr style={{ background: "var(--paper-2)" }}>
+                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>MRR por upgrades</td>
+                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>$$ atribuido a actividad de Growth (Eva, lifecycle, SEO)</td>
+                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Mensual</td>
+                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>NPS post-Eva</td>
+                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Score de asesor después de interacción con cualquier versión de Eva</td>
+                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Mensual</td>
+                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth + CS</td>
+                  </tr>
+                  <tr style={{ background: "var(--paper-2)" }}>
+                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Lead response rate</td>
+                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>% conversaciones con respuesta del asesor en &lt;24h</td>
+                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
+                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Sales</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-          <p className="text-xs mb-8" style={{ color: "var(--ink-3)" }}>* Las 2 métricas marcadas como API GAP no se resuelven con el sistema actual. Requieren exposición de datos en API pública por parte del equipo de Producto.</p>
 
           {/* Impacto en Revenue */}
           <div className="flex items-center gap-4 my-8">
