@@ -1,21 +1,10 @@
 import { config } from "@/lib/config";
 import { loadScoringResults } from "@/lib/loadResults";
-import { loadListingDates } from "@/lib/loadDates";
-import { loadMaturityData } from "@/lib/loadMaturity";
-import { MATURITY_LEVELS } from "@/lib/maturity";
 import Link from "next/link";
 
 export default async function GrowthPage() {
   const data = await loadScoringResults();
-  const datesData = await loadListingDates();
-  const maturityData = await loadMaturityData();
   const { aggregates, results } = data;
-
-  // Build lookup maps
-  const datesMap: Record<string, { created_at: string; updated_at: string; published_at: string | null }> = {};
-  for (const d of datesData.results) datesMap[d.publicId] = d;
-  const maturityMap: Record<string, number> = {};
-  for (const m of maturityData.results) maturityMap[m.publicId] = m.level;
 
   const worstDim = Object.entries(aggregates.avgByDimension).sort(
     (a, b) => a[1] - b[1],
@@ -170,56 +159,44 @@ export default async function GrowthPage() {
             </div>
           </section>
 
-          {/* Section 3: Inventario por Listing */}
+          {/* Section 3: Qué más medimos */}
           <section>
-            <p className="section-tag">Inventario Detallado</p>
-            <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>
-              Estado por propiedad
+            <p className="section-tag">Qué más medimos</p>
+            <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>
+              Salud del inventario
             </h2>
+            <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>
+              Más allá de la calidad: cuánto tiempo lleva publicado, cuánto sin actualización, cuántos canales activos. Estas métricas anticipan churn y oportunidad.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {results.map((r) => {
-                const dates = datesMap[r.publicId];
-                const level = maturityMap[r.publicId] ?? 1;
-                const levelInfo = MATURITY_LEVELS.find(ml => ml.level === level)!;
-                const now = new Date();
-
-                const publishedDate = dates?.published_at ? new Date(dates.published_at) : dates?.created_at ? new Date(dates.created_at) : null;
-                const updatedDate = dates?.updated_at ? new Date(dates.updated_at) : null;
-
-                const daysPublished = publishedDate ? Math.floor((now.getTime() - publishedDate.getTime()) / (1000 * 60 * 60 * 24)) : null;
-                const daysUpdated = updatedDate ? Math.floor((now.getTime() - updatedDate.getTime()) / (1000 * 60 * 60 * 24)) : null;
-
-                const isZombie = daysPublished !== null && daysPublished > 90 && (level === 1 || level === 2);
-
-                return (
-                  <div key={r.publicId} className="card" style={isZombie ? { borderColor: "var(--red)", borderLeft: "4px solid var(--red)" } : { borderLeft: `4px solid ${levelInfo.color}` }}>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium" style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "var(--eb-ink)" }}>{r.publicId}</span>
-                      {isZombie && (
-                        <span className="inline-block px-2 py-0.5 text-[10px] font-bold rounded" style={{ background: "#FEE2E2", color: "var(--red)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Zombie</span>
-                      )}
-                    </div>
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
-                      <div>
-                        <span className="label-eyebrow">Calidad</span>
-                        <p className="font-bold text-sm" style={{ color: r.totalScore >= 80 ? "var(--green)" : r.totalScore >= 50 ? "var(--amber)" : "var(--red)", fontFamily: "var(--font-mono)" }}>{r.totalScore}%</p>
-                      </div>
-                      <div>
-                        <span className="label-eyebrow">Status</span>
-                        <p className="font-medium text-sm" style={{ color: levelInfo.color }}>{levelInfo.label}</p>
-                      </div>
-                      <div>
-                        <span className="label-eyebrow">Días publicado</span>
-                        <p style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>{daysPublished !== null ? `${daysPublished} días` : "—"}</p>
-                      </div>
-                      <div>
-                        <span className="label-eyebrow">Última actualización</span>
-                        <p style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>{daysUpdated !== null ? `hace ${daysUpdated} días` : "—"}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {/* Card 1: Antigüedad promedio */}
+              <div className="card">
+                <p className="label-eyebrow mb-2">Antigüedad promedio</p>
+                <p className="text-3xl font-extrabold" style={{ fontFamily: "var(--font-heading)", color: "var(--eb-ink)" }}>1,179 días</p>
+                <p className="text-[12.5px] mt-2" style={{ color: "var(--ink-2)" }}>Listings publicados desde febrero 2023. Indicador de retention silenciosamente roto.</p>
+              </div>
+              {/* Card 2: Última actualización promedio */}
+              <div className="card">
+                <p className="label-eyebrow mb-2">Última actualización promedio</p>
+                <p className="text-3xl font-extrabold" style={{ fontFamily: "var(--font-heading)", color: "var(--eb-ink)" }}>629 días</p>
+                <p className="text-[12.5px] mt-2" style={{ color: "var(--ink-2)" }}>Tiempo promedio desde el último cambio en cualquier campo. {">"}90 días = inventario zombie.</p>
+              </div>
+              {/* Card 3: Calidad promedio */}
+              <div className="card">
+                <p className="label-eyebrow mb-2">Calidad promedio</p>
+                <p className="text-3xl font-extrabold" style={{ fontFamily: "var(--font-heading)", color: "var(--red)" }}>53.6%</p>
+                <p className="text-[12.5px] mt-2" style={{ color: "var(--ink-2)" }}>Lejos del estándar Pincali Ready (&ge;80%). Eva Quality cierra el gap.</p>
+              </div>
+              {/* Card 4: Distribución por nivel */}
+              <div className="card">
+                <p className="label-eyebrow mb-2">Distribución por nivel</p>
+                <div className="space-y-1.5 text-sm" style={{ color: "var(--ink-2)" }}>
+                  <p><span style={{ color: "#EF4444" }}>&#9679;</span> Crítico (&lt;50%): <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600 }}>7 listings (70%)</span></p>
+                  <p><span style={{ color: "#F59E0B" }}>&#9679;</span> Standard (50-79%): <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600 }}>3 listings (30%)</span></p>
+                  <p><span style={{ color: "#10B981" }}>&#9679;</span> Pincali Ready (&ge;80%): <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600 }}>0 listings</span></p>
+                  <p><span style={{ color: "#1E3AD9" }}>&#9679;</span> Top Performer: <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600 }}>0 listings</span></p>
+                </div>
+              </div>
             </div>
           </section>
 
