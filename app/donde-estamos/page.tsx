@@ -85,7 +85,7 @@ export default async function GrowthPage() {
       <main className="flex-1 px-6 py-10">
         <div className="max-w-7xl mx-auto space-y-12">
           <div>
-            <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>MEDIMOS</h1>
+            <h1 className="text-2xl font-extrabold tracking-tight mb-1" style={{ color: config.brand.primaryColor }}>MEDIMOS</h1>
             <p className="text-sm text-gray-500">Estado actual de EasyBroker</p>
           </div>
 

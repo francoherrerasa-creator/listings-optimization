@@ -151,7 +151,7 @@ function EmptyState({
       <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-3xl mb-6">
         ⊘
       </div>
-      <h2 className="text-2xl font-bold text-gray-900 mb-3">
+      <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 mb-3">
         0 propiedades cumplen el mínimo esperado de calidad
       </h2>
       <p className="text-gray-500 max-w-lg leading-relaxed mb-8">

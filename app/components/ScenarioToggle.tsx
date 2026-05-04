@@ -12,7 +12,7 @@ export default function ScenarioToggle({ scenario, onChange }: ScenarioTogglePro
         onClick={() => onChange("conservative")}
         className={`px-4 py-1.5 text-sm font-medium transition-colors ${
           scenario === "conservative"
-            ? "bg-[#2A2EBE] text-white"
+            ? "bg-[#5B5FE9] text-white"
             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
         }`}
       >
@@ -22,7 +22,7 @@ export default function ScenarioToggle({ scenario, onChange }: ScenarioTogglePro
         onClick={() => onChange("optimistic")}
         className={`px-4 py-1.5 text-sm font-medium transition-colors ${
           scenario === "optimistic"
-            ? "bg-[#2A2EBE] text-white"
+            ? "bg-[#5B5FE9] text-white"
             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
         }`}
       >

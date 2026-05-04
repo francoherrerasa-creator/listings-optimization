@@ -29,8 +29,8 @@ export default function JourneyChart({ data }: JourneyChartProps) {
         <AreaChart data={data} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="healthGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#2A2EBE" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#2A2EBE" stopOpacity={0.05} />
+              <stop offset="5%" stopColor="#5B5FE9" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#5B5FE9" stopOpacity={0.05} />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -54,10 +54,10 @@ export default function JourneyChart({ data }: JourneyChartProps) {
           <Area
             type="monotone"
             dataKey="health"
-            stroke="#2A2EBE"
+            stroke="#5B5FE9"
             strokeWidth={2}
             fill="url(#healthGradient)"
-            dot={{ r: 5, fill: "#2A2EBE", stroke: "#fff", strokeWidth: 2 }}
+            dot={{ r: 5, fill: "#5B5FE9", stroke: "#fff", strokeWidth: 2 }}
             activeDot={{ r: 7 }}
           />
         </AreaChart>

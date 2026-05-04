@@ -33,7 +33,7 @@ export default async function NextStepsPage() {
 
       <main className="flex-1 px-6 py-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>ACCIONAMOS</h1>
+          <h1 className="text-2xl font-extrabold tracking-tight mb-1" style={{ color: config.brand.primaryColor }}>ACCIONAMOS</h1>
           <p className="text-sm text-gray-500 mb-8">Cada flag clasificado por equipo</p>
 
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
@@ -117,8 +117,8 @@ export default async function NextStepsPage() {
                       <td className="px-4 py-3 text-gray-700">Asignar asesor responsable a propiedades sin agente</td>
                       <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">5 propiedades</td>
                     </tr>
-                    <tr className="bg-cyan-50/50">
-                      <td className="px-4 py-3 text-sm font-medium text-cyan-700">Customer Success</td>
+                    <tr className="bg-[#5B5FE908]">
+                      <td className="px-4 py-3 text-sm font-medium text-[#5B5FE9]">Customer Success</td>
                       <td className="px-4 py-3 text-gray-700">Reactivar asesores con propiedades sin actualizar {">"}90 días</td>
                       <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">10 propiedades</td>
                     </tr>
@@ -127,8 +127,8 @@ export default async function NextStepsPage() {
                       <td className="px-4 py-3 text-gray-700">Resolver violaciones de política comercial</td>
                       <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">5 violaciones</td>
                     </tr>
-                    <tr className="bg-purple-50/50">
-                      <td className="px-4 py-3 text-sm font-medium text-purple-700">Producto</td>
+                    <tr className="bg-[#5B5FE908]">
+                      <td className="px-4 py-3 text-sm font-medium text-[#5B5FE9]">Producto</td>
                       <td className="px-4 py-3 text-gray-700">Exponer plan del asesor y tipo de asesor en API pública</td>
                       <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">API GAP</td>
                     </tr>

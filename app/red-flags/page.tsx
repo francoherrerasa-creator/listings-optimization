@@ -122,7 +122,7 @@ export default async function RedFlagsPage() {
 
       <main className="flex-1 px-6 py-10">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>RED FLAGS</h1>
+          <h1 className="text-2xl font-extrabold tracking-tight mb-1" style={{ color: config.brand.primaryColor }}>RED FLAGS</h1>
           <p className="text-sm text-gray-500 mb-8">Detección de violaciones a políticas comerciales</p>
 
           {/* Executive Summary */}

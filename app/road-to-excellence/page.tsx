@@ -31,7 +31,7 @@ export default async function RoadToExcellencePage() {
 
       <main className="flex-1 px-6 py-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-2xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>ENTREGAMOS</h1>
+          <h1 className="text-2xl font-extrabold tracking-tight mb-1" style={{ color: config.brand.primaryColor }}>ENTREGAMOS</h1>
           <p className="text-sm text-gray-500 mb-8">One team: de 0 a 10 Pincali Ready</p>
 
           {/* Executive Summary */}
@@ -70,11 +70,11 @@ export default async function RoadToExcellencePage() {
               </div>
             </div>
             {/* Customer Success */}
-            <div className="border border-cyan-200 bg-cyan-50 rounded-lg p-5">
+            <div className="border border-[#5B5FE930] bg-[#5B5FE908] rounded-lg p-5">
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER: CUSTOMER SUCCESS</p>
               <h3 className="text-lg font-semibold text-gray-900 mt-1">Reactivación de Propiedades</h3>
               <p className="text-xs text-gray-600 mt-3">Contactar a los asesores con propiedades sin actualizar {">"}90 días</p>
-              <p className="text-sm font-medium text-cyan-700 mt-3">10 → 0 propiedades inactivas</p>
+              <p className="text-sm font-medium text-[#5B5FE9] mt-3">10 → 0 propiedades inactivas</p>
             </div>
             {/* Trust & Safety */}
             <div className="border border-red-200 bg-red-50 rounded-lg p-5">

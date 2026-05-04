@@ -114,7 +114,7 @@ export default async function Home() {
 
         {/* Funnel de Madurez del Listing */}
         <div className="mt-10 max-w-3xl mx-auto w-full">
-          <h2 className="text-xl font-bold mb-1" style={{ color: config.brand.primaryColor }}>
+          <h2 className="text-xl font-extrabold tracking-tight mb-1" style={{ color: config.brand.primaryColor }}>
             Pipeline de Calidad
           </h2>
           <p className="text-lg text-gray-500 mb-6">Distribución de propiedades por nivel</p>
