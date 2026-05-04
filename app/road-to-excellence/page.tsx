@@ -98,6 +98,45 @@ export default async function RoadToExcellencePage() {
             </div>
           </div>
 
+          {/* Estado Meta */}
+          <section className="mb-10">
+            <p className="section-tag">Estado Meta</p>
+            <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>De dónde venimos, a dónde llegamos en 90 días</h2>
+            <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>El motor free-to-paid en 3 KPIs. Hoy vs el target del Plan 90 días.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Pincali Ready */}
+              <div className="card" style={{ borderLeft: "3px solid var(--eb-blue)" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "12px" }}>Pincali Ready %</p>
+                <div className="flex items-center justify-between gap-2">
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--red)", lineHeight: 1 }}>0%</p>
+                  <span style={{ fontSize: "28px", color: "var(--green)" }}>&rarr;</span>
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>60%+</p>
+                </div>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginTop: "12px" }}>Growth + Eva Quality</p>
+              </div>
+              {/* Inventario Zombie */}
+              <div className="card" style={{ borderLeft: "3px solid var(--eb-blue)" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "12px" }}>Inventario Zombie</p>
+                <div className="flex items-center justify-between gap-2">
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--red)", lineHeight: 1 }}>100%</p>
+                  <span style={{ fontSize: "28px", color: "var(--green)" }}>&rarr;</span>
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>&lt;30%</p>
+                </div>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginTop: "12px" }}>Growth + Eva Reactivate</p>
+              </div>
+              {/* Listings sin asesor */}
+              <div className="card" style={{ borderLeft: "3px solid var(--eb-blue)" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "12px" }}>Listings sin Asesor</p>
+                <div className="flex items-center justify-between gap-2">
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--red)", lineHeight: 1 }}>50%</p>
+                  <span style={{ fontSize: "28px", color: "var(--green)" }}>&rarr;</span>
+                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>&lt;10%</p>
+                </div>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginTop: "12px" }}>Growth + Eva Match</p>
+              </div>
+            </div>
+          </section>
+
           {/* Impacto en Revenue */}
           <div className="flex items-center gap-4 my-8">
             <div className="flex-1 h-px" style={{ background: "var(--eb-line)" }} />
