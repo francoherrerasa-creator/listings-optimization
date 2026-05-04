@@ -38,7 +38,7 @@ export default async function NextStepsPage() {
 
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
             <p className="text-base text-gray-700 leading-relaxed">
-              El diagnóstico revela 5 frentes simultáneos que requieren acciones concretas. Growth resuelve 40 flags de calidad con Automatización y Mona AI. Sales, Customer Success y Trust & Safety atacan los hallazgos operativos: propiedades sin asesor, propiedades inactivas y violaciones de política. Producto cierra los gaps de visibilidad en la API.
+              El diagnóstico revela 5 frentes simultáneos que requieren acciones concretas. Growth resuelve 40 flags de calidad con Automatización y Eva Quality. Sales, Customer Success y Trust & Safety atacan los hallazgos operativos: propiedades sin asesor, propiedades inactivas y violaciones de política. Producto cierra los gaps de visibilidad en la API.
             </p>
           </div>
 
@@ -109,7 +109,7 @@ export default async function NextStepsPage() {
                     </tr>
                     <tr className="bg-green-50/50">
                       <td className="px-4 py-3 text-sm font-medium text-green-700">Growth</td>
-                      <td className="px-4 py-3 text-gray-700">Mona AI: solicitar fotos premium y validaciones vía WhatsApp</td>
+                      <td className="px-4 py-3 text-gray-700">Eva Quality: solicitar fotos premium y validaciones vía WhatsApp</td>
                       <td className="px-4 py-3 text-right font-medium text-gray-700 whitespace-nowrap">9 flags</td>
                     </tr>
                     <tr className="bg-yellow-50/50">

@@ -153,7 +153,7 @@ export default async function Home() {
         {/* Declarative paragraph */}
         <div className="mt-8 max-w-3xl mx-auto w-full">
           <p className="text-base text-gray-600 leading-relaxed text-center">
-            El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva las propiedades de Calidad 54% a 93% promedio. 10 de 10 propiedades quedan Pincali Ready tras resolver Red Flags.
+            El equipo de Growth, con la estrategia de Automatización y Eva Quality, lleva las propiedades de Calidad 54% a 93% promedio. 10 de 10 propiedades quedan Pincali Ready tras resolver Red Flags.
           </p>
         </div>
 

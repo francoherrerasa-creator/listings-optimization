@@ -24,7 +24,7 @@ export default function EntregamosContent(props: EntregamosContentProps) {
 
   const subtitle = `One team: de 0 a 10 Pincali Ready`;
 
-  const executiveSummary = `El equipo de Growth, con la estrategia de Automatización y Mona AI, lleva las propiedades de Calidad ${props.currentHealth}% a ${s.postBotMonaHealth}% promedio. Automatización resuelve 14 de 15 campos medibles sin tocar al asesor. Mona AI cierra el último: pedir fotos premium vía WhatsApp. Pincali Ready depende de resolver Red Flags: 5 violaciones de política en 4 propiedades requieren acción inmediata.`;
+  const executiveSummary = `El equipo de Growth, con la estrategia de Automatización y Eva Quality, lleva las propiedades de Calidad ${props.currentHealth}% a ${s.postBotMonaHealth}% promedio. Automatización resuelve 14 de 15 campos medibles sin tocar al asesor. Eva Quality cierra el último: pedir fotos premium vía WhatsApp. Pincali Ready depende de resolver Red Flags: 5 violaciones de política en 4 propiedades requieren acción inmediata.`;
 
   return (
     <div>
@@ -38,7 +38,7 @@ export default function EntregamosContent(props: EntregamosContentProps) {
       <div className="border border-gray-100 rounded-lg p-6 bg-[#A7F3D0]">
         <div className="mb-4">
           <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER</p>
-          <h3 className="text-lg font-semibold text-gray-900">Growth Strategy: Automatización y Mona AI</h3>
+          <h3 className="text-lg font-semibold text-gray-900">Growth Strategy: Automatización y Eva Quality</h3>
         </div>
 
         {/* Sub-section 1: Automatización */}
@@ -59,9 +59,9 @@ export default function EntregamosContent(props: EntregamosContentProps) {
 
         <hr className="border-gray-300/50 my-4" />
 
-        {/* Sub-section 2: Mona AI */}
+        {/* Sub-section 2: Eva Quality */}
         <div>
-          <h4 className="text-sm font-semibold text-gray-800 mb-1">Mona AI (WhatsApp)</h4>
+          <h4 className="text-sm font-semibold text-gray-800 mb-1">Eva Quality (WhatsApp)</h4>
           <p className="text-sm text-gray-600 mb-2">
             Solicita al asesor fotos, ubicación exacta y confirmación de datos que solo el humano puede proveer.
           </p>
@@ -76,7 +76,7 @@ export default function EntregamosContent(props: EntregamosContentProps) {
         </div>
 
         <p className="text-xs text-gray-500 mt-4 pt-3 border-t border-gray-300/30">
-          Mona AI es herramienta del equipo Growth. Solo se activa cuando el campo requiere al asesor humano.
+          Eva Quality es herramienta del equipo Growth. Solo se activa cuando el campo requiere al asesor humano.
         </p>
       </div>
     </div>

@@ -37,7 +37,7 @@ export default async function RoadToExcellencePage() {
           {/* Executive Summary */}
           <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
             <p className="text-base text-gray-700 leading-relaxed">
-              Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Mona AI. Sales asigna asesor a las 5 propiedades huérfanas. Customer Success reactiva las 10 propiedades inactivas. Trust & Safety resuelve las 5 violaciones de política. Resultado: de 0 propiedades Pincali Ready hoy, llegamos a 10 cuando los frentes ejecutan en paralelo.
+              Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Eva Quality. Sales asigna asesor a las 5 propiedades huérfanas. Customer Success reactiva las 10 propiedades inactivas. Trust & Safety resuelve las 5 violaciones de política. Resultado: de 0 propiedades Pincali Ready hoy, llegamos a 10 cuando los frentes ejecutan en paralelo.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export default async function RoadToExcellencePage() {
               <h3 className="text-lg font-semibold text-gray-900 mt-1">Calidad de la Propiedad</h3>
               <div className="mt-3 space-y-2 text-xs text-gray-600">
                 <p>Automatización · 90% éxito · resuelve 31 flags</p>
-                <p>Mona AI · 50% respuesta · resuelve 9 flags</p>
+                <p>Eva Quality · 50% respuesta · resuelve 9 flags</p>
               </div>
               <p className="text-sm font-medium mt-3" style={{ color: config.brand.primaryColor }}>Calidad: 54% → 93%</p>
             </div>
