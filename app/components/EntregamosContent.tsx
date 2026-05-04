@@ -28,54 +28,54 @@ export default function EntregamosContent(props: EntregamosContentProps) {
 
   return (
     <div>
-      <p className="text-sm text-gray-500 mb-4">{subtitle}</p>
+      <p className="text-sm mb-4" style={{ color: "var(--ink-3)" }}>{subtitle}</p>
 
-      <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6 mb-10">
-        <p className="text-base text-gray-700 leading-relaxed">{executiveSummary}</p>
+      <div className="highlight-block mb-10">
+        <p className="leading-relaxed" style={{ color: "var(--ink-2)" }}>{executiveSummary}</p>
       </div>
 
       {/* Growth card */}
-      <div className="border border-gray-100 rounded-lg p-6 bg-[#A7F3D0]">
+      <div className="card" style={{ borderColor: "var(--green)", background: "#D1FAE5" }}>
         <div className="mb-4">
-          <p className="text-[10px] text-gray-400 uppercase tracking-wide">OWNER</p>
-          <h3 className="text-lg font-semibold text-gray-900">Growth Strategy: Automatización y Eva Quality</h3>
+          <p className="label-eyebrow">OWNER</p>
+          <h3 className="text-lg font-semibold" style={{ color: "var(--eb-ink)" }}>Growth Strategy: Automatización y Eva Quality</h3>
         </div>
 
         {/* Sub-section 1: Automatización */}
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-800 mb-1">Automatización</h4>
-          <p className="text-sm text-gray-600 mb-2">
+          <h4 className="text-sm font-semibold mb-1" style={{ color: "var(--eb-ink)" }}>Automatización</h4>
+          <p className="text-sm mb-2" style={{ color: "var(--ink-2)" }}>
             Optimiza descripción, datos básicos y campos faltantes de forma automática vía API.
           </p>
           <div className="flex gap-4 text-sm">
-            <span className="px-3 py-1 bg-white/60 rounded-full text-gray-700">
+            <span className="badge">
               Tasa de éxito: {Math.round(s.automationRate * 100)}%
             </span>
-            <span className="px-3 py-1 bg-white/60 rounded-full text-gray-700">
+            <span className="badge">
               Calidad promedio: {props.currentHealth}% → {s.postAutomationHealth}%
             </span>
           </div>
         </div>
 
-        <hr className="border-gray-300/50 my-4" />
+        <hr style={{ borderColor: "var(--eb-line)", opacity: 0.5 }} className="my-4" />
 
         {/* Sub-section 2: Eva Quality */}
         <div>
-          <h4 className="text-sm font-semibold text-gray-800 mb-1">Eva Quality (WhatsApp)</h4>
-          <p className="text-sm text-gray-600 mb-2">
+          <h4 className="text-sm font-semibold mb-1" style={{ color: "var(--eb-ink)" }}>Eva Quality (WhatsApp)</h4>
+          <p className="text-sm mb-2" style={{ color: "var(--ink-2)" }}>
             Solicita al asesor fotos, ubicación exacta y confirmación de datos que solo el humano puede proveer.
           </p>
           <div className="flex gap-4 text-sm">
-            <span className="px-3 py-1 bg-white/60 rounded-full text-gray-700">
+            <span className="badge">
               Tasa de respuesta: {Math.round(s.botMonaThreshold * 100)}%
             </span>
-            <span className="px-3 py-1 bg-white/60 rounded-full text-gray-700">
+            <span className="badge">
               Calidad promedio: {s.postAutomationHealth}% → {s.postBotMonaHealth}%
             </span>
           </div>
         </div>
 
-        <p className="text-xs text-gray-500 mt-4 pt-3 border-t border-gray-300/30">
+        <p className="text-xs mt-4 pt-3" style={{ borderTop: "1px solid var(--eb-line)", color: "var(--ink-3)" }}>
           Eva Quality es herramienta del equipo Growth. Solo se activa cuando el campo requiere al asesor humano.
         </p>
       </div>

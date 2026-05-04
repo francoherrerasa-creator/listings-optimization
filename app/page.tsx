@@ -6,19 +6,19 @@ import Link from "next/link";
 
 const features = [
   {
-    title: "🔌 API EasyBroker",
+    title: "API EasyBroker",
     subtitle: "Datos Reales",
     description:
       "Conexión directa al inventario. 1,437 propiedades reales del entorno staging. La transición a producción es cambiar una API key.",
   },
   {
-    title: "🛡️ Evaluación Automática",
+    title: "Evaluación Automática",
     subtitle: "Safety Compliance",
     description:
       "Seguimos las 7 políticas oficiales de publicación de EasyBroker. Cada propiedad evaluada en 5 dimensiones: descripción, precio, datos faltantes, fotos y ubicación.",
   },
   {
-    title: "🎯 Next Steps",
+    title: "Next Steps",
     subtitle: "Acciones Claras",
     description:
       "Canales de acción derivados de los datos: cada flag detectado se convierte en un ticket accionable para el equipo.",
@@ -62,23 +62,23 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" style={{ background: "var(--paper)" }}>
       {/* Header */}
-      <header className="border-b border-gray-100 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
+      <header style={{ background: "var(--paper)", borderBottom: "1px solid var(--eb-line)" }} className="px-6 py-4">
+        <div className="container-main flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span
               className="font-semibold text-sm tracking-tight"
-              style={{ color: config.brand.primaryColor }}
+              style={{ color: "var(--eb-blue)" }}
             >
               {config.brand.shortName}
             </span>
-            <span className="text-gray-300">·</span>
-            <span className="text-sm text-gray-500">
+            <span style={{ color: "var(--eb-line)" }}>·</span>
+            <span className="text-sm" style={{ color: "var(--ink-3)" }}>
               {config.project.name}
             </span>
           </div>
-          <span className="text-xs text-gray-400">v0.1 · Mayo 2026</span>
+          <span className="text-xs" style={{ color: "var(--ink-3)" }}>v0.1 · Mayo 2026</span>
         </div>
       </header>
 
@@ -87,26 +87,21 @@ export default async function Home() {
         <div className="max-w-3xl mx-auto text-center">
           {/* Live badge */}
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 border rounded-full text-sm mb-4"
-            style={{
-              backgroundColor: "#5B5FE610",
-              borderColor: "#5B5FE640",
-              color: config.brand.primaryColor,
-            }}
+            className="badge inline-flex items-center gap-2 px-3 py-1.5 mb-4"
           >
-            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: config.brand.secondaryColor }} />
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "var(--green)" }} />
             Live demo · {aggregate.totalListings} propiedades reales analizadas
           </div>
 
           <h1
-            className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-2"
-            style={{ color: config.brand.primaryColor }}
+            className="mb-2"
+            style={{ color: "var(--eb-blue)", fontSize: "clamp(40px, 5.8vw, 78px)", fontWeight: 800, letterSpacing: "-0.045em" }}
           >
             Free-to-paid Engine
           </h1>
           <p
             className="text-xl md:text-2xl font-medium tracking-tight"
-            style={{ color: config.brand.secondaryColor }}
+            style={{ color: "var(--eb-blue-deep)" }}
           >
             Property Optimization
           </p>
@@ -114,10 +109,11 @@ export default async function Home() {
 
         {/* Funnel de Madurez del Listing */}
         <div className="mt-10 max-w-3xl mx-auto w-full">
-          <h2 className="text-xl font-extrabold tracking-tight mb-1" style={{ color: config.brand.primaryColor }}>
+          <p className="section-tag">Pipeline de Calidad</p>
+          <h2 style={{ color: "var(--eb-ink)" }} className="mb-1">
             Pipeline de Calidad
           </h2>
-          <p className="text-lg text-gray-500 mb-6">Distribución de propiedades por nivel</p>
+          <p className="text-sm mb-6" style={{ color: "var(--ink-3)" }}>Distribución de propiedades por nivel</p>
 
           <div className="space-y-3">
             {MATURITY_LEVELS.map((ml) => {
@@ -125,23 +121,23 @@ export default async function Home() {
               const widthPercent = total > 0 ? Math.max((count / total) * 100, 4) : 4;
               const levelAvgHealth = avgHealthByLevel[ml.level];
               return (
-                <div key={ml.level} className={`flex items-center gap-4 p-4 border rounded-lg ${ml.color}`}>
-                  <div className="text-3xl font-bold w-12 text-center">{count}</div>
+                <div key={ml.level} className="card flex items-center gap-4">
+                  <div className="text-3xl font-bold w-12 text-center" style={{ color: "var(--eb-blue)" }}>{count}</div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <p className="text-sm font-medium">Nivel {ml.level}: {ml.label}</p>
+                      <p className="text-sm font-medium" style={{ color: "var(--eb-ink)" }}>Nivel {ml.level}: {ml.label}</p>
                     </div>
-                    <p className="text-xs text-gray-500 mt-0.5">{levelDescriptions[ml.level]}</p>
-                    <div className="mt-2 h-2 bg-white/50 rounded-full overflow-hidden">
+                    <p className="text-xs mt-0.5" style={{ color: "var(--ink-3)" }}>{levelDescriptions[ml.level]}</p>
+                    <div className="mt-2 h-2 rounded-full overflow-hidden" style={{ background: "var(--eb-line)" }}>
                       <div
-                        className="h-full bg-current opacity-40 rounded-full"
-                        style={{ width: `${widthPercent}%` }}
+                        className="h-full rounded-full"
+                        style={{ width: `${widthPercent}%`, background: "var(--eb-blue)", opacity: 0.5 }}
                       />
                     </div>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="text-xs text-gray-500">Calidad promedio</p>
-                    <p className="text-lg font-bold">{levelAvgHealth !== undefined ? `${levelAvgHealth}%` : "-"}</p>
+                    <p className="text-xs" style={{ color: "var(--ink-3)" }}>Calidad promedio</p>
+                    <p className="text-lg font-bold" style={{ fontFamily: "var(--font-mono)", color: "var(--eb-ink)" }}>{levelAvgHealth !== undefined ? `${levelAvgHealth}%` : "-"}</p>
                   </div>
                 </div>
               );
@@ -152,28 +148,30 @@ export default async function Home() {
 
         {/* Declarative paragraph */}
         <div className="mt-8 max-w-3xl mx-auto w-full">
-          <p className="text-base text-gray-600 leading-relaxed text-center">
+          <div className="highlight-block">
             El equipo de Growth, con la estrategia de Automatización y Eva Quality, lleva las propiedades de Calidad 54% a 93% promedio. 10 de 10 propiedades quedan Pincali Ready tras resolver Red Flags.
-          </p>
+          </div>
         </div>
 
-        {/* Buttons - 6 in 3x2 grid */}
+        {/* Buttons - 7 in grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8 max-w-3xl mx-auto w-full">
-          <Link href="/donde-estamos" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">MEDIMOS</Link>
-          <Link href="/plan-de-accion" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>ACCIONAMOS</Link>
-          <Link href="/road-to-excellence" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">ENTREGAMOS</Link>
-          <Link href="/red-flags" className="px-4 py-4 rounded-lg font-medium text-center bg-red-100 text-red-700 hover:bg-red-200 transition-colors">RED FLAGS</Link>
-          <Link href="/propiedades" className="px-4 py-4 rounded-lg font-medium text-center text-white transition-opacity hover:opacity-90" style={{ backgroundColor: config.brand.primaryColor }}>PROPIEDADES</Link>
-          <Link href="/pincali" className="px-4 py-4 rounded-lg font-medium text-center bg-green-100 text-green-800 hover:bg-green-200 transition-colors">PINCALI READY</Link>
+          <Link href="/donde-estamos" className="card text-center font-medium text-sm" style={{ color: "var(--red)", borderColor: "var(--red)", background: "#FEF2F2" }}>MEDIMOS</Link>
+          <Link href="/plan-de-accion" className="btn-primary text-center font-medium text-sm">ACCIONAMOS</Link>
+          <Link href="/road-to-excellence" className="card text-center font-medium text-sm" style={{ color: "var(--green)", borderColor: "var(--green)", background: "#F0FDF4" }}>ENTREGAMOS</Link>
+          <Link href="/red-flags" className="card text-center font-medium text-sm" style={{ color: "var(--red)", borderColor: "var(--red)", background: "#FEF2F2" }}>RED FLAGS</Link>
+          <Link href="/propiedades" className="btn-primary text-center font-medium text-sm">PROPIEDADES</Link>
+          <Link href="/pincali" className="card text-center font-medium text-sm" style={{ color: "var(--green)", borderColor: "var(--green)", background: "#F0FDF4" }}>PINCALI READY</Link>
+          <Link href="/benchmark" className="card text-center font-medium text-sm" style={{ color: "var(--eb-blue)" }}>BENCHMARK</Link>
         </div>
       </section>
 
       {/* Cómo funciona */}
-      <section className="px-6 py-8">
-        <div className="max-w-5xl mx-auto">
+      <section className="px-6 py-8" style={{ background: "var(--eb-cream)" }}>
+        <div className="container-main">
+          <p className="section-tag">Arquitectura</p>
           <h2
-            className="text-2xl font-bold mb-10 text-center"
-            style={{ color: config.brand.primaryColor }}
+            className="mb-10 text-center"
+            style={{ color: "var(--eb-blue)" }}
           >
             Cómo funciona
           </h2>
@@ -181,16 +179,16 @@ export default async function Home() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="border border-gray-100 rounded-xl p-6 hover:border-gray-200 transition-colors"
+                className="card"
               >
-                <h3 className="font-semibold text-lg mb-0.5">{feature.title}</h3>
+                <h3 className="font-semibold text-lg mb-0.5" style={{ color: "var(--eb-ink)" }}>{feature.title}</h3>
                 <p
                   className="text-sm font-medium mb-3"
-                  style={{ color: config.brand.secondaryColor }}
+                  style={{ color: "var(--eb-blue-deep)" }}
                 >
                   {feature.subtitle}
                 </p>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm leading-relaxed" style={{ color: "var(--ink-2)" }}>
                   {feature.description}
                 </p>
               </div>
@@ -200,11 +198,11 @@ export default async function Home() {
       </section>
 
       {/* Stack */}
-      <section className="px-6 py-16 bg-gray-50">
+      <section className="px-6 py-16" style={{ background: "var(--paper-2)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2
-            className="text-2xl font-bold mb-6"
-            style={{ color: config.brand.primaryColor }}
+            className="mb-6"
+            style={{ color: "var(--eb-blue)" }}
           >
             Stack
           </h2>
@@ -212,7 +210,7 @@ export default async function Home() {
             {stack.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700"
+                className="badge"
               >
                 {tech}
               </span>
@@ -222,15 +220,16 @@ export default async function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 px-6 py-8">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <footer style={{ borderTop: "1px solid var(--eb-line)" }} className="px-6 py-8">
+        <div className="container-main flex flex-col md:flex-row items-center justify-between gap-4 text-sm" style={{ color: "var(--ink-3)" }}>
           <p>
             Construido por{" "}
             <a
               href={config.brand.ownerLinkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-gray-900 transition-colors"
+              className="transition-colors"
+              style={{ color: "var(--ink-2)" }}
             >
               {config.brand.ownerName}
             </a>
@@ -239,9 +238,10 @@ export default async function Home() {
             href={config.urls.parentLabUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-900 transition-colors"
+            className="transition-colors hover:opacity-70"
+            style={{ color: "var(--ink-2)" }}
           >
-            GitHub →
+            GitHub
           </a>
         </div>
       </footer>

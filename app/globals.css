@@ -1,26 +1,206 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #FAFAF7;
+  --paper-2: #F4F3EE;
+  --eb-cream: #F2EEE6;
+  --eb-cream-2: #E8E2D4;
+  --eb-ink: #0A0E27;
+  --ink-2: #3A3A42;
+  --ink-3: #6B6B73;
+  --eb-line: #E5E3DC;
+  --line-2: #D4D1C7;
+  --eb-blue: #1E3AD9;
+  --eb-blue-deep: #0F25A8;
+  --eb-blue-soft: #E5E9FB;
+  --green: #10B981;
+  --amber: #F59E0B;
+  --red: #EF4444;
+
+  --background: var(--paper);
+  --foreground: var(--eb-ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-inter-tight);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─── Base Typography ─── */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(15.5px, 2vw, 20px);
+  font-weight: 600;
+}
+
+/* ─── Section Tags ─── */
+
+.section-tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--eb-ink);
+  border-bottom: 1px solid var(--eb-ink);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* ─── Labels / Eyebrow ─── */
+
+.label-eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--eb-ink);
+  opacity: 0.55;
+}
+
+/* ─── Badges ─── */
+
+.badge {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 2px;
+  background: var(--eb-blue-soft);
+  color: var(--eb-blue);
+}
+
+/* ─── Cards ─── */
+
+.card {
+  background: #fff;
+  border: 1px solid var(--eb-line);
+  border-radius: 8px;
+  padding: 22px 24px;
+  transition: transform 0.25s cubic-bezier(.2,.8,.2,1), box-shadow 0.25s cubic-bezier(.2,.8,.2,1), border-color 0.25s cubic-bezier(.2,.8,.2,1);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px -4px rgba(30, 58, 217, 0.12);
+  border-color: var(--eb-blue);
+}
+
+/* ─── Tables ─── */
+
+table {
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+table th {
+  font-family: var(--font-mono), monospace;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+table td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--eb-line);
+}
+
+/* ─── Buttons ─── */
+
+.btn-primary {
+  background: var(--eb-blue);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--eb-blue-deep);
+}
+
+/* ─── Highlights / Blockquotes ─── */
+
+.highlight-block {
+  background: var(--paper-2);
+  border-left: 3px solid var(--eb-blue);
+  padding: 10px 14px;
+  font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+  font-size: 15px;
+}
+
+/* ─── Reading Progress Bar ─── */
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--eb-blue), var(--eb-blue-deep));
+  box-shadow: 0 0 8px rgba(30, 58, 217, 0.4);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ─── Layout ─── */
+
+.container-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+@media (max-width: 768px) {
+  .container-main {
+    padding: 0 28px;
+  }
+}
+
+/* ─── Reveal on scroll ─── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Print ─── */
+
+@media print {
+  nav, header, footer, .reading-progress { display: none !important; }
+  body { font-size: 10.5pt; color: #000; background: #fff; }
+  @page { size: A4; margin: 18mm 16mm; }
+  .card { page-break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
 }

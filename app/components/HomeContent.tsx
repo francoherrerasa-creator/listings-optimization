@@ -48,7 +48,7 @@ export default function HomeContent(props: HomeContentProps) {
         <ScenarioToggle scenario={scenario} onChange={setScenario} />
       </div>
       <JourneyChart data={chartData} />
-      <p className="text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto mt-6 text-center">
+      <p className="text-sm leading-relaxed max-w-3xl mx-auto mt-6 text-center" style={{ color: "var(--ink-2)" }}>
         {paragraph}
       </p>
     </div>

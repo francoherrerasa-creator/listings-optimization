@@ -51,49 +51,50 @@ export default async function GrowthPage() {
 
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen" style={{ background: "var(--paper)" }}>
       {/* Header */}
-      <header className="border-b border-gray-100 px-6 py-4">
+      <header style={{ background: "var(--paper)", borderBottom: "1px solid var(--eb-line)" }} className="px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link
               href="/"
               className="font-semibold text-sm tracking-tight hover:opacity-70 transition-opacity"
-              style={{ color: config.brand.primaryColor }}
+              style={{ color: "var(--eb-blue)" }}
             >
               {config.brand.shortName}
             </Link>
-            <span className="text-gray-300">·</span>
-            <span className="text-sm text-gray-500">
+            <span style={{ color: "var(--eb-line)" }}>·</span>
+            <span className="text-sm" style={{ color: "var(--ink-3)" }}>
               Medimos · {config.project.name}
             </span>
           </div>
-          <div className="flex items-center gap-3 text-sm text-gray-500">
-            <Link href="/plan-de-accion" className="hover:text-gray-900 transition-colors">Accionamos</Link>
-            <span className="text-gray-300">·</span>
-            <Link href="/road-to-excellence" className="hover:text-gray-900 transition-colors">Entregamos</Link>
-            <span className="text-gray-300">·</span>
-            <Link href="/propiedades" className="hover:text-gray-900 transition-colors">Propiedades</Link>
-            <span className="text-gray-300">·</span>
-            <Link href="/red-flags" className="hover:text-gray-900 transition-colors">Red Flags</Link>
-            <span className="text-gray-300">·</span>
-            <Link href="/pincali" className="hover:text-gray-900 transition-colors">Pincali</Link>
-          </div>
+          <nav className="flex items-center gap-3 text-sm" style={{ color: "var(--ink-2)" }}>
+            <Link href="/plan-de-accion" className="hover:opacity-70 transition-opacity" style={{ color: "var(--ink-2)" }}>Accionamos</Link>
+            <span style={{ color: "var(--eb-line)" }}>·</span>
+            <Link href="/road-to-excellence" className="hover:opacity-70 transition-opacity" style={{ color: "var(--ink-2)" }}>Entregamos</Link>
+            <span style={{ color: "var(--eb-line)" }}>·</span>
+            <Link href="/propiedades" className="hover:opacity-70 transition-opacity" style={{ color: "var(--ink-2)" }}>Propiedades</Link>
+            <span style={{ color: "var(--eb-line)" }}>·</span>
+            <Link href="/red-flags" className="hover:opacity-70 transition-opacity" style={{ color: "var(--ink-2)" }}>Red Flags</Link>
+            <span style={{ color: "var(--eb-line)" }}>·</span>
+            <Link href="/pincali" className="hover:opacity-70 transition-opacity" style={{ color: "var(--ink-2)" }}>Pincali</Link>
+            <span style={{ color: "var(--eb-line)" }}>·</span>
+            <Link href="/benchmark" className="hover:opacity-70 transition-opacity" style={{ color: "var(--ink-2)" }}>Benchmark</Link>
+          </nav>
         </div>
       </header>
 
       <main className="flex-1 px-6 py-10">
         <div className="max-w-7xl mx-auto space-y-12">
           <div>
-            <h1 className="text-2xl font-extrabold tracking-tight mb-1" style={{ color: config.brand.primaryColor }}>MEDIMOS</h1>
-            <p className="text-sm text-gray-500">Estado actual de EasyBroker</p>
+            <p className="section-tag">Sección 01 · Diagnóstico</p>
+            <h1 style={{ color: "var(--eb-blue)" }}>MEDIMOS</h1>
+            <p className="text-sm" style={{ color: "var(--ink-3)" }}>Estado actual de EasyBroker</p>
           </div>
 
           {/* Executive Summary */}
-          <div className="border border-gray-200 bg-gray-50/30 rounded-lg p-6">
-            <p className="text-base text-gray-700 leading-relaxed">
-              Analizamos 10 propiedades de las 1,437 publicadas. Ninguna pasa control de calidad. Promedio actual: Calidad 54% con 40 flags totales, 4 flags por propiedad. La descripción es el cuello de botella claro: afecta a las 10 propiedades auditadas con 19 flags.
-            </p>
+          <div className="highlight-block">
+            Analizamos 10 propiedades de las 1,437 publicadas. Ninguna pasa control de calidad. Promedio actual: Calidad 54% con 40 flags totales, 4 flags por propiedad. La descripción es el cuello de botella claro: afecta a las 10 propiedades auditadas con 19 flags.
           </div>
 
           {/* Section 1: Stat boxes */}
@@ -136,14 +137,15 @@ export default async function GrowthPage() {
 
           {/* Section 2: Calidad por Dimensión */}
           <section>
-            <h2 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.primaryColor }}>
+            <p className="section-tag">Calidad por Dimensión</p>
+            <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>
               Calidad por dimensión
             </h2>
 
             {/* Column headers */}
             <div className="flex items-center gap-4 mb-2">
               <div className="w-32 shrink-0" />
-              <span className="w-8 text-center text-[10px] text-gray-400 uppercase shrink-0">prop.</span>
+              <span className="w-8 text-center label-eyebrow shrink-0">prop.</span>
               <div className="flex-1" />
               <div className="w-10 shrink-0" />
             </div>
@@ -166,28 +168,29 @@ export default async function GrowthPage() {
             </div>
 
             <div className="flex items-center justify-between mt-4 text-xs font-medium">
-              <span className="text-green-700">Total: {data.sampled}</span>
-              <span className="text-yellow-700">80 · estándar de calidad</span>
-              <span style={{ color: config.brand.primaryColor }}>Calidad promedio: 54</span>
+              <span style={{ color: "var(--green)" }}>Total: {data.sampled}</span>
+              <span style={{ color: "var(--amber)" }}>80 · estándar de calidad</span>
+              <span style={{ color: "var(--eb-blue)" }}>Calidad promedio: 54</span>
             </div>
           </section>
 
           {/* Section 3: Flags by Dimension */}
           <section>
-            <h2 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.primaryColor }}>
+            <p className="section-tag">Flags por Dimensión</p>
+            <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>
               Flags por dimensión
             </h2>
-            <div className="border border-gray-100 rounded-lg overflow-hidden">
+            <div className="card overflow-hidden" style={{ padding: 0 }}>
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wide">
-                    <th className="px-4 py-3 font-medium">Dimensión</th>
-                    <th className="px-4 py-3 font-medium text-center">Flags</th>
-                    <th className="px-4 py-3 font-medium text-center">Propiedades afectadas</th>
-                    <th className="px-4 py-3 font-medium text-center">Score</th>
+                  <tr style={{ background: "var(--paper-2)" }}>
+                    <th className="px-4 py-3 text-left">Dimensión</th>
+                    <th className="px-4 py-3 text-center">Flags</th>
+                    <th className="px-4 py-3 text-center">Propiedades afectadas</th>
+                    <th className="px-4 py-3 text-center">Score</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-50">
+                <tbody>
                   {Object.entries(dimFlagCounts)
                     .sort((a, b) => b[1] - a[1])
                     .map(([dim, flags]) => {
@@ -195,14 +198,14 @@ export default async function GrowthPage() {
                       const affected = results.filter(
                         (r) => r.dimensions[dim as keyof typeof r.dimensions]?.score < 70
                       ).length;
-                      const scoreBg = avg >= 85 ? "bg-emerald-50 text-emerald-700" : avg >= 70 ? "bg-yellow-50 text-yellow-700" : "bg-red-50 text-red-400";
+                      const scoreBg = avg >= 85 ? { background: "#D1FAE5", color: "#065F46" } : avg >= 70 ? { background: "#FEF3C7", color: "#92400E" } : { background: "#FEE2E2", color: "#991B1B" };
                       return (
-                        <tr key={dim} className={flags > 10 ? "bg-red-50/30" : ""}>
-                          <td className="px-4 py-3 text-gray-700">{dimensionLabels[dim] ?? dim}</td>
-                          <td className="px-4 py-3 text-center font-medium text-gray-700">{flags}</td>
-                          <td className="px-4 py-3 text-center text-gray-600">{affected}</td>
+                        <tr key={dim} style={flags > 10 ? { background: "#FEF2F220" } : {}}>
+                          <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>{dimensionLabels[dim] ?? dim}</td>
+                          <td className="px-4 py-3 text-center font-medium" style={{ fontFamily: "var(--font-mono)", color: "var(--eb-ink)" }}>{flags}</td>
+                          <td className="px-4 py-3 text-center" style={{ color: "var(--ink-2)" }}>{affected}</td>
                           <td className="px-4 py-3 text-center">
-                            <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${scoreBg}`}>
+                            <span className="inline-block px-2 py-0.5 rounded text-xs font-medium" style={scoreBg}>
                               {avg}
                             </span>
                           </td>
@@ -216,39 +219,40 @@ export default async function GrowthPage() {
 
           {/* Funnel de Optimización */}
           <section>
-            <h2 className="text-sm font-semibold uppercase tracking-wide mb-4" style={{ color: config.brand.primaryColor }}>
+            <p className="section-tag">Funnel de Optimización</p>
+            <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>
               Funnel de Optimización
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
-              <div className="border-b-4 border-gray-300 rounded-lg p-4 text-center border border-gray-100">
-                <p className="text-2xl font-bold text-gray-700">10</p>
-                <p className="text-xs font-medium text-gray-700 mt-1">Propiedades revisadas</p>
-                <p className="text-[11px] text-gray-500 mt-0.5">muestra auditada</p>
-                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-medium bg-gray-100 text-gray-600 rounded-full">40 flags encontradas</span>
+              <div className="card text-center" style={{ borderBottom: "4px solid var(--ink-3)" }}>
+                <p className="text-2xl font-bold" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>10</p>
+                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Propiedades revisadas</p>
+                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>muestra auditada</p>
+                <span className="badge inline-block mt-2">40 flags encontradas</span>
               </div>
-              <div className="border-b-4 border-red-400 rounded-lg p-4 text-center border border-gray-100">
-                <p className="text-2xl font-bold text-red-600">19</p>
-                <p className="text-xs font-medium text-gray-700 mt-1">flags por descripción incompleta</p>
-                <p className="text-[11px] text-gray-500 mt-0.5">10 de 10 propiedades afectadas</p>
-                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">CUELLO DE BOTELLA</span>
+              <div className="card text-center" style={{ borderBottom: "4px solid var(--red)" }}>
+                <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>19</p>
+                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>flags por descripción incompleta</p>
+                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>10 de 10 propiedades afectadas</p>
+                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold rounded" style={{ background: "#FEE2E2", color: "var(--red)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>CUELLO DE BOTELLA</span>
               </div>
-              <div className="border-b-4 border-green-300 rounded-lg p-4 text-center border border-gray-100">
-                <p className="text-2xl font-bold text-green-700">9</p>
-                <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Automatización</p>
-                <p className="text-[11px] text-gray-500 mt-0.5">9 propiedades a activar</p>
-                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-medium bg-green-100 text-green-700 rounded-full">vía API</span>
+              <div className="card text-center" style={{ borderBottom: "4px solid var(--green)" }}>
+                <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>9</p>
+                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Optimizables por Automatización</p>
+                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>9 propiedades a activar</p>
+                <span className="badge inline-block mt-2">vía API</span>
               </div>
-              <div className="border-b-4 border-green-500 rounded-lg p-4 text-center border border-gray-100">
-                <p className="text-2xl font-bold text-green-700">10</p>
-                <p className="text-xs font-medium text-gray-700 mt-1">Optimizables por Eva Quality</p>
-                <p className="text-[11px] text-gray-500 mt-0.5">10 propiedades a activar</p>
-                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-medium bg-green-100 text-green-700 rounded-full">vía WhatsApp</span>
+              <div className="card text-center" style={{ borderBottom: "4px solid #059669" }}>
+                <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>10</p>
+                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Optimizables por Eva Quality</p>
+                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>10 propiedades a activar</p>
+                <span className="badge inline-block mt-2">vía WhatsApp</span>
               </div>
-              <div className="border-b-4 border-green-700 rounded-lg p-4 text-center border border-gray-100">
-                <p className="text-2xl font-bold text-green-800">{results.length - 4}</p>
-                <p className="text-xs font-medium text-gray-700 mt-1">Pincali Ready</p>
-                <p className="text-[11px] text-gray-500 mt-0.5">después de optimizaciones</p>
-                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold bg-red-100 text-red-600 rounded-full">4 con Red Flags</span>
+              <div className="card text-center" style={{ borderBottom: "4px solid #047857" }}>
+                <p className="text-2xl font-bold" style={{ color: "#047857", fontFamily: "var(--font-mono)" }}>{results.length - 4}</p>
+                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Pincali Ready</p>
+                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>después de optimizaciones</p>
+                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold rounded" style={{ background: "#FEE2E2", color: "var(--red)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>4 con Red Flags</span>
               </div>
             </div>
           </section>
@@ -258,23 +262,22 @@ export default async function GrowthPage() {
           <div className="text-center">
             <Link
               href="/plan-de-accion"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-white font-medium text-lg transition-opacity hover:opacity-90"
-              style={{ backgroundColor: config.brand.primaryColor }}
+              className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg"
             >
-              Accionamos →
+              Accionamos
             </Link>
           </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 px-6 py-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-sm text-gray-400">
+      <footer style={{ borderTop: "1px solid var(--eb-line)" }} className="px-6 py-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-sm" style={{ color: "var(--ink-3)" }}>
           <p>
             Generado: {new Date(data.generatedAt).toLocaleString("es-MX")} ·
             Fuente: {data.source}
           </p>
-          <Link href="/" className="hover:text-gray-900">
+          <Link href="/" className="hover:opacity-70" style={{ color: "var(--eb-blue)" }}>
             {config.brand.shortName}
           </Link>
         </div>
@@ -286,9 +289,9 @@ export default async function GrowthPage() {
 // ─── Components ───
 
 function scoreColor(score: number): string {
-  if (score >= 85) return "text-emerald-600";
-  if (score >= 70) return "text-yellow-600";
-  return "text-red-400";
+  if (score >= 85) return "var(--green)";
+  if (score >= 70) return "var(--amber)";
+  return "var(--red)";
 }
 
 function AggregateCard({
@@ -302,27 +305,27 @@ function AggregateCard({
   detail: string;
   numericScore?: number;
 }) {
-  const valueClass = numericScore !== undefined ? scoreColor(numericScore) : "text-gray-900";
+  const valueColor = numericScore !== undefined ? scoreColor(numericScore) : "var(--eb-ink)";
 
   return (
-    <div className="border border-gray-100 rounded-lg p-5 relative overflow-hidden">
+    <div className="card relative overflow-hidden">
       <div
         className="absolute top-0 left-0 right-0 h-1"
-        style={{ backgroundColor: config.brand.primaryColor }}
+        style={{ backgroundColor: "var(--eb-blue)" }}
       />
-      <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">
+      <p className="label-eyebrow mb-2">
         {label}
       </p>
-      <p className={`text-2xl font-bold ${valueClass}`}>{value}</p>
-      <p className="text-xs text-gray-400 mt-1">{detail}</p>
+      <p className="text-2xl font-bold" style={{ color: valueColor, fontFamily: "var(--font-mono)" }}>{value}</p>
+      <p className="text-xs mt-1" style={{ color: "var(--ink-3)" }}>{detail}</p>
     </div>
   );
 }
 
 function barBgColor(value: number): string {
-  if (value >= 85) return "bg-emerald-500";
-  if (value >= 70) return "bg-yellow-400";
-  return "bg-red-200";
+  if (value >= 85) return "var(--green)";
+  if (value >= 70) return "var(--amber)";
+  return "#FCA5A5";
 }
 
 function DimensionBar({
@@ -339,20 +342,20 @@ function DimensionBar({
   return (
     <div className="flex items-center gap-4">
       <div className="w-32 shrink-0">
-        <span className="text-sm text-gray-600">{label}</span>
-        {hint && <p className="text-[11px] text-gray-400 leading-tight">{hint}</p>}
+        <span className="text-sm" style={{ color: "var(--ink-2)" }}>{label}</span>
+        {hint && <p className="text-[11px] leading-tight" style={{ color: "var(--ink-3)" }}>{hint}</p>}
       </div>
-      <span className="w-8 text-center text-sm font-medium text-gray-500 shrink-0">
+      <span className="w-8 text-center text-sm font-medium shrink-0" style={{ color: "var(--ink-3)", fontFamily: "var(--font-mono)" }}>
         {affected}
       </span>
-      <div className="flex-1 relative h-6 bg-gray-50 rounded overflow-hidden">
+      <div className="flex-1 relative h-6 rounded overflow-hidden" style={{ background: "var(--paper-2)" }}>
         <div
-          className={`absolute inset-y-0 left-0 ${barBgColor(value)} rounded transition-all`}
-          style={{ width: `${value}%` }}
+          className="absolute inset-y-0 left-0 rounded transition-all"
+          style={{ width: `${value}%`, background: barBgColor(value) }}
         />
-        <div className="absolute inset-y-0 w-[2px] bg-green-600 opacity-70" style={{ left: "80%" }} />
+        <div className="absolute inset-y-0 w-[2px] opacity-70" style={{ left: "80%", background: "var(--green)" }} />
       </div>
-      <span className="w-10 text-right text-sm font-bold text-gray-700 shrink-0">
+      <span className="w-10 text-right text-sm font-bold shrink-0" style={{ color: "var(--eb-ink)", fontFamily: "var(--font-mono)" }}>
         {value}
       </span>
     </div>
@@ -373,13 +376,13 @@ function FunnelCard({
   badge?: string;
 }) {
   return (
-    <div className={`border border-gray-100 rounded-lg p-4 text-center border-b-4 ${borderColor}`}>
-      <p className="text-3xl font-bold text-gray-900">{value}</p>
+    <div className="card text-center" style={{ borderBottom: `4px solid ${borderColor}` }}>
+      <p className="text-3xl font-bold" style={{ color: "var(--eb-ink)", fontFamily: "var(--font-mono)" }}>{value}</p>
       {badge && (
-        <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-700 font-medium mt-1">{badge}</span>
+        <span className="badge inline-block mt-1">{badge}</span>
       )}
-      <p className="text-sm font-medium text-gray-700 mt-1">{label}</p>
-      <p className="text-xs text-gray-400 mt-0.5">{detail}</p>
+      <p className="text-sm font-medium mt-1" style={{ color: "var(--ink-2)" }}>{label}</p>
+      <p className="text-xs mt-0.5" style={{ color: "var(--ink-3)" }}>{detail}</p>
     </div>
   );
 }
