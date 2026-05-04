@@ -42,47 +42,29 @@ export default async function NextStepsPage() {
           {/* [1] Dónde estamos */}
           <section className="mb-10">
             <h3 className="label-eyebrow mb-4" style={{ opacity: 1, color: "var(--eb-blue-deep)" }}>Dónde estamos</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* Card 1: Pincali Ready */}
               <div className="card" style={{ borderColor: "var(--red)", background: "#FEF2F2" }}>
                 <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Pincali Ready</h4>
                 <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>0</p>
-                <p className="text-xs mt-1" style={{ color: "var(--ink-2)" }}>Pincali Ready hoy</p>
-                <p className="text-[10px] mt-1" style={{ color: "var(--ink-3)" }}>40 flags en 10 publicaciones bloquean activación</p>
+                <p className="text-xs mt-1" style={{ color: "var(--ink-2)" }}>de 10 listos para Pincali</p>
+                <p className="text-[10px] mt-2" style={{ color: "var(--eb-blue)" }}>Growth + Eva Quality</p>
               </div>
-              {/* Card 2: Propiedades sin asesor */}
-              <div className="card" style={{ borderColor: "var(--red)", background: "#FEF2F2" }}>
-                <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Propiedades sin asesor asignado</h4>
-                <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>5 de 10 (50%)</p>
-                <p className="text-xs mt-1" style={{ color: "var(--ink-3)" }}>agent: null. Riesgo operativo: lead llega y no hay quién atienda</p>
-              </div>
-              {/* Card 3: Sin actualizar */}
+              {/* Card 2: Inventario Zombie */}
               <div className="card" style={{ borderColor: "var(--amber)", background: "#FFFBEB" }}>
-                <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Propiedades sin actualizar</h4>
-                <p className="text-2xl font-bold" style={{ color: "var(--amber)", fontFamily: "var(--font-mono)" }}>{">"}90 días: 10</p>
-                <p className="text-xs mt-1" style={{ color: "var(--ink-3)" }}>Todas las propiedades sin actualización desde agosto 2024</p>
+                <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Inventario Zombie</h4>
+                <p className="text-2xl font-bold" style={{ color: "var(--amber)", fontFamily: "var(--font-mono)" }}>10/10</p>
+                <p className="text-xs mt-1" style={{ color: "var(--ink-2)" }}>{">"}90 días sin actualizar</p>
+                <p className="text-[10px] mt-2" style={{ color: "var(--eb-blue)" }}>Growth + Eva Reactivate</p>
               </div>
-              {/* Card 4: Riesgo de Churn */}
+              {/* Card 3: Sin asesor */}
               <div className="card" style={{ borderColor: "var(--red)", background: "#FEF2F2" }}>
-                <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Riesgo de Churn del Asesor</h4>
-                <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>10 de 10</p>
-                <p className="text-xs mt-1" style={{ color: "var(--ink-3)" }}>propiedades con señales de riesgo</p>
-                <p className="text-[10px] mt-1" style={{ color: "var(--ink-3)" }}>inactivas, asesor con 1 sola publicación, perfil incompleto</p>
-              </div>
-              {/* Card 5: API GAP */}
-              <div className="card relative" style={{ background: "var(--paper-2)" }}>
-                <span className="badge absolute top-2 right-2">API GAP</span>
-                <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Por tipo de plan</h4>
-                <p className="text-sm" style={{ color: "var(--ink-3)" }}>Free / Basic / Pro: no expuesto por API pública</p>
-              </div>
-              {/* Card 6: API GAP */}
-              <div className="card relative" style={{ background: "var(--paper-2)" }}>
-                <span className="badge absolute top-2 right-2">API GAP</span>
-                <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Por tipo de asesor</h4>
-                <p className="text-sm" style={{ color: "var(--ink-3)" }}>Inmobiliaria / Independiente: no expuesto por API pública</p>
+                <h4 className="label-eyebrow mb-2" style={{ opacity: 1 }}>Sin Asesor Asignado</h4>
+                <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>5/10 (50%)</p>
+                <p className="text-xs mt-1" style={{ color: "var(--ink-2)" }}>agent: null. Riesgo de lead perdido</p>
+                <p className="text-[10px] mt-2" style={{ color: "var(--eb-blue)" }}>Growth + Eva Match</p>
               </div>
             </div>
-            <p className="text-xs mt-3" style={{ color: "var(--ink-3)" }}>* Métricas identificadas como críticas para el funnel free-to-paid. No expuestas en la API pública de EasyBroker.</p>
           </section>
 
           {/* [2] Sistema Eva Multi-Bot */}
