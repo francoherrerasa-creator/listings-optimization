@@ -161,7 +161,6 @@ export default async function Home() {
           <Link href="/red-flags" className="card text-center font-medium text-sm" style={{ color: "var(--red)", borderColor: "var(--red)", background: "#FEF2F2" }}>RED FLAGS</Link>
           <Link href="/propiedades" className="btn-primary text-center font-medium text-sm">PROPIEDADES</Link>
           <Link href="/pincali" className="card text-center font-medium text-sm" style={{ color: "var(--green)", borderColor: "var(--green)", background: "#F0FDF4" }}>PINCALI READY</Link>
-          <Link href="/benchmark" className="card text-center font-medium text-sm" style={{ color: "var(--eb-blue)" }}>BENCHMARK</Link>
         </div>
       </section>
 
