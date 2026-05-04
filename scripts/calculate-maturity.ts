@@ -29,10 +29,10 @@ async function main() {
   fs.writeFileSync(path.join(process.cwd(), "data/maturity-results.json"), JSON.stringify(output, null, 2));
 
   console.log("=== MATURITY FUNNEL ===");
-  console.log(`Básico (nivel 1): ${counts[1]}`);
-  console.log(`Completo (nivel 2): ${counts[2]}`);
-  console.log(`Optimizado (nivel 3): ${counts[3]}`);
-  console.log(`Premium (nivel 4): ${counts[4]}`);
+  console.log(`Crítico (nivel 1): ${counts[1]}`);
+  console.log(`Standard (nivel 2): ${counts[2]}`);
+  console.log(`Pincali Ready (nivel 3): ${counts[3]}`);
+  console.log(`Top Performer (nivel 4): ${counts[4]}`);
   console.log("\nPer listing:");
   for (const r of results) {
     console.log(`${r.publicId}: Level ${r.level} (${r.levelLabel}) - agent:${r.criteria.hasAgent} photos5:${r.criteria.hasMinPhotos5} photos10:${r.criteria.hasMinPhotos10} health80:${r.criteria.healthAbove80}`);

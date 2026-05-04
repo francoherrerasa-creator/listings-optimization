@@ -1,9 +1,9 @@
 /**
- * Maturity levels for listings based on marketplace standards.
- * Level 1 (Básico): has agent + basic data (title, description, property_type)
- * Level 2 (Completo): above + ≥5 photos + location with city and neighborhood
- * Level 3 (Optimizado): above + ≥10 photos + Health ≥80%
- * Level 4 (Premium): above + (video OR virtual_tour) + share_commission: true
+ * Maturity levels for listings based on quality score and marketplace readiness.
+ * Level 1 (Crítico): Published on EasyBroker, quality < 50%
+ * Level 2 (Standard): Published on EasyBroker, quality 50-79%
+ * Level 3 (Pincali Ready): Quality ≥80% + ≥10 photos
+ * Level 4 (Top Performer): Pincali Ready + video or virtual tour
  */
 
 export interface MaturityResult {
@@ -23,10 +23,10 @@ export interface MaturityResult {
 }
 
 export const MATURITY_LEVELS = [
-  { level: 1, label: "Básico", color: "bg-red-100 text-red-700 border-red-200" },
-  { level: 2, label: "Completo", color: "bg-yellow-100 text-yellow-700 border-yellow-200" },
-  { level: 3, label: "Optimizado", color: "bg-green-100 text-green-700 border-green-200" },
-  { level: 4, label: "Premium", color: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+  { level: 1, label: "Crítico", color: "#EF4444" },
+  { level: 2, label: "Standard", color: "#F59E0B" },
+  { level: 3, label: "Pincali Ready", color: "#10B981" },
+  { level: 4, label: "Top Performer", color: "#1E3AD9" },
 ];
 
 export function calculateMaturityLevel(listing: any, healthPercent: number): MaturityResult {
@@ -44,20 +44,20 @@ export function calculateMaturityLevel(listing: any, healthPercent: number): Mat
 
   const criteria = { hasAgent, hasBasicData, hasMinPhotos5, hasLocationComplete, hasMinPhotos10, healthAbove80, hasVideoOrTour, hasShareCommission };
 
+  // Classification based on quality score
   let level: 1 | 2 | 3 | 4 = 1;
-  if (hasAgent && hasBasicData) {
-    level = 1;
-    if (hasMinPhotos5 && hasLocationComplete) {
-      level = 2;
-      if (hasMinPhotos10 && healthAbove80) {
-        level = 3;
-        if (hasVideoOrTour && hasShareCommission) {
-          level = 4;
-        }
-      }
+  if (healthPercent >= 80 && hasMinPhotos10) {
+    if (hasVideoOrTour) {
+      level = 4;
+    } else {
+      level = 3;
     }
+  } else if (healthPercent >= 50) {
+    level = 2;
+  } else {
+    level = 1;
   }
 
-  const levelLabel = MATURITY_LEVELS.find(l => l.level === level)?.label ?? "Básico";
+  const levelLabel = MATURITY_LEVELS.find(l => l.level === level)?.label ?? "Crítico";
   return { publicId: listing.public_id || listing.publicId || "", level, levelLabel, criteria };
 }

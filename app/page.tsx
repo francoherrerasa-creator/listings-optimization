@@ -34,10 +34,10 @@ const stack = [
 ];
 
 const levelDescriptions: Record<number, string> = {
-  1: "Asesor asignado + datos básicos (título, descripción, tipo)",
-  2: "5+ fotos + ubicación con colonia y ciudad",
-  3: "10+ fotos + Calidad 80%+",
-  4: "Video o tour virtual + comisión compartida",
+  1: "Publicado pero invisible",
+  2: "Compite en EasyBroker pero no califica para Pincali",
+  3: "Listo para generar leads orgánicos",
+  4: "Domina búsqueda, 3x más leads",
 };
 
 export default async function Home() {
@@ -121,8 +121,8 @@ export default async function Home() {
               const widthPercent = total > 0 ? Math.max((count / total) * 100, 4) : 4;
               const levelAvgHealth = avgHealthByLevel[ml.level];
               return (
-                <div key={ml.level} className="card flex items-center gap-4">
-                  <div className="text-3xl font-bold w-12 text-center" style={{ color: "var(--eb-blue)" }}>{count}</div>
+                <div key={ml.level} className="card flex items-center gap-4" style={{ borderLeft: `4px solid ${ml.color}` }}>
+                  <div className="text-3xl font-bold w-12 text-center" style={{ color: ml.color }}>{count}</div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <p className="text-sm font-medium" style={{ color: "var(--eb-ink)" }}>Nivel {ml.level}: {ml.label}</p>
@@ -131,7 +131,7 @@ export default async function Home() {
                     <div className="mt-2 h-2 rounded-full overflow-hidden" style={{ background: "var(--eb-line)" }}>
                       <div
                         className="h-full rounded-full"
-                        style={{ width: `${widthPercent}%`, background: "var(--eb-blue)", opacity: 0.5 }}
+                        style={{ width: `${widthPercent}%`, background: ml.color, opacity: 0.6 }}
                       />
                     </div>
                   </div>
