@@ -159,7 +159,56 @@ export default async function GrowthPage() {
             </div>
           </section>
 
-          {/* Section 3: Qué más medimos */}
+          {/* Section 3: Cómo medimos la calidad */}
+          <section>
+            <p className="section-tag">Metodología</p>
+            <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>
+              Cómo medimos la calidad
+            </h2>
+            <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>
+              Score ponderado de 100 puntos basado en los campos que EasyBroker pide y los que más pesan en match de búsqueda y SEO. No incluye campos obligatorios (título, ubicación básica, precio): esos son condición de existencia.
+            </p>
+
+            <div className="card mb-6" style={{ padding: "20px 24px" }}>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-2)" }}>Descripción optimizada</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: "13px", color: "var(--eb-ink)" }}>30%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-2)" }}>10+ fotos de calidad</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: "13px", color: "var(--eb-ink)" }}>25%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-2)" }}>Ubicación granular</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: "13px", color: "var(--eb-ink)" }}>15%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-2)" }}>Características numéricas</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: "13px", color: "var(--eb-ink)" }}>15%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-2)" }}>Amenidades (mín 3)</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: "13px", color: "var(--eb-ink)" }}>10%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-2)" }}>Comisión compartida</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600, fontSize: "13px", color: "var(--eb-ink)" }}>5%</span>
+                </div>
+              </div>
+
+              <div style={{ borderTop: "1px solid var(--eb-line)", marginTop: "16px", paddingTop: "16px" }}>
+                <p className="text-sm mb-1" style={{ color: "var(--eb-ink)" }}><strong>Pincali Ready (80%)</strong> = descripción + fotos + ubicación + características</p>
+                <p className="text-sm" style={{ color: "var(--eb-ink)" }}><strong>Top Performer (95%+)</strong> = Pincali Ready + amenidades + comisión + video/tour virtual</p>
+              </div>
+            </div>
+
+            <p className="text-xs" style={{ color: "var(--ink-3)" }}>
+              Disclaimer: este modelo de scoring es una propuesta y se ajustaría con Producto, Customer Success, Brand y Sales una vez dentro del equipo, según data interna que no está en la API pública.
+            </p>
+          </section>
+
+          {/* Section 4: Qué más medimos */}
           <section>
             <p className="section-tag">Qué más medimos</p>
             <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>
