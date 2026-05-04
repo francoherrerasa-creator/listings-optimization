@@ -67,6 +67,45 @@ export default async function NextStepsPage() {
             </div>
           </section>
 
+          {/* Output de Growth */}
+          <section className="mb-10">
+            <p className="section-tag">Output de Growth</p>
+            <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>Visibilidad operativa del motor</h2>
+            <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>Lo que produce Growth + Eva. Cada métrica es trazable y se reporta semanalmente.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="card">
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags resueltos</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>por Eva Quality en 90 días</p>
+              </div>
+              <div className="card">
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Listings optimizados</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>10</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>tocados por sistema Eva (Quality / Reactivate / Match)</p>
+              </div>
+              <div className="card">
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Conversaciones WhatsApp</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>30+</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>flujos completados vía Whapi + Anthropic API</p>
+              </div>
+              <div className="card">
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>API Calls EasyBroker</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40+</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>PATCH ejecutados al endpoint /properties</p>
+              </div>
+              <div className="card">
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Tiempo promedio de resolución</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>&lt;3 min</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>por listing optimizado por Eva Quality</p>
+              </div>
+              <div className="card">
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Respuesta del asesor</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>65%+</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>responde a Eva en menos de 24 horas</p>
+              </div>
+            </div>
+          </section>
+
           {/* [2] Sistema Eva Multi-Bot */}
           <section className="mb-10">
             <h3 className="label-eyebrow mb-4" style={{ opacity: 1, color: "var(--eb-blue-deep)" }}>Plan de acción · Sistema Eva</h3>
