@@ -149,7 +149,7 @@ export default async function Home() {
         {/* Declarative paragraph */}
         <div className="mt-8 max-w-3xl mx-auto w-full">
           <div className="highlight-block">
-            Sistema Eva (Quality + Reactivate + Match) optimiza el inventario hacia 80%+ de calidad. Target: 60% Pincali Ready.
+            Hoy 0 de 10 listings llegan a Pincali. El área de Growth podría reducir drásticamente ese gap en 90 días.
           </div>
         </div>
 
