@@ -35,11 +35,11 @@ export default async function RoadToExcellencePage() {
         <div className="max-w-5xl mx-auto">
           <p className="section-tag">Sección 03 · Ejecución</p>
           <h1 style={{ color: "var(--eb-blue)" }}>ENTREGAMOS</h1>
-          <p className="text-sm mb-8" style={{ color: "var(--ink-3)" }}>One team: de 0 a 10 Pincali Ready</p>
+          <p className="text-sm mb-8" style={{ color: "var(--ink-3)" }}>One team: de 0 a 60% Pincali Ready</p>
 
           {/* Executive Summary */}
           <div className="highlight-block mb-10">
-            Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Eva Quality. Sales asigna asesor a las 5 propiedades huérfanas. Customer Success reactiva las 10 propiedades inactivas. Trust & Safety resuelve las 5 violaciones de política. Resultado: de 0 propiedades Pincali Ready hoy, llegamos a 10 cuando los frentes ejecutan en paralelo.
+            Cada equipo entrega su slice del sistema. Growth + Eva Quality llevan la calidad del listing del 54% promedio hacia &ge;80%. Eva Reactivate recupera el inventario zombie con data de zona. Eva Match conecta leads sin asesor en menos de 5 minutos. Resultado: de 0 propiedades Pincali Ready hoy a 60% del inventario optimizado al día 90.
           </div>
 
           {/* Output de Growth - Estado Meta Cumplido */}
