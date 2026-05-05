@@ -156,10 +156,10 @@ export default async function Home() {
         {/* Buttons - 7 in grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8 max-w-3xl mx-auto w-full">
           <Link href="/donde-estamos" className="card text-center font-medium text-sm" style={{ color: "var(--red)", borderColor: "var(--red)", background: "#FEF2F2" }}>MEDIMOS</Link>
-          <Link href="/plan-de-accion" className="btn-primary text-center font-medium text-sm">ACCIONAMOS</Link>
+          <Link href="/plan-de-accion" className="card text-center font-medium text-sm" style={{ color: "#fff", borderColor: "var(--eb-blue)", background: "var(--eb-blue)" }}>ACCIONAMOS</Link>
           <Link href="/road-to-excellence" className="card text-center font-medium text-sm" style={{ color: "var(--green)", borderColor: "var(--green)", background: "#F0FDF4" }}>ENTREGAMOS</Link>
           <Link href="/red-flags" className="card text-center font-medium text-sm" style={{ color: "var(--red)", borderColor: "var(--red)", background: "#FEF2F2" }}>RED FLAGS</Link>
-          <Link href="/propiedades" className="btn-primary text-center font-medium text-sm">PROPIEDADES</Link>
+          <Link href="/propiedades" className="card text-center font-medium text-sm" style={{ color: "#fff", borderColor: "var(--eb-blue)", background: "var(--eb-blue)" }}>PROPIEDADES</Link>
           <Link href="/pincali" className="card text-center font-medium text-sm" style={{ color: "var(--green)", borderColor: "var(--green)", background: "#F0FDF4" }}>PINCALI READY</Link>
         </div>
       </section>

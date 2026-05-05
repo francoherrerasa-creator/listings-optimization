@@ -42,36 +42,41 @@ export default async function RoadToExcellencePage() {
             Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Eva Quality. Sales asigna asesor a las 5 propiedades huérfanas. Customer Success reactiva las 10 propiedades inactivas. Trust & Safety resuelve las 5 violaciones de política. Resultado: de 0 propiedades Pincali Ready hoy, llegamos a 10 cuando los frentes ejecutan en paralelo.
           </div>
 
-          {/* Output de Growth */}
+          {/* Output de Growth - Estado Meta Cumplido */}
           <section className="mb-10">
             <p className="section-tag">Output de Growth</p>
             <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>Visibilidad operativa del motor</h2>
-            <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>Lo que produce Growth + Eva. Cada métrica es trazable y se reporta semanalmente.</p>
+            <p className="text-sm mb-4" style={{ color: "var(--ink-2)" }}>Lo que produce Growth + Eva. Cada métrica es trazable y se reporta semanalmente.</p>
+
+            <div className="highlight-block mb-6" style={{ borderLeftColor: "var(--green)", background: "#F0FDF4" }}>
+              Estado meta al día 90: las acciones de Growth + Eva llevaron al inventario de 0% Pincali Ready a 60% en 90 días.
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Propiedades revisadas</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>10</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Auditadas por el sistema Eva con scoring de 100 puntos</p>
+              <div className="card" style={{ borderColor: "var(--green)" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Propiedades optimizadas</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>10</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Sistema Eva tocó las 10 propiedades del staging</p>
               </div>
-              <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags totales detectados</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Errores de calidad que bloquean Pincali Ready</p>
+              <div className="card" style={{ borderColor: "var(--green)" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags resueltos</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>40</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>De 40 detectados a 0 pendientes</p>
               </div>
-              <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags de cuello de botella</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>19</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Concentrados en descripción (47% del gap total)</p>
+              <div className="card" style={{ borderColor: "var(--green)" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Descripciones optimizadas por Eva</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>19</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>47% del gap total cerrado</p>
               </div>
-              <div className="card">
+              <div className="card" style={{ borderColor: "var(--green)" }}>
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Tiempo promedio de resolución</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>&lt;3 min</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Por listing optimizado por Eva Quality vía WhatsApp</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>&lt;3 min</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Eva Quality vía WhatsApp + API EasyBroker</p>
               </div>
-              <div className="card">
+              <div className="card" style={{ borderColor: "var(--green)" }}>
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Pincali Ready hoy</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--red)", lineHeight: 1 }}>0/10</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Listings con calidad &ge;80% y todas las dimensiones cubiertas</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--green)", lineHeight: 1 }}>6/10</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>60% del inventario alcanzó calidad &ge;80%, target del Plan 90 días</p>
               </div>
             </div>
           </section>
