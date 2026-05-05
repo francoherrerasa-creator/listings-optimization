@@ -114,8 +114,8 @@ export default async function GrowthPage() {
               />
               <Link href="/red-flags" className="card relative overflow-hidden block" style={{ borderLeft: "4px solid var(--red)", background: "#FEF2F2" }}>
                 <p className="label-eyebrow mb-2">Red Flags detectados</p>
-                <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>10</p>
-                <p className="text-xs mt-1" style={{ color: "var(--ink-2)" }}>10 propiedades con red flags graves</p>
+                <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>4</p>
+                <p className="text-xs mt-1" style={{ color: "var(--ink-2)" }}>4 propiedades con red flags graves</p>
               </Link>
             </div>
           </section>

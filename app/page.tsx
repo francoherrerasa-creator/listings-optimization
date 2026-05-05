@@ -15,7 +15,7 @@ const features = [
     title: "Evaluación Automática",
     subtitle: "Safety Compliance",
     description:
-      "Seguimos las 7 políticas oficiales de publicación de EasyBroker. Cada propiedad evaluada en 5 dimensiones: descripción, precio, datos faltantes, fotos y ubicación.",
+      "Seguimos las 7 políticas oficiales de publicación de EasyBroker. Cada propiedad evaluada en 8 dimensiones ponderadas: fotos, descripción, precio, info actualizada, ubicación, características, amenidades y video.",
   },
   {
     title: "Next Steps",
@@ -149,7 +149,7 @@ export default async function Home() {
         {/* Declarative paragraph */}
         <div className="mt-8 max-w-3xl mx-auto w-full">
           <div className="highlight-block">
-            El equipo de Growth, con el sistema Eva (Quality + Reactivate + Match), lleva las propiedades de Calidad 46% a 80%+ promedio. De 0% Pincali Ready hoy a 60% del inventario optimizado al día 90.
+            Sistema Eva (Quality + Reactivate + Match) optimiza el inventario hacia 80%+ de calidad. Target: 60% Pincali Ready.
           </div>
         </div>
 
