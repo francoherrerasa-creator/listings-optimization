@@ -149,7 +149,7 @@ export default async function Home() {
         {/* Declarative paragraph */}
         <div className="mt-8 max-w-3xl mx-auto w-full">
           <div className="highlight-block">
-            El equipo de Growth, con la estrategia de Automatización y Eva Quality, lleva las propiedades de Calidad 54% a 93% promedio. 10 de 10 propiedades quedan Pincali Ready tras resolver Red Flags.
+            El equipo de Growth, con el sistema Eva (Quality + Reactivate + Match), lleva las propiedades de Calidad 46% a 80%+ promedio. De 0% Pincali Ready hoy a 60% del inventario optimizado al día 90.
           </div>
         </div>
 

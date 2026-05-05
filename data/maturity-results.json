@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-03T17:13:44.432Z",
+  "timestamp": "2026-05-05T01:57:06.543Z",
   "results": [
     {
       "publicId": "EB-B5525",
       "level": 1,
-      "levelLabel": "Básico",
+      "levelLabel": "Crítico",
       "criteria": {
         "hasAgent": true,
         "hasBasicData": true,
@@ -19,7 +19,7 @@
     {
       "publicId": "EB-B5526",
       "level": 2,
-      "levelLabel": "Completo",
+      "levelLabel": "Standard",
       "criteria": {
         "hasAgent": true,
         "hasBasicData": true,
@@ -34,7 +34,7 @@
     {
       "publicId": "EB-B5531",
       "level": 1,
-      "levelLabel": "Básico",
+      "levelLabel": "Crítico",
       "criteria": {
         "hasAgent": true,
         "hasBasicData": true,
@@ -49,7 +49,7 @@
     {
       "publicId": "EB-B5534",
       "level": 1,
-      "levelLabel": "Básico",
+      "levelLabel": "Crítico",
       "criteria": {
         "hasAgent": true,
         "hasBasicData": true,
@@ -63,8 +63,8 @@
     },
     {
       "publicId": "EB-C0135",
-      "level": 1,
-      "levelLabel": "Básico",
+      "level": 2,
+      "levelLabel": "Standard",
       "criteria": {
         "hasAgent": false,
         "hasBasicData": true,
@@ -79,7 +79,7 @@
     {
       "publicId": "EB-C0152",
       "level": 1,
-      "levelLabel": "Básico",
+      "levelLabel": "Crítico",
       "criteria": {
         "hasAgent": true,
         "hasBasicData": true,
@@ -93,8 +93,8 @@
     },
     {
       "publicId": "EB-C6349",
-      "level": 1,
-      "levelLabel": "Básico",
+      "level": 2,
+      "levelLabel": "Standard",
       "criteria": {
         "hasAgent": false,
         "hasBasicData": true,
@@ -109,7 +109,7 @@
     {
       "publicId": "EB-C6350",
       "level": 1,
-      "levelLabel": "Básico",
+      "levelLabel": "Crítico",
       "criteria": {
         "hasAgent": false,
         "hasBasicData": true,
@@ -124,7 +124,7 @@
     {
       "publicId": "EB-C6351",
       "level": 1,
-      "levelLabel": "Básico",
+      "levelLabel": "Crítico",
       "criteria": {
         "hasAgent": false,
         "hasBasicData": true,
@@ -139,7 +139,7 @@
     {
       "publicId": "EB-C6352",
       "level": 1,
-      "levelLabel": "Básico",
+      "levelLabel": "Crítico",
       "criteria": {
         "hasAgent": false,
         "hasBasicData": true,
@@ -153,8 +153,8 @@
     }
   ],
   "counts": {
-    "1": 9,
-    "2": 1,
+    "1": 7,
+    "2": 3,
     "3": 0,
     "4": 0
   }

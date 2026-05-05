@@ -22,7 +22,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/25525/51470/EB-B5525.jpg?version=1555544616&width=200",
-      "totalScore": 55,
+      "totalScore": 40,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -81,7 +81,79 @@
         "Faltan datos críticos: sin información de m² de construcción para oficina comercial",
         "Sin amenidades listadas para inmueble de 'primer nivel con acabados de lujo'",
         "Cantidad de fotos muy por debajo de la recomendación oficial (4 vs 10 mínimo)"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 3,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": false,
+            "diversity": false,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": false,
+            "structure": true,
+            "spelling": true
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 10,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": true
+          }
+        },
+        "characteristics": {
+          "score": 0,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": false,
+            "bathrooms": false,
+            "construction": false,
+            "lot": false,
+            "parking": false
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-B5526",
@@ -101,7 +173,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/25526/51474/EB-B5526.jpg?version=1555544618&width=200",
-      "totalScore": 64,
+      "totalScore": 56,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -159,7 +231,79 @@
         "Descripción truncada o incompleta - el texto termina abruptamente sin punto final",
         "El título menciona 'Amueblado' y 'San Jeronimo' pero estos detalles no se desarrollan en la descripción",
         "No se especifican amenidades del edificio mencionado (Torre Arboretum) que según descripción tiene jardín y alberca"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 14,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": true,
+            "diversity": true,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": true,
+            "structure": false,
+            "spelling": true
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 10,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": true
+          }
+        },
+        "characteristics": {
+          "score": 5,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": true,
+            "bathrooms": true,
+            "construction": true,
+            "lot": false,
+            "parking": false
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-B5531",
@@ -179,7 +323,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/25531/51545/EB-B5531.jpg?version=1555544662&width=200",
-      "totalScore": 58,
+      "totalScore": 48,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -237,7 +381,79 @@
         "Cantidad insuficiente de fotos (2/10 recomendadas) - no cumple con estándar de recorrido virtual",
         "Descripción incompleta - el texto termina abruptamente sin finalizar la lista de recámaras",
         "Sin amenidades listadas - una propiedad de $3.15M MXN debería especificar acabados, servicios y amenidades del fraccionamiento"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 3,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": false,
+            "diversity": false,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": true,
+            "structure": false,
+            "spelling": true
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 10,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": true
+          }
+        },
+        "characteristics": {
+          "score": 8,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": true,
+            "bathrooms": true,
+            "construction": true,
+            "lot": true,
+            "parking": true
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-B5534",
@@ -257,7 +473,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/25534/51579/EB-B5534.jpg?version=1555544683&width=200",
-      "totalScore": 52,
+      "totalScore": 35,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -315,7 +531,79 @@
         "Descripción de muy baja calidad - no diferencia el inmueble ni aporta información útil al prospecto",
         "Cantidad de fotos muy por debajo del estándar recomendado (3 vs 10 mínimo sugerido)",
         "Descripción contiene ID interno (ID-1342) sin contexto que no aporta valor al cliente final"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 3,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": false,
+            "diversity": false,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 5,
+          "maxScore": 20,
+          "subFactors": {
+            "length": false,
+            "mentions": true,
+            "structure": false,
+            "spelling": true
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 10,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": true
+          }
+        },
+        "characteristics": {
+          "score": 2,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": false,
+            "bathrooms": false,
+            "construction": true,
+            "lot": false,
+            "parking": false
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-C0135",
@@ -354,7 +642,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/30135/116394/EB-C0135.png?version=1596730015&width=200",
-      "totalScore": 47,
+      "totalScore": 57,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -416,7 +704,79 @@
         "Amenidades contradictorias: 'Mascotas permitidas' y 'No se aceptan mascotas' listadas simultáneamente",
         "Amenidades contradictorias: 'Permitido fumar' y 'Prohibido fumar' listadas simultáneamente",
         "Inconsistencia en datos: 1 recámara con 3 baños y 400m² de construcción en 34m² de terreno es incoherente"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 8,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": true,
+            "diversity": false,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": false,
+            "structure": true,
+            "spelling": true
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 10,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": true
+          }
+        },
+        "characteristics": {
+          "score": 8,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": true,
+            "bathrooms": true,
+            "construction": true,
+            "lot": true,
+            "parking": true
+          }
+        },
+        "amenities": {
+          "score": 4,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": true
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-C0152",
@@ -436,7 +796,7 @@
         }
       ],
       "titleImageThumb": null,
-      "totalScore": 36,
+      "totalScore": 30,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -495,7 +855,79 @@
         "Sin fotografías: images_count es 0, no puede publicarse sin imágenes del inmueble",
         "Título genérico 'Cambio en moneda' no sigue formato estándar (debería ser 'Casa en Venta en 20 de Noviembre, La Paz')",
         "Falta información crítica: sin m² de construcción ni de terreno"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 0,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": false,
+            "diversity": false,
+            "cover": false
+          }
+        },
+        "description": {
+          "score": 2,
+          "maxScore": 20,
+          "subFactors": {
+            "length": false,
+            "mentions": false,
+            "structure": false,
+            "spelling": true
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 10,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": true
+          }
+        },
+        "characteristics": {
+          "score": 2,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": true,
+            "bathrooms": true,
+            "construction": false,
+            "lot": false,
+            "parking": false
+          }
+        },
+        "amenities": {
+          "score": 1,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": true
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-C6349",
@@ -515,7 +947,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/36349/126557/EB-C6349.jpg?version=1611968228&width=200",
-      "totalScore": 59,
+      "totalScore": 58,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -574,7 +1006,79 @@
         "Descripción incluye promoción de agencia ('Hassaf Bienes Raices') que no corresponde al inmueble",
         "Ubicación sin coordenadas GPS dificulta aparecer correctamente en filtros de búsqueda",
         "Falta información de baños (campo en null) siendo un dato importante para compradores/inquilinos"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 20,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": true,
+            "resolution": true,
+            "diversity": true,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": true,
+            "structure": true,
+            "spelling": false
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 6,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": false
+          }
+        },
+        "characteristics": {
+          "score": 5,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": true,
+            "bathrooms": false,
+            "construction": true,
+            "lot": false,
+            "parking": true
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-C6350",
@@ -594,7 +1098,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/36350/126568/EB-C6350.jpg?version=1611968237&width=200",
-      "totalScore": 45,
+      "totalScore": 38,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -652,7 +1156,79 @@
         "Descripción contiene datos de contacto (nombre de agencia 'Hassaf Bienes Raices' y llamado a acción 'llame!') - violación directa de políticas",
         "Número insuficiente de fotos (3) para inmueble comercial de $18M MXN - experiencia de usuario deficiente",
         "Falta información de ubicación precisa (coordenadas, calle, CP) - afecta visibilidad en búsquedas"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 3,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": false,
+            "diversity": false,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": true,
+            "structure": true,
+            "spelling": false
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 6,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": false
+          }
+        },
+        "characteristics": {
+          "score": 2,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": false,
+            "bathrooms": false,
+            "construction": true,
+            "lot": false,
+            "parking": false
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-C6351",
@@ -672,7 +1248,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/36351/126571/EB-C6351.jpg?version=1611968241&width=200",
-      "totalScore": 55,
+      "totalScore": 46,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -731,7 +1307,79 @@
         "Discrepancia crítica: indica 3 recámaras con baño cada una pero el sistema registra solo 1 baño total",
         "Faltan amenidades importantes: no se listaron amenidades básicas mencionadas en descripción (jardín, terraza, área de asador, bodega, cuarto de servicio, lavandería)",
         "Sin coordenadas geográficas para verificación exacta de ubicación"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 8,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": true,
+            "diversity": false,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": true,
+            "structure": true,
+            "spelling": false
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 6,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": false
+          }
+        },
+        "characteristics": {
+          "score": 5,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": true,
+            "bathrooms": true,
+            "construction": true,
+            "lot": true,
+            "parking": false
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     },
     {
       "publicId": "EB-C6352",
@@ -751,7 +1399,7 @@
         }
       ],
       "titleImageThumb": "https://assets.stagingeb.com/property_images/36352/126577/EB-C6352.jpg?version=1611968245&width=200",
-      "totalScore": 55,
+      "totalScore": 49,
       "passes": false,
       "dimensions": {
         "description_quality": {
@@ -811,18 +1459,90 @@
         "Ubicación sin coordenadas geográficas dificulta filtros de búsqueda por zona",
         "Discrepancia: indica 4 recámaras cada una con baño, pero solo registra 1 baño en los datos estructurados",
         "Sin amenidades listadas a pesar de mencionar múltiples features (terraza, jardín, área de asador, bodegas)"
-      ]
+      ],
+      "dimensionsV2": {
+        "photos": {
+          "score": 8,
+          "maxScore": 20,
+          "subFactors": {
+            "quantity": false,
+            "resolution": true,
+            "diversity": false,
+            "cover": true
+          }
+        },
+        "description": {
+          "score": 12,
+          "maxScore": 20,
+          "subFactors": {
+            "length": true,
+            "mentions": true,
+            "structure": true,
+            "spelling": false
+          }
+        },
+        "price": {
+          "score": 15,
+          "maxScore": 20,
+          "subFactors": {
+            "numericPrice": true,
+            "priceType": true,
+            "financing": false
+          }
+        },
+        "freshness": {
+          "score": 0,
+          "maxScore": 15,
+          "subFactors": {
+            "recentUpdate": false
+          }
+        },
+        "location": {
+          "score": 6,
+          "maxScore": 10,
+          "subFactors": {
+            "stateCity": true,
+            "colonia": true,
+            "pin": false
+          }
+        },
+        "characteristics": {
+          "score": 8,
+          "maxScore": 8,
+          "subFactors": {
+            "bedrooms": true,
+            "bathrooms": true,
+            "construction": true,
+            "lot": true,
+            "parking": true
+          }
+        },
+        "amenities": {
+          "score": 0,
+          "maxScore": 4,
+          "subFactors": {
+            "hasAmenities": false
+          }
+        },
+        "video": {
+          "score": 0,
+          "maxScore": 3,
+          "subFactors": {
+            "hasVideoOrTour": false
+          }
+        }
+      }
     }
   ],
   "aggregates": {
     "passRate": 0,
-    "avgScore": 53,
+    "avgScore": 45.7,
     "avgByDimension": {
-      "description_quality": 40,
-      "price_plausibility": 50,
-      "data_completeness": 60,
-      "photos_signal": 51,
-      "location_clarity": 69
+      "description_quality": 52,
+      "price_plausibility": 75,
+      "data_completeness": 20,
+      "photos_signal": 35,
+      "location_clarity": 84
     },
     "topFlags": [
       {

@@ -79,7 +79,7 @@ export default async function GrowthPage() {
 
           {/* Executive Summary */}
           <div className="highlight-block">
-            Analizamos 10 propiedades de las 1,437 publicadas. Ninguna pasa control de calidad. Promedio actual: Calidad 54% con 40 flags totales, 4 flags por propiedad. La descripción es el cuello de botella claro: afecta a las 10 propiedades auditadas con 19 flags.
+            Analizamos 10 propiedades de las 1,437 publicadas. Ninguna pasa control de calidad. Promedio actual: Calidad 46% con 40 flags totales, 4 flags por propiedad. La descripción es el cuello de botella claro: afecta a las 10 propiedades auditadas con 19 flags.
           </div>
 
           {/* Section 1: Stat boxes */}
@@ -93,9 +93,9 @@ export default async function GrowthPage() {
               />
               <AggregateCard
                 label="Calidad Promedio"
-                value="54%"
+                value="46%"
                 detail="Estándar de calidad: 80%"
-                numericScore={54}
+                numericScore={46}
               />
               <AggregateCard
                 label="Analizados"
@@ -155,7 +155,7 @@ export default async function GrowthPage() {
             <div className="flex items-center justify-between mt-4 text-xs font-medium">
               <span style={{ color: "var(--green)" }}>Total: {data.sampled}</span>
               <span style={{ color: "var(--amber)" }}>80 · estándar de calidad</span>
-              <span style={{ color: "var(--eb-blue)" }}>Calidad promedio: 54</span>
+              <span style={{ color: "var(--eb-blue)" }}>Calidad promedio: 46</span>
             </div>
           </section>
 
@@ -184,7 +184,7 @@ export default async function GrowthPage() {
               {/* Card 3: Calidad promedio */}
               <div className="card">
                 <p className="label-eyebrow mb-2">Calidad promedio</p>
-                <p className="text-3xl font-extrabold" style={{ fontFamily: "var(--font-heading)", color: "var(--red)" }}>53.6%</p>
+                <p className="text-3xl font-extrabold" style={{ fontFamily: "var(--font-heading)", color: "var(--red)" }}>45.7%</p>
                 <p className="text-[12.5px] mt-2" style={{ color: "var(--ink-2)" }}>Lejos del estándar Pincali Ready (&ge;80%). Eva Quality cierra el gap.</p>
               </div>
               {/* Card 4: Distribución por nivel */}

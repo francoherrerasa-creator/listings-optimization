@@ -39,7 +39,7 @@ export default async function RoadToExcellencePage() {
 
           {/* Executive Summary */}
           <div className="highlight-block mb-10">
-            Cada equipo entrega su slice del sistema. Growth + Eva Quality llevan la calidad del listing del 54% promedio hacia &ge;80%. Eva Reactivate recupera el inventario zombie con data de zona. Eva Match conecta leads sin asesor en menos de 5 minutos. Resultado: de 0 propiedades Pincali Ready hoy a 60% del inventario optimizado al día 90.
+            Cada equipo entrega su slice del sistema. Growth + Eva Quality llevan la calidad del listing del 46% promedio hacia &ge;80%. Eva Reactivate recupera el inventario zombie con data de zona. Eva Match conecta leads sin asesor en menos de 5 minutos. Trust &amp; Safety resuelve las violaciones a Términos y Condiciones detectadas en /red-flags. Resultado: de 0 propiedades Pincali Ready hoy a 60% del inventario optimizado al día 90.
           </div>
 
           {/* Output de Growth - Estado Meta Cumplido */}

@@ -85,13 +85,16 @@ export const config: Config = {
     },
   },
   scoring: {
-    passingThreshold: 70,
+    passingThreshold: 80,
     dimensions: [
-      { id: "description_quality", label: "Calidad de descripción", weight: 25 },
-      { id: "price_plausibility", label: "Plausibilidad de precio", weight: 20 },
-      { id: "data_completeness", label: "Completitud de datos", weight: 20 },
-      { id: "photos_signal", label: "Señal de calidad de fotos", weight: 20 },
-      { id: "location_clarity", label: "Claridad de ubicación", weight: 15 },
+      { id: "photos", label: "Fotos", weight: 20 },
+      { id: "description", label: "Descripción", weight: 20 },
+      { id: "price", label: "Precio", weight: 20 },
+      { id: "freshness", label: "Info actualizada", weight: 15 },
+      { id: "location", label: "Ubicación granular", weight: 10 },
+      { id: "characteristics", label: "Características numéricas", weight: 8 },
+      { id: "amenities", label: "Amenidades", weight: 4 },
+      { id: "video", label: "Video o tour virtual", weight: 3 },
     ],
   },
   policies: {
