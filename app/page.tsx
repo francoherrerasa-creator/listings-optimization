@@ -162,6 +162,25 @@ export default async function Home() {
           <Link href="/propiedades" className="card text-center font-medium text-sm" style={{ color: "#fff", borderColor: "var(--eb-blue)", background: "var(--eb-blue)" }}>PROPIEDADES</Link>
           <Link href="/pincali" className="card text-center font-medium text-sm" style={{ color: "var(--green)", borderColor: "var(--green)", background: "#F0FDF4" }}>PINCALI READY</Link>
         </div>
+
+        {/* Futuro Roadmap */}
+        <div className="mt-12 max-w-3xl mx-auto w-full">
+          <p className="section-tag">Futuro Roadmap</p>
+          <h2 className="mb-1" style={{ color: "var(--eb-blue)" }}>Lo que medimos cuando tengamos data interna</h2>
+          <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>Hoy lo estimamos con proxies de la API pública. En producción se conecta vía SQL directo a la base de datos de EasyBroker.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="card" style={{ borderLeft: "4px solid var(--amber)" }}>
+              <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>MRR atribuido a Growth</p>
+              <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "28px", color: "var(--amber)", lineHeight: 1.2 }}>Data interna requerida</p>
+              <p className="mt-2" style={{ fontSize: "12.5px", lineHeight: 1.45, color: "var(--ink-2)" }}>$$ generado por upgrades, expansion y nuevas activaciones causadas por Eva, lifecycle, SEO. Hoy lo estimamos con proxies (% asesores activos optimizados con Eva).</p>
+            </div>
+            <div className="card" style={{ borderLeft: "4px solid var(--red)" }}>
+              <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Churn Proxy (inventario zombie)</p>
+              <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--red)", lineHeight: 1 }}>100%</p>
+              <p className="mt-2" style={{ fontSize: "12.5px", lineHeight: 1.45, color: "var(--ink-2)" }}>10 de 10 listings auditados llevan más de 90 días sin actualizar. Asesores con +180 días sin actividad son señal predictiva de churn próximo. Eva Reactivate los rescata antes.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Cómo funciona */}
