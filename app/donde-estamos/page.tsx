@@ -249,47 +249,6 @@ export default async function GrowthPage() {
             </div>
           </section>
 
-          {/* Funnel de Optimización */}
-          <section>
-            <p className="section-tag">Funnel de Optimización</p>
-            <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>
-              Funnel de Optimización
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
-              <div className="card text-center" style={{ borderBottom: "4px solid var(--ink-3)" }}>
-                <p className="text-2xl font-bold" style={{ color: "var(--ink-2)", fontFamily: "var(--font-mono)" }}>10</p>
-                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Propiedades revisadas</p>
-                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>muestra auditada</p>
-                <span className="badge inline-block mt-2">40 flags encontradas</span>
-              </div>
-              <div className="card text-center" style={{ borderBottom: "4px solid var(--red)" }}>
-                <p className="text-2xl font-bold" style={{ color: "var(--red)", fontFamily: "var(--font-mono)" }}>19</p>
-                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>flags por descripción incompleta</p>
-                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>10 de 10 propiedades afectadas</p>
-                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold rounded" style={{ background: "#FEE2E2", color: "var(--red)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>CUELLO DE BOTELLA</span>
-              </div>
-              <div className="card text-center" style={{ borderBottom: "4px solid var(--green)" }}>
-                <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>9</p>
-                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Optimizables por Automatización</p>
-                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>9 propiedades a activar</p>
-                <span className="badge inline-block mt-2">vía API</span>
-              </div>
-              <div className="card text-center" style={{ borderBottom: "4px solid #059669" }}>
-                <p className="text-2xl font-bold" style={{ color: "var(--green)", fontFamily: "var(--font-mono)" }}>10</p>
-                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Optimizables por Eva Quality</p>
-                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>10 propiedades a activar</p>
-                <span className="badge inline-block mt-2">vía WhatsApp</span>
-              </div>
-              <div className="card text-center" style={{ borderBottom: "4px solid #047857" }}>
-                <p className="text-2xl font-bold" style={{ color: "#047857", fontFamily: "var(--font-mono)" }}>{results.length - 4}</p>
-                <p className="text-xs font-medium mt-1" style={{ color: "var(--ink-2)" }}>Pincali Ready</p>
-                <p className="text-[11px] mt-0.5" style={{ color: "var(--ink-3)" }}>después de optimizaciones</p>
-                <span className="inline-block mt-2 px-2 py-0.5 text-[10px] font-bold rounded" style={{ background: "#FEE2E2", color: "var(--red)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>4 con Red Flags</span>
-              </div>
-            </div>
-          </section>
-
-
           {/* CTA to Next Steps */}
           <div className="text-center">
             <Link

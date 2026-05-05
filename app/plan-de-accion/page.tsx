@@ -74,34 +74,29 @@ export default async function NextStepsPage() {
             <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>Lo que produce Growth + Eva. Cada métrica es trazable y se reporta semanalmente.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags resueltos</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>por Eva Quality en 90 días</p>
-              </div>
-              <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Listings optimizados</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Propiedades revisadas</p>
                 <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>10</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>tocados por sistema Eva (Quality / Reactivate / Match)</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Auditadas por el sistema Eva con scoring de 100 puntos</p>
               </div>
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Conversaciones WhatsApp</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>30+</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>flujos completados vía Whapi + Anthropic API</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags totales detectados</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Errores de calidad que bloquean Pincali Ready</p>
               </div>
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>API Calls EasyBroker</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40+</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>PATCH ejecutados al endpoint /properties</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags de cuello de botella</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>19</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Concentrados en descripción (47% del gap total)</p>
               </div>
               <div className="card">
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Tiempo promedio de resolución</p>
                 <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>&lt;3 min</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>por listing optimizado por Eva Quality</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Por listing optimizado por Eva Quality vía WhatsApp</p>
               </div>
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Respuesta del asesor</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>65%+</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>responde a Eva en menos de 24 horas</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Pincali Ready hoy</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--red)", lineHeight: 1 }}>0/10</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Listings con calidad &ge;80% y todas las dimensiones cubiertas</p>
               </div>
             </div>
           </section>

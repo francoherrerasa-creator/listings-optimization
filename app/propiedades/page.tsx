@@ -1,8 +1,11 @@
 import { config } from "@/lib/config";
 import { loadListingDates } from "@/lib/loadDates";
+import { loadMaturityData } from "@/lib/loadMaturity";
+import { MATURITY_LEVELS } from "@/lib/maturity";
 import Link from "next/link";
+import FunnelStages from "./FunnelStages";
 
-const FUNNEL_STAGES = [
+const FUNNEL_STAGE_DEFS = [
   { label: "Fresco", range: "< 30 días", maxDays: 30, color: "#10B981", width: "100%" },
   { label: "Saludable", range: "30 a 90 días", maxDays: 90, color: "#F59E0B", width: "80%" },
   { label: "Riesgo", range: "91 a 365 días", maxDays: 365, color: "#F97316", width: "60%" },
@@ -11,7 +14,15 @@ const FUNNEL_STAGES = [
 
 export default async function ListingsPage() {
   const datesData = await loadListingDates();
+  const maturityData = await loadMaturityData();
   const now = new Date();
+
+  // Build maturity lookup
+  const maturityMap: Record<string, { level: number; label: string }> = {};
+  for (const m of maturityData.results) {
+    const info = MATURITY_LEVELS.find(ml => ml.level === m.level);
+    maturityMap[m.publicId] = { level: m.level, label: info?.label ?? "Crítico" };
+  }
 
   // Calculate days published for each listing
   const daysPerListing = datesData.results.map((d) => {
@@ -21,17 +32,32 @@ export default async function ListingsPage() {
       publicId: d.publicId,
       daysPublished: Math.floor((now.getTime() - pubDate.getTime()) / (1000 * 60 * 60 * 24)),
       daysUpdated: Math.floor((now.getTime() - updDate.getTime()) / (1000 * 60 * 60 * 24)),
+      level: maturityMap[d.publicId]?.level ?? 1,
+      levelLabel: maturityMap[d.publicId]?.label ?? "Crítico",
     };
   });
 
-  // Classify into funnel stages
-  const stageCounts = [0, 0, 0, 0];
-  for (const l of daysPerListing) {
-    if (l.daysPublished < 30) stageCounts[0]++;
-    else if (l.daysPublished <= 90) stageCounts[1]++;
-    else if (l.daysPublished <= 365) stageCounts[2]++;
-    else stageCounts[3]++;
-  }
+  // Classify into funnel stages with listing details
+  const stages = FUNNEL_STAGE_DEFS.map((def, i) => {
+    const minDays = i === 0 ? 0 : FUNNEL_STAGE_DEFS[i - 1].maxDays;
+    const listings = daysPerListing.filter((l) => {
+      if (i === 0) return l.daysPublished < def.maxDays;
+      if (def.maxDays === Infinity) return l.daysPublished > minDays;
+      return l.daysPublished >= minDays && l.daysPublished <= def.maxDays;
+    });
+    return {
+      label: def.label,
+      range: def.range,
+      color: def.color,
+      width: def.width,
+      listings: listings.map((l) => ({
+        publicId: l.publicId,
+        daysPublished: l.daysPublished,
+        level: l.level,
+        levelLabel: l.levelLabel,
+      })),
+    };
+  });
 
   const total = daysPerListing.length;
   const avgDaysPublished = Math.round(daysPerListing.reduce((s, l) => s + l.daysPublished, 0) / total);
@@ -89,29 +115,7 @@ export default async function ListingsPage() {
           </div>
 
           {/* Funnel */}
-          <div className="flex flex-col items-center gap-5 mb-12">
-            {FUNNEL_STAGES.map((stage, i) => {
-              const count = stageCounts[i];
-              const pct = total > 0 ? Math.round((count / total) * 100) : 0;
-              return (
-                <div
-                  key={stage.label}
-                  className="w-full flex items-center gap-4 px-5 py-4 rounded-lg"
-                  style={{
-                    maxWidth: stage.width,
-                    background: `${stage.color}18`,
-                    borderLeft: `4px solid ${stage.color}`,
-                  }}
-                >
-                  <div className="flex-1">
-                    <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)" }}>{stage.label} · {stage.range}</p>
-                    <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "40px", color: stage.color, lineHeight: 1.1, marginTop: "4px" }}>{count}</p>
-                  </div>
-                  <p style={{ fontFamily: "var(--font-mono)", fontSize: "18px", fontWeight: 600, color: stage.color }}>{pct}%</p>
-                </div>
-              );
-            })}
-          </div>
+          <FunnelStages stages={stages} />
 
           {/* Stat row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
