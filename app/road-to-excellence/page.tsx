@@ -42,62 +42,6 @@ export default async function RoadToExcellencePage() {
             Cada equipo entrega su slice del sistema. Growth lleva la calidad de 54% a 93% con Automatización y Eva Quality. Sales asigna asesor a las 5 propiedades huérfanas. Customer Success reactiva las 10 propiedades inactivas. Trust & Safety resuelve las 5 violaciones de política. Resultado: de 0 propiedades Pincali Ready hoy, llegamos a 10 cuando los frentes ejecutan en paralelo.
           </div>
 
-          {/* KPI Tracking Table */}
-          <p className="section-tag">KPIs de Seguimiento</p>
-          <h2 className="mb-4" style={{ color: "var(--eb-blue)" }}>Cómo medimos el éxito</h2>
-          <div className="card overflow-hidden mb-10" style={{ padding: 0 }}>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr style={{ background: "var(--paper-2)" }}>
-                    <th className="px-4 py-3 text-left">KPI</th>
-                    <th className="px-4 py-3 text-left">Métrica</th>
-                    <th className="px-4 py-3 text-center">Frecuencia</th>
-                    <th className="px-4 py-3 text-center">Owner</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Pincali Ready %</td>
-                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>(Listings con calidad &ge;80%) / (Total listings activos)</td>
-                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
-                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth</td>
-                  </tr>
-                  <tr style={{ background: "var(--paper-2)" }}>
-                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Inventario zombie %</td>
-                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>(Listings {">"}90 días sin actualizar) / (Total listings)</td>
-                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
-                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth + CS</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Listings sin asesor %</td>
-                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>(Listings con agent:null) / (Total listings)</td>
-                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
-                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth + Sales</td>
-                  </tr>
-                  <tr style={{ background: "var(--paper-2)" }}>
-                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>MRR por upgrades</td>
-                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>$$ atribuido a actividad de Growth (Eva, lifecycle, SEO)</td>
-                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Mensual</td>
-                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>NPS post-Eva</td>
-                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>Score de asesor después de interacción con cualquier versión de Eva</td>
-                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Mensual</td>
-                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Growth + CS</td>
-                  </tr>
-                  <tr style={{ background: "var(--paper-2)" }}>
-                    <td className="px-4 py-3 font-medium" style={{ color: "var(--eb-ink)" }}>Lead response rate</td>
-                    <td className="px-4 py-3" style={{ color: "var(--ink-2)" }}>% conversaciones con respuesta del asesor en &lt;24h</td>
-                    <td className="px-4 py-3 text-center" style={{ fontFamily: "var(--font-mono)", color: "var(--ink-3)" }}>Semanal</td>
-                    <td className="px-4 py-3 text-center" style={{ color: "var(--eb-blue)" }}>Sales</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
           {/* Output de Growth */}
           <section className="mb-10">
             <p className="section-tag">Output de Growth</p>
@@ -105,34 +49,29 @@ export default async function RoadToExcellencePage() {
             <p className="text-sm mb-6" style={{ color: "var(--ink-2)" }}>Lo que produce Growth + Eva. Cada métrica es trazable y se reporta semanalmente.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags resueltos</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>por Eva Quality en 90 días</p>
-              </div>
-              <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Listings optimizados</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Propiedades revisadas</p>
                 <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>10</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>tocados por sistema Eva (Quality / Reactivate / Match)</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Auditadas por el sistema Eva con scoring de 100 puntos</p>
               </div>
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Conversaciones WhatsApp</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>30+</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>flujos completados vía Whapi + Anthropic API</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags totales detectados</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Errores de calidad que bloquean Pincali Ready</p>
               </div>
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>API Calls EasyBroker</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>40+</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>PATCH ejecutados al endpoint /properties</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Flags de cuello de botella</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>19</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Concentrados en descripción (47% del gap total)</p>
               </div>
               <div className="card">
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Tiempo promedio de resolución</p>
                 <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>&lt;3 min</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>por listing optimizado por Eva Quality</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Por listing optimizado por Eva Quality vía WhatsApp</p>
               </div>
               <div className="card">
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Respuesta del asesor</p>
-                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--eb-blue)", lineHeight: 1 }}>65%+</p>
-                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>responde a Eva en menos de 24 horas</p>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-3)", marginBottom: "8px" }}>Pincali Ready hoy</p>
+                <p style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "36px", color: "var(--red)", lineHeight: 1 }}>0/10</p>
+                <p className="mt-2" style={{ fontSize: "12px", lineHeight: 1.45, color: "var(--ink-2)" }}>Listings con calidad &ge;80% y todas las dimensiones cubiertas</p>
               </div>
             </div>
           </section>
